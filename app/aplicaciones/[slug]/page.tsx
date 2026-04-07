@@ -1,168 +1,391 @@
+"use client";
+
+import { use } from "react";
 import Link from "next/link";
-import { Badge } from "@/components/ui/Badge";
-import { MethodBento } from "@/components/sections";
-import type { Metadata } from "next";
+import { aplicacionesMap, type AplicacionDetail } from "@/lib/aplicaciones-data";
+import { industriasMap } from "@/lib/industrias-data";
 
-// ---------------------------------------------------------------------------
-// Demo data matching Stitch Pesticidas detail page
-// ---------------------------------------------------------------------------
-const demoApplication = {
-  badge: "Aplicación Analítica #772-B",
-  title: (
-    <>
-      Determinación Multiresiduo de{" "}
-      <span className="text-secondary">Pesticidas en Alimentos</span>
-    </>
-  ),
-  description:
-    "Optimización de flujos de trabajo cromatográficos para la detección de trazas de pesticidas organofosforados y piretroides según normativas internacionales.",
-  methodDescription:
-    "El método propuesto utiliza una extracción QuEChERS modificada seguida de una separación por Cromatografía de Gases (GC) con detección por espectrometría de masas en tándem (MS/MS). Este enfoque garantiza una selectividad superior en matrices complejas como frutas con alto contenido de lípidos o pigmentos.",
-  methodStats: [
-    { label: "Límite de Detección", value: "< 0.01 mg/kg" },
-    { label: "Tiempo de Corrida", value: "18.5 min" },
-  ],
-  equipmentItems: [
-    {
-      title: "GC-MS/MS System",
-      description: "Triple Cuadrupolo de alta sensibilidad.",
-    },
-    {
-      title: "Autosampler Robotizado",
-      description: "Inyección de espacio de cabeza y líquido.",
-    },
-  ],
-  consumables: [
-    { name: "Columna Capilar DB-5ms" },
-    { name: "Kits de Extracción QuEChERS" },
-    { name: "Viales de Vidrio Ámbar" },
-  ],
-  visualImage:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAlE89CYY7Za-pIQAThPE0tFOODCXiDg5GgbSm9xUDGKtVfNOhmacmYtOrp_7fySEXwwOBcs8xG7K0kP3ocKoN--m7G2sfbiXvATiqRZieP-__x70BVisI25RwYd9oUzkM4wDJD6V8Yu78WorqrzjTTnASpdro5Kjsf61_3zx4eEh8CvTboFcUCdGq6gft40h4j10_pyKQTwgKeOuU94D3vAQqxAd52yEq0xhgouF9U7eKnYECzKT1OiVPRPxS8VfDaw0vRYhTiyg",
-  visualTitle: "Visualización de Picos",
-  visualDescription:
-    "Resolución cromatográfica superior incluso en co-eluciones complejas de isómeros.",
-};
-
-// ---------------------------------------------------------------------------
-// Metadata
-// ---------------------------------------------------------------------------
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  return {
-    title: `Aplicación: ${slug}`,
-    description: demoApplication.description,
-  };
-}
-
-// ---------------------------------------------------------------------------
-// Page
-// ---------------------------------------------------------------------------
-export default async function ApplicationDetailPage({
+export default function AplicacionPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+  const { slug } = use(params);
+  const data: AplicacionDetail | undefined = aplicacionesMap[slug];
+
+  if (!data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-primary mb-4">
+            Aplicación no encontrada
+          </h1>
+          <Link
+            href="/aplicaciones"
+            className="text-secondary font-bold hover:underline"
+          >
+            Volver a Aplicaciones
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const industria = industriasMap[data.industriaSlug];
 
   return (
-    <div className="mx-auto flex max-w-[1440px] gap-0">
-      {/* SideNavBar placeholder — static, no client interactivity needed here */}
-      <aside className="hidden lg:flex h-screen w-64 sticky top-20 left-0 shrink-0 flex-col gap-4 rounded-xl bg-surface-container-low p-6 text-sm">
-        <div className="mb-6">
-          <p className="label mb-1 text-secondary">Filtros Técnicos</p>
-          <p className="text-sm text-on-surface-variant">Precisión Clínica</p>
-        </div>
-        <nav className="flex flex-col gap-2">
-          {[
-            { icon: "factory", label: "Industria", active: true },
-            { icon: "science", label: "Método Analítico", active: false },
-            { icon: "biotech", label: "HPLC/GC", active: false },
-            { icon: "query_stats", label: "Espectrometría", active: false },
-            { icon: "verified", label: "Multimarca", active: false },
-          ].map((item) => (
-            <button
-              key={item.label}
-              className={`flex items-center gap-3 rounded-lg px-4 py-3 text-left transition-all duration-200 ${
-                item.active
-                  ? "bg-white font-semibold text-secondary shadow-sm"
-                  : "text-on-surface-variant hover:bg-surface-container-highest hover:pl-5"
-              }`}
-            >
-              <span className="material-symbols-outlined text-lg">
-                {item.icon}
-              </span>
-              {item.label}
-            </button>
-          ))}
-        </nav>
-        <button className="mt-auto w-full rounded-lg bg-secondary py-3 font-bold text-white transition-all hover:opacity-90">
-          Aplicar Filtros
-        </button>
-      </aside>
-
-      {/* Main Content Area */}
-      <section className="flex-1 bg-surface px-8 py-12">
-        {/* Hero Header */}
-        <div className="mb-16 flex flex-col items-end gap-12 md:flex-row">
-          <div className="flex-1">
-            <Badge
-              label={demoApplication.badge}
-              variant="secondary-fixed"
-              className="mb-6"
-            />
-            <h1 className="mb-6 font-heading text-5xl font-extrabold leading-none tracking-tighter text-primary">
-              {demoApplication.title}
-            </h1>
-            <p className="max-w-2xl text-xl font-light leading-relaxed text-on-surface-variant">
-              {demoApplication.description}
-            </p>
-          </div>
-          <div className="w-full md:w-1/3">
-            <button className="flex w-full items-center justify-center gap-3 rounded-lg bg-gradient-to-br from-primary to-primary-container py-4 px-8 font-bold text-white shadow-lg transition-all hover:opacity-90">
-              <span className="material-symbols-outlined">download</span>
-              Download Application Note
-            </button>
-          </div>
-        </div>
-
-        {/* Technical Bento Grid */}
-        <MethodBento
-          methodDescription={demoApplication.methodDescription}
-          methodStats={demoApplication.methodStats}
-          equipmentItems={demoApplication.equipmentItems}
-          consumables={demoApplication.consumables}
-          visualImage={demoApplication.visualImage}
-          visualTitle={demoApplication.visualTitle}
-          visualDescription={demoApplication.visualDescription}
-        />
-
-        {/* CTA Section */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-8 rounded-3xl bg-secondary-fixed p-12 text-on-secondary-fixed md:flex-row">
-          <div className="max-w-xl">
-            <h2 className="mb-4 font-heading text-3xl font-black tracking-tight">
-              ¿Requiere asesoría técnica especializada?
-            </h2>
-            <p className="text-lg opacity-80">
-              Nuestros ingenieros expertos pueden ayudarle a implementar este
-              método en su laboratorio o realizar el mantenimiento preventivo de
-              sus sistemas de HPLC/GC.
-            </p>
-          </div>
-          <div className="flex gap-4">
-            <Link
-              href="/contacto"
-              className="rounded-lg bg-primary px-8 py-4 font-bold text-white shadow-md transition-all hover:opacity-90"
-            >
-              Agendar Consultoría
+    <div className="min-h-screen bg-surface-bright">
+      {/* Hero Section */}
+      <section className="relative bg-surface-container-low py-16 px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center space-x-2 text-xs text-on-surface-variant font-medium mb-6">
+            <Link href="/aplicaciones" className="hover:text-secondary transition-colors">
+              Aplicaciones
             </Link>
+            <span className="material-symbols-outlined text-xs">chevron_right</span>
+            <Link
+              href={`/industrias/${data.industriaSlug}`}
+              className="hover:text-secondary transition-colors"
+            >
+              {data.industria}
+            </Link>
+            <span className="material-symbols-outlined text-xs">chevron_right</span>
+            <span className="text-secondary">{data.title.split("por")[0].trim()}</span>
+          </nav>
+
+          {/* Title */}
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase tracking-wider">
+                  {data.industria}
+                </span>
+                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider">
+                  Nota Técnica #{data.slug.split("-")[0].toUpperCase()}
+                </span>
+              </div>
+              <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-primary leading-tight mb-4">
+                {data.title}
+              </h1>
+              <p className="text-xl text-on-surface-variant mb-6">
+                {data.subtitle}
+              </p>
+              <p className="text-on-surface-variant leading-relaxed max-w-2xl">
+                {data.description}
+              </p>
+            </div>
+            <div className="w-full md:w-64 flex-shrink-0">
+              <Link
+                href={`/industrias/${data.industriaSlug}`}
+                className="block bg-white rounded-2xl p-6 border border-outline-variant/10 shadow-sm hover:shadow-md transition-all"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span
+                    className="material-symbols-outlined text-3xl text-secondary"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    {industria?.icon}
+                  </span>
+                  <div>
+                    <p className="text-xs text-on-surface-variant">Ver industria</p>
+                    <p className="font-bold text-primary">{data.industria}</p>
+                  </div>
+                </div>
+                <span className="material-symbols-outlined text-primary">
+                  arrow_forward
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Main Content */}
+      <main className="max-w-6xl mx-auto px-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Main Column */}
+          <div className="lg:col-span-2 space-y-12">
+            {/* Introduction */}
+            <section>
+              <h2 className="font-heading text-2xl font-bold text-primary mb-4">
+                Introducción
+              </h2>
+              <p className="text-on-surface-variant leading-relaxed">
+                {data.introduccion}
+              </p>
+            </section>
+
+            {/* Parameters */}
+            {data.parametros && data.parametros.length > 0 && (
+              <section>
+                <h2 className="font-heading text-2xl font-bold text-primary mb-6">
+                  Parámetros Analizables
+                </h2>
+                <div className="bg-white rounded-2xl border border-outline-variant/10 overflow-hidden">
+                  <table className="w-full">
+                    <thead className="bg-surface-container-low">
+                      <tr>
+                        <th className="px-6 py-4 text-left text-xs font-bold text-primary uppercase tracking-wider">
+                          Parámetro
+                        </th>
+                        <th className="px-6 py-4 text-left text-xs font-bold text-primary uppercase tracking-wider">
+                          Descripción
+                        </th>
+                        <th className="px-6 py-4 text-left text-xs font-bold text-primary uppercase tracking-wider">
+                          Técnica
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-outline-variant/10">
+                      {data.parametros.map((param, index) => (
+                        <tr key={index} className="hover:bg-surface-container-low/50 transition-colors">
+                          <td className="px-6 py-4">
+                            <p className="font-semibold text-primary text-sm">
+                              {param.nombre}
+                            </p>
+                            {param.limiteDeteccion && (
+                              <p className="text-xs text-on-surface-variant mt-1">
+                                LOD: {param.limiteDeteccion}
+                              </p>
+                            )}
+                          </td>
+                          <td className="px-6 py-4 text-sm text-on-surface-variant">
+                            {param.descripcion}
+                          </td>
+                          <td className="px-6 py-4">
+                            <span className="inline-block px-2 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-lg">
+                              {param.tecnica}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            )}
+
+            {/* Methodology */}
+            {data.metodologia && data.metodologia.length > 0 && (
+              <section>
+                <h2 className="font-heading text-2xl font-bold text-primary mb-6">
+                  Metodología Analítica
+                </h2>
+                <div className="space-y-4">
+                  {data.metodologia.map((metodo, index) => (
+                    <div
+                      key={index}
+                      className="bg-white rounded-2xl p-6 border border-outline-variant/10"
+                    >
+                      <div className="flex items-start justify-between mb-3">
+                        <h3 className="font-bold text-primary">
+                          {metodo.nombre}
+                        </h3>
+                        {metodo.tiempoAnalisis && (
+                          <span className="text-xs text-on-surface-variant bg-surface-container-low px-2 py-1 rounded-lg">
+                            {metodo.tiempoAnalisis}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-sm text-on-surface-variant mb-3">
+                        {metodo.descripcion}
+                      </p>
+                      <div className="flex items-center gap-2 text-xs text-secondary">
+                        <span className="material-symbols-outlined text-sm">
+                          precision_manufacturing
+                        </span>
+                        <span className="font-medium">Equipo: {metodo.equipo}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Specifications */}
+            {data.especificaciones && data.especificaciones.length > 0 && (
+              <section>
+                <h2 className="font-heading text-2xl font-bold text-primary mb-6">
+                  Especificaciones Técnicas
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {data.especificaciones.map((spec, index) => (
+                    <div
+                      key={index}
+                      className="bg-surface-container-low rounded-2xl p-6"
+                    >
+                      <h3 className="font-bold text-primary mb-4">
+                        {spec.categoria}
+                      </h3>
+                      <dl className="space-y-3">
+                        {spec.especificaciones.map((esp, i) => (
+                          <div
+                            key={i}
+                            className="flex justify-between items-start text-sm"
+                          >
+                            <dt className="text-on-surface-variant">
+                              {esp.parametro}:
+                            </dt>
+                            <dd className="font-semibold text-primary text-right ml-4">
+                              {esp.valor}
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Considerations */}
+            {data.consideraciones && data.consideraciones.length > 0 && (
+              <section>
+                <h2 className="font-heading text-2xl font-bold text-primary mb-6">
+                  Consideraciones Importantes
+                </h2>
+                <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10">
+                  <ul className="space-y-3">
+                    {data.consideraciones.map((consideracion, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-3 text-sm text-on-surface-variant"
+                      >
+                        <span className="material-symbols-outlined text-secondary text-lg mt-0.5">
+                          info
+                        </span>
+                        <span>{consideracion}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <aside className="space-y-8">
+            {/* Equipment */}
+            {data.equipos && data.equipos.length > 0 && (
+              <div className="bg-white rounded-2xl p-6 border border-outline-variant/10 shadow-sm">
+                <h3 className="font-heading text-lg font-bold text-primary mb-4">
+                  Equipos Sugeridos
+                </h3>
+                <div className="space-y-4">
+                  {data.equipos.map((equipo, index) => (
+                    <div
+                      key={index}
+                      className="pb-4 border-b border-outline-variant/10 last:border-0 last:pb-0"
+                    >
+                      <p className="font-semibold text-primary text-sm mb-1">
+                        {equipo.nombre}
+                      </p>
+                      <p className="text-xs text-on-surface-variant mb-2">
+                        {equipo.descripcion}
+                      </p>
+                      <p className="text-xs text-secondary">
+                        {equipo.justificacion}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Regulations */}
+            {data.normativas && data.normativas.length > 0 && (
+              <div className="bg-white rounded-2xl p-6 border border-outline-variant/10 shadow-sm">
+                <h3 className="font-heading text-lg font-bold text-primary mb-4">
+                  Normativas
+                </h3>
+                <div className="space-y-4">
+                  {data.normativas.map((norm, index) => (
+                    <div
+                      key={index}
+                      className="pb-3 border-b border-outline-variant/10 last:border-0 last:pb-0"
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="material-symbols-outlined text-secondary text-sm">
+                          gavel
+                        </span>
+                        <p className="font-semibold text-primary text-xs">
+                          {norm.codigo}
+                        </p>
+                      </div>
+                      <p className="text-xs text-on-surface-variant">
+                        {norm.nombre}
+                      </p>
+                      <p className="text-xs text-on-surface-variant mt-1">
+                        {norm.organismo}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* CTA */}
+            <div className="bg-gradient-to-br from-secondary to-secondary-container rounded-2xl p-6 text-white">
+              <h3 className="font-heading text-lg font-bold mb-2">
+                ¿Necesita más información?
+              </h3>
+              <p className="text-sm text-blue-100/70 mb-4">
+                Descargue la nota técnica completa o contacte a un especialista.
+              </p>
+              <div className="space-y-3">
+                <Link
+                  href={`/contacto?subject=${encodeURIComponent(`Consulta sobre ${data.title}`)}`}
+                  className="block w-full bg-white text-secondary px-4 py-3 rounded-xl font-bold text-sm text-center hover:bg-blue-50 transition-colors"
+                >
+                  Solicitar Información
+                </Link>
+                <Link
+                  href={`/industrias/${data.industriaSlug}`}
+                  className="block w-full border-2 border-white/30 px-4 py-3 rounded-xl font-bold text-sm text-center hover:bg-white/10 transition-colors"
+                >
+                  Ver Más de {data.industria}
+                </Link>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        {/* Related Applications */}
+        {industria && industria.applications.length > 1 && (
+          <section className="mt-16 pt-16 border-t border-outline-variant/20">
+            <h2 className="font-heading text-2xl font-bold text-primary mb-8">
+              Aplicaciones Relacionadas en {data.industria}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {industria.applications
+                .filter((app) => app.slug !== slug)
+                .slice(0, 4)
+                .map((app) => (
+                  <Link
+                    key={app.slug}
+                    href={`/aplicaciones/${app.slug}`}
+                    className="group"
+                  >
+                    <div className="bg-white rounded-xl p-5 border border-outline-variant/10 hover:shadow-md transition-all">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="material-symbols-outlined text-secondary">
+                          {app.icon}
+                        </span>
+                        <h4 className="font-bold text-primary text-sm group-hover:text-secondary transition-colors">
+                          {app.title}
+                        </h4>
+                      </div>
+                      <p className="text-xs text-on-surface-variant line-clamp-2">
+                        {app.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </section>
+        )}
+      </main>
     </div>
   );
 }

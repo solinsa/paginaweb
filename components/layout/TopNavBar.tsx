@@ -12,6 +12,7 @@ interface TopNavBarProps {
 
 const NAV_ITEMS = [
   { label: "Soluciones", href: "/soluciones" },
+  { label: "Industrias", href: "/industrias" },
   { label: "Aplicaciones", href: "/aplicaciones" },
   { label: "Servicios", href: "/servicios" },
   { label: "Blog", href: "/blog" },

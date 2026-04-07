@@ -3,6 +3,9 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ApplicationCard, type ApplicationCardProps } from "./ApplicationCard";
 
+export { ApplicationCard };
+export type { ApplicationCardProps };
+
 export interface IndustryApplication {
   icon: string;
   title: string;
