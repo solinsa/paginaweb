@@ -1,0 +1,64 @@
+# Solinsa — llms.txt
+
+> One-stop shop for chromatography and analytical chemistry solutions in Mexico.
+
+## About
+
+Solinsa es una empresa mexicana con más de 25 años de experiencia en ingeniería y soluciones tecnológicas para análisis químico. Somos distribuidores autorizados de las principales marcas de instrumentación analítica: cromatografía líquida (HPLC/UHPLC), cromatografía de gases (GC), espectrometría de masas (MS), espectrofotometría y equipos de preparación de muestras.
+
+## Main Sections
+
+- **Inicio**: https://www.solinsa.com.mx — Página principal
+- **Soluciones**: https://www.solinsa.com.mx/soluciones — Catálogo de equipos y productos
+- **Aplicaciones**: https://www.solinsa.com.mx/aplicaciones — Aplicaciones analíticas por industria
+- **Servicios**: https://www.solinsa.com.mx/servicios — Servicios técnicos y soporte
+- **Blog**: https://www.solinsa.com.mx/blog — Artículos técnicos y novedades
+- **Contacto**: https://www.solinsa.com.mx/contacto — Formulario de contacto
+- **Categorías**: https://www.solinsa.com.mx/categorias — Categorías de productos
+
+## Key Products & Services
+
+### Equipos
+- Sistemas HPLC / UHPLC
+- Cromatógrafos de gases (GC)
+- Espectrómetros de masas (LC-MS, GC-MS)
+- Espectrofotómetros UV-Vis, IR, AAS
+- Equipos de preparación de muestras
+
+### Consumibles y Refacciones
+- Columnas cromatográficas (HPLC, GC)
+- Fases móviles y reactivos
+- Viales, filtros y accesorios
+- Refacciones y partes originales
+
+### Servicios
+- Instalación y puesta en marcha
+- Capacitación y entrenamiento
+- Mantenimiento preventivo y correctivo
+- Validación de métodos analíticos
+- Soporte técnico remoto y en sitio
+
+## Industries Served
+
+- Farmacéutica y Biotecnología
+- Alimentos y Bebidas
+- Petroquímica
+- Ambiental
+- Química Industrial
+- Academia e Investigación
+
+## Contact
+
+- **Ubicación**: Monterrey, Nuevo León, México
+- **Teléfono**: +52 (81) 8000-1234
+- **Email**: info@solinsa.com.mx
+- **LinkedIn**: https://www.linkedin.com/company/solinsa
+- **Facebook**: https://www.facebook.com/solinsamexico
+
+## Technical Details
+
+- Built with Next.js
+- CMS: Sanity.io
+- Search: Algolia
+- Image storage: Vercel Blob
+- Hosting: Vercel
