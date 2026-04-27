@@ -26,7 +26,7 @@ export default async function ProductDetailPage({
           <div className="inline-flex items-center px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-xs font-bold tracking-widest uppercase rounded">
             {product.badge}
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-primary tracking-tighter leading-tight">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter leading-tight">
             {product.title}
           </h1>
           <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
@@ -77,7 +77,7 @@ export default async function ProductDetailPage({
       <section className="mb-20">
         <div className="flex items-center gap-4 mb-8">
           <span className="h-[2px] w-12 bg-secondary" />
-          <h2 className="text-2xl font-extrabold text-primary tracking-tight uppercase">
+          <h2 className="text-2xl font-extrabold text-on-surface tracking-tight uppercase">
             Especificaciones Técnicas
           </h2>
         </div>
@@ -85,13 +85,13 @@ export default async function ProductDetailPage({
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-surface-container-low border-b border-outline-variant/10">
-                <th className="px-8 py-5 text-sm font-bold text-primary uppercase tracking-widest">
+                <th className="px-8 py-5 text-sm font-bold text-on-surface uppercase tracking-widest">
                   Parámetro Técnico
                 </th>
-                <th className="px-8 py-5 text-sm font-bold text-primary uppercase tracking-widest">
+                <th className="px-8 py-5 text-sm font-bold text-on-surface uppercase tracking-widest">
                   Valor de Precisión
                 </th>
-                <th className="px-8 py-5 text-sm font-bold text-primary uppercase tracking-widest">
+                <th className="px-8 py-5 text-sm font-bold text-on-surface uppercase tracking-widest">
                   Metodología
                 </th>
               </tr>
@@ -102,7 +102,7 @@ export default async function ProductDetailPage({
                   key={idx}
                   className="hover:bg-surface-container/50 transition-colors"
                 >
-                  <td className="px-8 py-6 font-semibold text-primary">
+                  <td className="px-8 py-6 font-semibold text-on-surface">
                     {spec.label}
                   </td>
                   <td className="px-8 py-6 text-on-surface-variant">
@@ -122,7 +122,7 @@ export default async function ProductDetailPage({
       <section className="mb-20">
         <div className="flex items-center gap-4 mb-8">
           <span className="h-[2px] w-12 bg-secondary" />
-          <h2 className="text-2xl font-extrabold text-primary tracking-tight uppercase">
+          <h2 className="text-2xl font-extrabold text-on-surface tracking-tight uppercase">
             Configuraciones Disponibles
           </h2>
         </div>
@@ -153,7 +153,7 @@ export default async function ProductDetailPage({
         </div>
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2">
+            <h2 className="text-3xl font-bold text-[#f59e0b] mb-2">
               ¿Necesita una solución personalizada?
             </h2>
             <p className="text-on-primary-container font-medium">

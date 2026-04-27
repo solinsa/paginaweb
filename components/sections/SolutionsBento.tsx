@@ -2,13 +2,32 @@ import React from 'react';
 import Link from 'next/link';
 
 export function SolutionsBento() {
+  const statItems = [
+    {
+      label: 'Estabilidad de línea base garantizada',
+      isHidden: false,
+    },
+    {
+      label: 'Compatibilidad con Agilent, Waters y Shimadzu',
+      isHidden: true,
+    },
+    {
+      label: 'Cumplimiento 21 CFR Part 11',
+      isHidden: false,
+    },
+    {
+      label: 'Automatización mediante Robótica',
+      isHidden: false,
+    },
+  ];
+
   return (
     <div className="grid grid-cols-12 gap-6 mb-20">
       {/* HPLC Section - col-span-8 */}
       <div className="col-span-12 lg:col-span-8 bg-surface-container-low p-10 rounded-[2rem] flex flex-col justify-between min-h-[400px]">
         <div>
           <div className="flex justify-between items-start mb-8">
-            <h2 className="font-heading text-4xl font-bold text-primary tracking-tight">
+            <h2 className="font-heading text-4xl font-bold text-on-surface tracking-tight">
               Cromatografía de Líquidos (HPLC/UHPLC)
             </h2>
             <span className="bg-secondary-fixed text-on-secondary-fixed px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
@@ -21,15 +40,10 @@ export function SolutionsBento() {
             para flujos de trabajo de alto volumen.
           </p>
           <ul className="grid grid-cols-2 gap-4 mb-8">
-            {[
-              'Estabilidad de línea base garantizada',
-              'Compatibilidad con Agilent, Waters y Shimadzu',
-              'Cumplimiento 21 CFR Part 11',
-              'Automatización mediante Robótica',
-            ].map((item) => (
+            {statItems.map((item, index) => (
               <li
-                key={item}
-                className="flex items-center gap-2 text-sm font-semibold text-primary"
+                key={index}
+                className="flex items-center gap-2 text-sm font-semibold text-on-surface"
               >
                 <span
                   className="material-symbols-outlined text-secondary"
@@ -37,7 +51,13 @@ export function SolutionsBento() {
                 >
                   check_circle
                 </span>
-                {item}
+                {item.isHidden ? (
+                  <span className="invisible whitespace-nowrap">
+                    {item.label}
+                  </span>
+                ) : (
+                  item.label
+                )}
               </li>
             ))}
           </ul>
@@ -64,7 +84,7 @@ export function SolutionsBento() {
         <h2 className="font-heading text-3xl font-bold mb-4 leading-tight">
           Cromatografía de Gases (GC)
         </h2>
-        <p className="text-blue-100/70 text-sm mb-8 leading-relaxed">
+        <p className="text-on-primary-container text-sm mb-8 leading-relaxed">
           Control de temperatura de alta precisión y selectividad para el
           análisis de volátiles y semivolátiles.
         </p>
@@ -82,15 +102,18 @@ export function SolutionsBento() {
             <p className="text-xs">Split/Splitless, On-column, PTV</p>
           </div>
         </div>
-        <button className="mt-8 w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-bold">
+        <Link
+          href="/soluciones/gc"
+          className="mt-8 w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-bold text-center"
+        >
           Configurar GC
-        </button>
+        </Link>
       </div>
 
       {/* Sample Prep Section - col-span-6 */}
       <div className="col-span-12 lg:col-span-6 bg-surface-container-high p-8 rounded-[2rem] flex gap-8 items-center">
         <div className="flex-1">
-          <h3 className="font-heading text-2xl font-bold text-primary mb-4">
+          <h3 className="font-heading text-2xl font-bold text-on-surface mb-4">
             Preparación de Muestra
           </h3>
           <p className="text-sm text-on-surface-variant mb-6">
@@ -112,7 +135,7 @@ export function SolutionsBento() {
           <img
             alt="Laboratorio"
             className="w-full h-full object-cover opacity-80"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl7SfOvMB7J_a7j7kWi7prv2FQezbGUDNpNyHPNzsB8SKpJQ6ET0r0tX8RijvAbs9f0ntYZV32XiaJDdQH80VeKDWHDiOkpUQRzJoeugd7VizU23lftWr65bQZU8OQ6BdwCedEZ3fOo4QXvftkLzZLwtxNxzOWmCc1QY8j1K9WndbPZQyJvQj4V9eXK3hfPD-w5x6tRg7Kr747v-zYbFd6CfD-YUVANd8yXiOqR_rfwIg9EK0nyQvgQYcLHaHYxZR5zI3BsoJ6pQ"
+            src="/images/heroes/solutions-bento-lab.jpg"
           />
         </div>
       </div>
@@ -129,7 +152,7 @@ export function SolutionsBento() {
             </span>
           </div>
           <div>
-            <h3 className="font-heading text-2xl font-bold text-primary mb-2">
+            <h3 className="font-heading text-2xl font-bold text-on-surface mb-2">
               Consumibles y Refacciones
             </h3>
             <p className="text-sm text-on-surface-variant">
@@ -139,12 +162,18 @@ export function SolutionsBento() {
           </div>
         </div>
         <div className="mt-6 flex gap-4">
-          <button className="text-sm font-bold border-b-2 border-primary pb-1">
+          <Link
+            href="/soluciones/hplc"
+            className="text-sm font-bold border-b-2 border-primary pb-1"
+          >
             Ver Columnas HPLC
-          </button>
-          <button className="text-sm font-bold border-b-2 border-primary pb-1">
+          </Link>
+          <Link
+            href="/contacto"
+            className="text-sm font-bold border-b-2 border-primary pb-1"
+          >
             Kits de Mantenimiento
-          </button>
+          </Link>
         </div>
       </div>
     </div>

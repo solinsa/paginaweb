@@ -68,7 +68,7 @@ export default function IndustriaPage({
       {/* Side Navigation */}
       <aside className="hidden lg:flex flex-col h-screen w-72 sticky top-20 overflow-y-auto bg-surface-container-low py-8 px-6 space-y-2 text-sm font-medium">
         <div className="mb-6 px-2">
-          <h3 className="font-heading font-extrabold text-lg tracking-tight text-primary">
+          <h3 className="font-heading font-extrabold text-lg tracking-tight text-on-surface">
             Filtros
           </h3>
           <p className="text-secondary text-xs font-bold uppercase tracking-widest mt-1">
@@ -162,7 +162,7 @@ export default function IndustriaPage({
                   </span>
                 )}
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold font-heading tracking-tight text-primary leading-tight mb-4">
+              <h1 className="text-4xl md:text-5xl font-extrabold font-heading tracking-tight text-on-surface leading-tight mb-4">
                 {data.title}
               </h1>
               <p className="text-on-surface-variant text-lg leading-relaxed">
@@ -182,7 +182,7 @@ export default function IndustriaPage({
                       {stat.label}
                     </p>
                   </div>
-                  <p className="text-2xl font-black text-primary">{stat.value}</p>
+                  <p className="text-2xl font-black text-on-surface">{stat.value}</p>
                 </div>
               ))}
             </div>
@@ -310,10 +310,10 @@ export default function IndustriaPage({
         <section className="bg-gradient-to-br from-primary to-primary-container rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-[#f59e0b]">
               ¿Necesita asesoría para {data.shortTitle}?
             </h2>
-            <p className="text-blue-100/70 mb-8 text-lg">
+            <p className="text-on-primary-container mb-8 text-lg">
               Nuestros especialistas en {data.shortTitle.toLowerCase()} pueden
               ayudarle a encontrar la solución analítica ideal para su
               laboratorio.

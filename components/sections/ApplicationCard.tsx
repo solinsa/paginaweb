@@ -16,7 +16,7 @@ export function ApplicationCard({
   title,
   description,
   noteId,
-  href = "#",
+  href = "/aplicaciones",
   className,
 }: ApplicationCardProps) {
   return (

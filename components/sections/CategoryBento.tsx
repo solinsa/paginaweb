@@ -100,7 +100,7 @@ function CategoryCard({ category: cat }: { category: CategoryItem }) {
               'material-symbols-outlined',
               isHero && 'text-secondary',
               isDark && 'text-white',
-              cat.variant === 'light' && 'text-primary',
+              cat.variant === 'light' && 'text-on-surface',
               cat.variant === 'neutral' && 'text-secondary',
               isAccent && 'text-secondary',
             )}
@@ -113,10 +113,10 @@ function CategoryCard({ category: cat }: { category: CategoryItem }) {
         <h2
           className={cn(
             'font-heading font-bold mb-4',
-            isHero ? 'text-3xl text-primary' : 'text-2xl',
+            isHero ? 'text-3xl text-on-surface' : 'text-2xl',
             isDark && 'text-white',
             isAccent && 'text-on-secondary-fixed',
-            !isHero && !isDark && !isAccent && 'text-primary',
+            !isHero && !isDark && !isAccent && 'text-on-surface',
           )}
         >
           {cat.title}
@@ -130,7 +130,7 @@ function CategoryCard({ category: cat }: { category: CategoryItem }) {
             isDark && 'text-on-primary-container',
             cat.variant === 'light' && 'text-on-surface-variant',
             cat.variant === 'neutral' && 'text-on-surface-variant',
-            isAccent && 'text-on-secondary-fixed-variant',
+            isAccent && 'text-on-secondary-fixed',
             // generic fallback
             !isHero &&
               !isDark &&
@@ -191,7 +191,7 @@ function CategoryCard({ category: cat }: { category: CategoryItem }) {
         /* neutral */
         <Link
           href={cat.ctaHref}
-          className="text-primary font-heading font-bold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform"
+          className="text-on-surface font-heading font-bold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform"
         >
           {cat.ctaLabel}
           <span className="material-symbols-outlined ml-1 text-sm">

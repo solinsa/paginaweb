@@ -46,7 +46,7 @@ export function IndustrySection({
             {description}
           </p>
           <Link
-            href="#"
+            href="/aplicaciones"
             className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-secondary"
           >
             {ctaLabel}
@@ -84,7 +84,7 @@ export function IndustrySection({
         {/* Medio Ambiente — compact card */}
         <div className="flex flex-col justify-between rounded-2xl bg-surface-container-low p-8 md:col-span-1">
           <div>
-            <h2 className="mb-4 font-heading text-2xl font-black uppercase tracking-tight text-primary">
+            <h2 className="mb-4 font-heading text-2xl font-black uppercase tracking-tight text-on-surface">
               Medio Ambiente
             </h2>
             <p className="mb-6 text-sm text-on-surface-variant">
@@ -109,9 +109,12 @@ export function IndustrySection({
         </div>
 
         {/* Investigación — wide CTA card */}
-        <div className="group flex cursor-pointer items-center justify-between rounded-3xl border-2 border-dashed border-secondary/20 bg-secondary/5 p-12 transition-colors hover:bg-secondary/10 md:col-span-2">
+        <Link
+          href="/contacto"
+          className="group flex items-center justify-between rounded-3xl border-2 border-dashed border-secondary/20 bg-secondary/5 p-12 transition-colors hover:bg-secondary/10 md:col-span-2"
+        >
           <div className="max-w-md">
-            <h2 className="mb-4 font-heading text-3xl font-black uppercase tracking-tighter text-primary">
+            <h2 className="mb-4 font-heading text-3xl font-black uppercase tracking-tighter text-on-surface">
               Investigación y Academia
             </h2>
             <p className="mb-6 leading-relaxed text-on-surface-variant">
@@ -120,13 +123,13 @@ export function IndustrySection({
               bioactivos.
             </p>
             <span className="inline-flex items-center rounded-lg bg-secondary px-4 py-2 text-xs font-bold uppercase tracking-widest text-white">
-              Explorar Publicaciones
+              Solicitar Asesoría
             </span>
           </div>
           <span className="material-symbols-outlined text-7xl text-secondary/20 transition-colors group-hover:text-secondary">
             biotech
           </span>
-        </div>
+        </Link>
       </div>
     );
   }
@@ -144,7 +147,7 @@ export function IndustrySection({
             {description}
           </p>
           <Link
-            href="#"
+            href="/aplicaciones"
             className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-secondary"
           >
             {ctaLabel}
@@ -193,7 +196,7 @@ export function IndustrySection({
           {description}
         </p>
         <Link
-          href="#"
+          href="/aplicaciones"
           className="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-secondary"
         >
           {ctaLabel}

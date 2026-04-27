@@ -15,11 +15,16 @@
   /* Primary (Deep Navy) */
   --color-primary: #001e40;
   --color-primary-container: #003366;
+  --color-primary-fixed: #c6e7ff;
 
   /* Secondary (Teal / Cyan) */
   --color-secondary: #00658d;
   --color-secondary-container: #2dbcfe;
   --color-secondary-fixed: #c6e7ff;
+
+  /* Accent (Solinsa Gold) */
+  --color-accent: #f59e0b;
+  --color-on-accent: #1a1c1c;
 
   /* Surfaces (Tonal layering — MD3) */
   --color-background: #f9f9f9;
@@ -30,6 +35,7 @@
   --color-surface-container: #eeeeee;
   --color-surface-container-high: #e8e8e8;
   --color-surface-container-highest: #e2e2e2;
+  --color-surface-bright: #f9f9f9;
 
   /* On-surface (Text) */
   --color-on-surface: #1a1c1c;
@@ -220,4 +226,92 @@ h1, h2, h3, h4, h5, h6,
 ::selection {
   background-color: rgba(0, 101, 141, 0.15);
   color: var(--color-on-surface);
+}
+
+/* ============================================================
+   MATERIAL DESIGN 3 UTILITY CLASSES — TEXT COLORS
+   (Generated for Tailwind v4 compatibility)
+   ============================================================ */
+
+/* On-primary variants */
+.text-on-primary {
+  color: var(--color-on-primary);
+}
+
+.text-on-primary-container {
+  color: var(--color-on-primary-container);
+}
+
+/* On-secondary variants */
+.text-on-secondary {
+  color: var(--color-on-secondary);
+}
+
+.text-on-secondary-container {
+  color: var(--color-on-secondary-container);
+}
+
+.text-on-secondary-fixed {
+  color: var(--color-on-secondary-fixed);
+}
+
+/* On-surface variants */
+.text-on-surface {
+  color: var(--color-on-surface);
+}
+
+.text-on-surface-variant {
+  color: var(--color-on-surface-variant);
+}
+
+/* On-error variants */
+.text-on-error {
+  color: var(--color-on-error);
+}
+
+.text-on-error-container {
+  color: var(--color-on-error-container);
+}
+
+/* Success */
+.text-success {
+  color: var(--color-success);
+}
+
+/* Info */
+.text-info {
+  color: var(--color-info);
+}
+
+/* Secondary-fixed */
+.text-secondary-fixed {
+  color: var(--color-secondary-fixed);
+}
+
+/* Primary-fixed (for text on dark backgrounds) */
+.text-primary-fixed {
+  color: #c6e7ff;
+}
+
+/* On-primary-fixed */
+.text-on-primary-fixed {
+  color: #001e40;
+}
+
+/* Surface bright (lightest surface) */
+.bg-surface-bright {
+  background-color: var(--color-background);
+}
+
+/* Accent (Solinsa Gold) */
+.text-accent {
+  color: var(--color-accent);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.text-on-accent {
+  color: var(--color-on-accent);
 }

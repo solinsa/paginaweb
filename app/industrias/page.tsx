@@ -19,7 +19,7 @@ export default function IndustriasPage() {
               </>
             }
             description="Encuentre la solución de cromatografía perfecta para su industria. Ofrecemos equipos, métodos y soporte especializado para cada sector."
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuDl7SfOvMB7J_a7j7kWi7prv2FQezbGUDNpNyHPNzsB8SKpJQ6ET0r0tX8RijvAbs9f0ntYZV32XiaJDdQH80VeKDWHDiOkpUQRzJoeugd7VizU23lftWr65bQZU8OQ6BdwCedEZ3fOo4QXvftkLzZLwtxNxzOWmCc1QY8j1K9WndbPZQyJvQj4V9eXK3hfPD-w5x6tRg7Kr747v-zYbFd6CfD-YUVANd8yXiOqR_rfwIg9EK0nyQvgQYcLHaHYxZR5zI3BsoJ6p"
+            image="/images/heroes/industrias-hero.jpg"
             stats={[
               { icon: "factory", label: "5 Industrias" },
               { icon: "science", label: "30+ Aplicaciones" },
@@ -32,7 +32,7 @@ export default function IndustriasPage() {
       {/* Industries Grid */}
       <main className="max-w-6xl mx-auto px-8 py-16">
         <div className="mb-12">
-          <h2 className="font-heading text-3xl font-bold text-primary mb-4">
+          <h2 className="font-heading text-3xl font-bold text-on-surface mb-4">
             Soluciones Especializadas por Sector
           </h2>
           <p className="text-on-surface-variant max-w-2xl">
@@ -145,10 +145,10 @@ export default function IndustriasPage() {
         <section className="mt-20 bg-gradient-to-br from-primary to-primary-container rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-[#f59e0b]">
               ¿No encuentra su industria?
             </h2>
-            <p className="text-blue-100/70 mb-8 text-lg">
+            <p className="mb-8 text-on-primary-container mb-8 text-lg">
               Contáctenos para una consulta personalizada. Tenemos experiencia en
               una amplia gama de sectores analíticos.
             </p>

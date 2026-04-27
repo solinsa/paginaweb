@@ -47,10 +47,10 @@ export const revalidate = 300; // Cache for 5 minutes
 
 export async function GET() {
   try {
-    const data = await client.fetch(SEARCH_QUERY);
+    const data = (await client.fetch(SEARCH_QUERY)) || {};
 
     const items = [
-      ...(data.products || []).map((p: Record<string, unknown>) => ({
+      ...((data as { products?: Record<string, unknown>[] }).products || []).map((p: Record<string, unknown>) => ({
         objectID: p._id as string,
         title: p.title as string,
         slug: p.slug as string,

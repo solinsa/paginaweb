@@ -22,7 +22,7 @@ export function BlogHero({ post }: BlogHeroProps) {
         <span className="text-secondary font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
           Nota de Aplicación Destacada
         </span>
-        <h1 className="font-heading text-5xl lg:text-6xl font-extrabold text-primary leading-tight tracking-tighter mb-6">
+        <h1 className="font-heading text-5xl lg:text-6xl font-extrabold text-on-surface leading-tight tracking-tighter mb-6">
           {post.title.split(' ').map((word, i, arr) => {
             // Highlight the middle phrase with secondary color
             const mid = Math.floor(arr.length * 0.4);
@@ -49,7 +49,7 @@ export function BlogHero({ post }: BlogHeroProps) {
               arrow_forward
             </span>
           </Link>
-          <button className="bg-surface-container-highest text-primary px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-wider">
+          <button className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-wider">
             Ver Webinar
           </button>
         </div>
@@ -67,7 +67,7 @@ export function BlogHero({ post }: BlogHeroProps) {
         </div>
         {/* Stats Chip */}
         <GlassCard className="absolute -bottom-6 -left-6 p-6 rounded-xl border border-outline-variant/20 shadow-2xl">
-          <div className="text-3xl font-heading font-black text-primary">
+          <div className="text-3xl font-heading font-black text-on-surface">
             99.9%
           </div>
           <div className="text-xs font-body uppercase tracking-widest text-on-surface-variant">

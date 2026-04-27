@@ -11,7 +11,7 @@ export default function ContactoPage() {
           <img
             className="w-full h-full object-cover"
             alt="Laboratorio profesional con equipos de cromatografía de alta precisión"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7qEwTVSuT83b8FkZJAhiHk9ESnBERQWoNrB953xsj2JGoIKCLPeEDM9LNg-S_1o5kkMJyBm93SstwA_So1lRxBAtgQpNcZahzFvqbDbuwpRUuMb8Zf5lx9bDInezT_42IzyaHK_xfyZgA8Wh3gb2qQUTZx0aB5RkbBVO11M-tep1aXD2j3sxxsj28OInjgPcs7U0U9rNsSKpfWS4eEk7xoRlRs4cr5mzfedLx2qtEy1WigRIt7n3xx2vBaBzxFXqBuNsPzs05qg"
+            src="/images/heroes/contacto-hero.jpg"
           />
         </div>
         <div className="relative z-20 max-w-[1440px] mx-auto px-8 w-full">

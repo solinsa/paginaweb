@@ -30,7 +30,7 @@ const allPosts: BlogDetailPost[] = [
     excerpt:
       'Descubra cómo las nuevas arquitecturas de columnas mejoran la resolución y reducen los tiempos de análisis en un 40%.',
     featuredImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuB1Dp_6jhaHTnk7o5Bg2Kpkyd2JYLhcJ5ujZeEgVgrIyWjBGhavkKdwbjNdCtLuJDhIGGYeaDFXU0_3QnOn2MRxpA4JePg2lPbHqvlav2C_m1o1F5pt8gqEBQsu66AqhTn5ILva0PSG973jNi7ae9eTsKb96eLOgO3opS6L1eVQVOOBbFE1lafVaPYophu1avuNAhOtUbW-O_JSLh95Eopl4yykxLils5U45ton81iBcgGo_jd6rNKaPbakq8i1MDRqRn2uyl8NcQ',
+      '/images/blog/columnas-resolucion.jpg',
     author: 'Dra. María González',
     authorRole: 'Directora de Aplicaciones Analíticas',
     publishedAt: '2024-05-20',
@@ -51,7 +51,7 @@ const allPosts: BlogDetailPost[] = [
     excerpt:
       'Aprenda los protocolos críticos diarios y semanales para evitar tiempos de inactividad costosos.',
     featuredImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAnFnv7HTX-z5i8fyxGAIi0RYlETu1xsTa8pr9Ur4A86VhUi1JMIQozMNbrBd4GF_SjcdAHX-0JX63k5vAsPwBYz7NO915Cl_D0p4ESe9L4OFC7XVmCBgMzoRQN69Y7q0K42c_eu_QaMGDNCT9iKadWB2G_MVWrp_1REq0BQF_4jWabTYnn-q5co2EatJ2nEr4AU3oRlSdTfsUHmjJfrWbXhzTUMIErC8ygWTnN75rWeVo4LQ4lQBc_TutXmx_1Iz7D1CLsKtPlWg',
+      '/images/blog/protocolos-mantenimiento.jpg',
     author: 'Ing. Roberto Sánchez',
     authorRole: 'Especialista en Servicio Técnico',
     publishedAt: '2024-05-24',
@@ -72,7 +72,7 @@ const allPosts: BlogDetailPost[] = [
     excerpt:
       'Expertos de la industria discuten la detección de contaminantes traza.',
     featuredImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA822EBQ1GtrQ_bZhdHYeeTs1o3ybdYigD18bBTW-1LzpDVSqaTZglp8CHrFlGGaVVN8Q3coBTRFLODmir9mCObfsAPHd3x_1bb_Tnzcm8HZKEM7-o2JAnirhGt4EJUMM1gsuH01VM5Z5b_M939PuA5SOq23POpB3HWGGfGw8e3XLqiUa9a70PA683eW10h8EvBUII458Y-n-FCN8ZfSeYZGjJ9F_bMkS2UiokjPm56A2OSE1itgXMtQwHceJMB8Nvoe8xWXWnFwA',
+      '/images/blog/contaminantes-traza.jpg',
     author: 'Dra. Ana López',
     authorRole: 'Investigadora Principal',
     publishedAt: '2024-05-15',
@@ -92,7 +92,7 @@ const allPosts: BlogDetailPost[] = [
     excerpt:
       'Implementación de cromatografía gaseosa automatizada para la monitorización continua.',
     featuredImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDGospMHFjrm8Iwuz0DNIZayE7vwU8GbKanwC_HKsLWdX8bFVn8CMG-Rbvbovb5XugKGMvbQSWJ5ahz0x39k_YCiAMU8D_wQb2w_oW6xuQM4dQTd7MVT2BGuDLZicIhVjvj3b9-uSFDJh83uzPNJRYsrnhAL1ejZA1sKgb_2Xh0I8WCZOBBF1qh9yZytyIjxyU9-x2XYqO44hiwFp__iCrummJGkR6j0BgzYY4yIVf4bB3K2QqUsBDcTjIyrlYWL6xfJWzQjvv58w',
+      '/images/blog/gc-automatizada.jpg',
     author: 'Ing. Carlos Mendoza',
     authorRole: 'Consultor de Procesos Industriales',
     publishedAt: '2024-05-08',
@@ -116,7 +116,7 @@ const relatedPostsData: ResourceCardPost[] = [
     excerpt:
       'Aprenda los protocolos críticos diarios y semanales para evitar tiempos de inactividad costosos y asegurar la reproducibilidad.',
     featuredImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAnFnv7HTX-z5i8fyxGAIi0RYlETu1xsTa8pr9Ur4A86VhUi1JMIQozMNbrBd4GF_SjcdAHX-0JX63k5vAsPwBYz7NO915Cl_D0p4ESe9L4OFC7XVmCBgMzoRQN69Y7q0K42c_eu_QaMGDNCT9iKadWB2G_MVWrp_1REq0BQF_4jWabTYnn-q5co2EatJ2nEr4AU3oRlSdTfsUHmjJfrWbXhzTUMIErC8ygWTnN75rWeVo4LQ4lQBc_TutXmx_1Iz7D1CLsKtPlWg',
+      '/images/blog/protocolos-mantenimiento.jpg',
     publishedAt: '2024-05-24',
     actionIcon: 'download',
   },
@@ -129,7 +129,7 @@ const relatedPostsData: ResourceCardPost[] = [
     excerpt:
       'Expertos de la industria discuten la detección de contaminantes traza y nuevas regulaciones internacionales.',
     featuredImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA822EBQ1GtrQ_bZhdHYeeTs1o3ybdYigD18bBTW-1LzpDVSqaTZglp8CHrFlGGaVVN8Q3coBTRFLODmir9mCObfsAPHd3x_1bb_Tnzcm8HZKEM7-o2JAnirhGt4EJUMM1gsuH01VM5Z5b_M939PuA5SOq23POpB3HWGGfGw8e3XLqiUa9a70PA683eW10h8EvBUII458Y-n-FCN8ZfSeYZGjJ9F_bMkS2UiokjPm56A2OSE1itgXMtQwHceJMB8Nvoe8xWXWnFwA',
+      '/images/blog/contaminantes-traza.jpg',
     publishedAt: '2024-05-15',
     actionIcon: 'play_circle',
   },
@@ -142,7 +142,7 @@ const relatedPostsData: ResourceCardPost[] = [
     excerpt:
       'Implementación de cromatografía gaseosa automatizada para la monitorización continua en líneas de producción petroquímica.',
     featuredImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDGospMHFjrm8Iwuz0DNIZayE7vwU8GbKanwC_HKsLWdX8bFVn8CMG-Rbvbovb5XugKGMvbQSWJ5ahz0x39k_YCiAMU8D_wQb2w_oW6xuQM4dQTd7MVT2BGuDLZicIhVjvj3b9-uSFDJh83uzPNJRYsrnhAL1ejZA1sKgb_2Xh0I8WCZOBBF1qh9yZytyIjxyU9-x2XYqO44hiwFp__iCrummJGkR6j0BgzYY4yIVf4bB3K2QqUsBDcTjIyrlYWL6xfJWzQjvv58w',
+      '/images/blog/gc-automatizada.jpg',
     publishedAt: '2024-05-08',
     actionIcon: 'description',
   },
@@ -278,7 +278,7 @@ export default async function BlogPostPage({
               </span>
             </div>
             <div>
-              <h4 className="font-heading text-lg font-bold text-primary">
+              <h4 className="font-heading text-lg font-bold text-on-surface">
                 {post.author}
               </h4>
               <p className="text-on-surface-variant text-sm">

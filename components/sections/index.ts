@@ -1,5 +1,6 @@
 export { HeroHome } from './HeroHome';
 export { ServicesBento } from './ServicesBento';
+export { MethodsSection } from './MethodsSection';
 export { AboutSection } from './AboutSection';
 export { BlogPreview } from './BlogPreview';
 export { CTABanner } from './CTABanner';
@@ -31,3 +32,4 @@ export type { SubscriptionCTAProps } from './SubscriptionCTA';
 export { ContactForm } from './ContactForm';
 export { ContactInfo } from './ContactInfo';
 export type { ContactInfoProps } from './ContactInfo';
+export { FAQSection } from './FAQSection';

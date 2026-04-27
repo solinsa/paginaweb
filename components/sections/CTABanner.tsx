@@ -14,21 +14,22 @@ export function CTABanner({
   secondaryButton = { label: 'Ver Aplicaciones', href: '/aplicaciones' },
 }: CTABannerProps) {
   return (
-    <section className="py-20">
+    <section id="contacto" className="py-20">
       <div className="container mx-auto px-8">
         <div className="relative overflow-hidden rounded-[3rem] bg-primary p-12 text-center md:p-20">
-          {/* Background texture */}
-          <div className="absolute inset-0 opacity-10">
+          {/* Background texture - decorative */}
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
             <img
               alt=""
+              aria-hidden="true"
               className="h-full w-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfgSzk00iv5GcjwdW9i8cDvAGbacHNWcim_6vXU-l9rvwLlFOfOdWOmysHgvL9dnW4f-ImTQhECkx_Xsupbfa6jwACAmsRpzhmcP5NCn4u9ToE6lE89yrVCnIsFR1lmWDEtVLhxjzDK6yHQv3iNd6vAouj6ocJKYylUYMb_3sAHA9uOV90iHJUvsKxJz98r-Df1BkjX4xiK-IAr_abJxcWxD1jTSDHMn8kY_8WLz2rrZXYMBIjYBWUFXsdq0MKsz65WCABULLJlA"
+              src="/images/heroes/cta-banner-bg.jpg"
             />
           </div>
 
           {/* Content */}
           <div className="relative z-10 mx-auto max-w-3xl">
-            <h2 className="mb-8 font-heading text-4xl font-extrabold tracking-tighter text-white md:text-5xl">
+            <h2 className="mb-8 font-heading text-4xl font-extrabold tracking-tighter text-[#f59e0b] md:text-5xl">
               {title}
             </h2>
             <p className="mb-12 text-lg text-on-primary-container">
@@ -43,11 +44,30 @@ export function CTABanner({
               </Link>
               <Link
                 href={secondaryButton.href}
-                className="rounded-xl border-2 border-on-primary-container px-10 py-4 font-heading text-lg font-extrabold text-white transition-all hover:bg-white/10"
+                className="rounded-xl border-2 border-white/30 px-10 py-4 font-heading text-lg font-extrabold text-white transition-all hover:bg-white/10"
               >
                 {secondaryButton.label}
               </Link>
+              {/* Phone link - mobile button, desktop text */}
+              <a
+                href="tel:+528****0234"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 px-10 py-4 font-heading text-lg font-extrabold text-white transition-all hover:bg-white/10 sm:hidden"
+              >
+                <span className="material-symbols-outlined text-xl">call</span>
+                Llamar ahora
+              </a>
+              <a
+                href="tel:+528****0234"
+                className="hidden items-center gap-2 font-heading font-bold text-white/70 transition-all hover:text-white sm:inline-flex"
+              >
+                <span className="material-symbols-outlined text-lg">call</span>
+                +52 81 8100 0234
+              </a>
             </div>
+            {/* Micro-text */}
+            <p className="mt-6 text-sm text-white/60">
+              Respuesta en menos de 24 horas. Sin compromiso.
+            </p>
           </div>
         </div>
       </div>

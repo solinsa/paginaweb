@@ -34,7 +34,7 @@ export function HeroPage({
         {badge && (
           <span className="label mb-4 block text-secondary">{badge}</span>
         )}
-        <h1 className="mb-6 font-heading text-5xl font-extrabold leading-[1.1] tracking-tighter text-primary md:text-6xl">
+        <h1 className="mb-6 font-heading text-5xl font-extrabold leading-[1.1] tracking-tighter text-on-surface md:text-6xl">
           {title}
         </h1>
         <p className="mb-8 max-w-md text-lg leading-relaxed text-on-surface-variant">
@@ -53,7 +53,7 @@ export function HeroPage({
                 >
                   {stat.icon}
                 </span>
-                <span className="text-xs font-bold text-primary">
+                <span className="text-xs font-bold text-on-surface">
                   {stat.label}
                 </span>
               </div>
@@ -61,9 +61,10 @@ export function HeroPage({
           </div>
         )}
       </div>
-      <div className="relative h-[400px] overflow-hidden rounded-3xl shadow-2xl">
+      <div className="relative h-[400px] overflow-hidden rounded-3xl shadow-2xl" aria-hidden="true">
         <img
           alt=""
+          aria-hidden="true"
           className="h-full w-full object-cover"
           src={image}
         />

@@ -1,21 +1,39 @@
 import Link from 'next/link';
-import type { Industry } from '@/lib/demo-data';
+
+/* ------------------------------------------------------------------ */
+/*  Local data — quick-access industry buttons (anchor links)         */
+/* ------------------------------------------------------------------ */
+
+const quickLinks = [
+  { label: 'Servicios', href: '#servicios', icon: 'science' },
+  { label: 'Confianza', href: '#confianza', icon: 'verified' },
+  { label: 'Nosotros', href: '#nosotros', icon: 'groups' },
+  { label: 'Contacto', href: '#contacto', icon: 'chat' },
+] as const;
+
+/* ------------------------------------------------------------------ */
+/*  Types                                                              */
+/* ------------------------------------------------------------------ */
 
 interface HeroHomeProps {
-  industries?: Industry[];
+  /** Kept for backward compatibility — no longer required. */
+  industries?: unknown[];
 }
 
-export function HeroHome({ industries }: HeroHomeProps) {
-  const items = industries ?? [];
+/* ------------------------------------------------------------------ */
+/*  Component                                                          */
+/* ------------------------------------------------------------------ */
 
+export function HeroHome(_props?: HeroHomeProps) {
   return (
     <section className="relative flex min-h-[870px] items-center overflow-hidden bg-surface">
-      {/* Background image with overlay */}
+      {/* Background image with overlay - decorative, hidden from screen readers */}
       <div className="absolute inset-0 z-0">
         <img
           alt=""
+          aria-hidden="true"
           className="h-full w-full object-cover opacity-20 mix-blend-multiply"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI-jwyl2V19FKbCNWXkPoq5VUrjFYoe-PCoPAKVJvYBwNmXblCPF5wcyp0jBcHM9ketVks6IrQ5bMsFhO27HPXrOMPghLINcs9FE0WRT7qLYQ9o25HgXXgpAwqLCtdk1tBlGYKsXpcO03nb5N3lGlV3fJ-pb-q6ZWza-grEnx3r5Oex5o7F39jNjE3Z-P-thePXu_JRKZ05ziGPioiJmB8KBZATfcvL6_V2aISxhwLuHw1A9MqAEMMPsU0ajADYk4dgoFckCGg6Q"
+          src="/images/heroes/hero-home-bg.jpg"
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-surface via-transparent to-transparent" />
       </div>
@@ -24,47 +42,75 @@ export function HeroHome({ industries }: HeroHomeProps) {
       <div className="container relative z-10 mx-auto grid items-center gap-12 px-8 md:grid-cols-2">
         {/* Left column */}
         <div>
+          {/* Overline */}
           <span className="mb-6 inline-block rounded-full bg-secondary-fixed px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-on-secondary-fixed">
-            Excelencia Analítica
+            Tu Aliado en Cromatografía y Espectroscopía
           </span>
 
-          <h1 className="mb-8 font-heading text-5xl font-extrabold leading-[1.1] tracking-tighter text-primary md:text-7xl">
-            ¿Qué necesitas <br />
-            <span className="italic text-secondary">analizar?</span>
+          {/* Title */}
+          <h1 className="mb-8 font-heading text-5xl font-extrabold leading-[1.1] tracking-tighter text-on-surface md:text-7xl">
+            Tu laboratorio al 100%,{' '}
+            <br className="hidden sm:inline" />
+            con el aliado que{' '}
+            <span className="italic text-secondary">necesitas</span>
           </h1>
 
-          <p className="mb-12 max-w-lg text-lg leading-relaxed text-on-surface-variant">
-            Desde 2010 en Monterrey, transformamos datos complejos en decisiones
-            críticas mediante consultoría técnica especializada en sistemas
-            multimarca.
+          {/* Subtitle */}
+          <p className="mb-10 max-w-lg text-lg leading-relaxed text-on-surface-variant">
+            Atendemos cualquier marca de equipo de cromatografía y
+            espectroscopía. Mantenimiento, calibración, repuestos y
+            consultoría: todo lo que tu laboratorio necesita bajo un mismo
+            aliado.
           </p>
 
-          {/* Industry quick-access buttons */}
+          {/* Primary CTAs */}
+          <div className="mb-12 flex flex-wrap gap-4">
+            <Link
+              href="/contacto"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition-all duration-300 hover:opacity-90"
+            >
+              <span className="material-symbols-outlined text-lg">
+                troubleshoot
+              </span>
+              Diagnóstico Gratuito
+            </Link>
+            <a
+              href="#servicios"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-on-surface transition-all duration-300 hover:bg-primary hover:text-white"
+            >
+              <span className="material-symbols-outlined text-lg">
+               GridView
+              </span>
+              Nuestros Servicios
+            </a>
+          </div>
+
+          {/* Quick-access buttons */}
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {items.map((ind) => (
-              <Link
-                key={ind._id}
-                href={`/aplicaciones?industria=${ind.slug}`}
+            {quickLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
                 className="group flex flex-col items-center gap-3 rounded-xl bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:bg-primary hover:text-white"
               >
                 <span className="material-symbols-outlined text-3xl transition-transform group-hover:scale-110">
-                  {ind.icon}
+                  {link.icon}
                 </span>
                 <span className="font-heading text-xs font-bold uppercase tracking-wider">
-                  {ind.title}
+                  {link.label}
                 </span>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
 
         {/* Right column — hero image with glass card */}
-        <div className="relative hidden md:block">
+        <div className="relative hidden md:block" aria-hidden="true">
           <div className="relative aspect-square overflow-hidden rounded-2xl bg-surface-container-highest shadow-2xl">
             <img
-              alt="Profesional de laboratorio analizando resultados"
+              alt="Equipo de laboratorio analizando datos de cromatografía de gases"
               className="h-full w-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcmlJubZRXYVmuaaZRNBcMeZrIcXLBJ5X_jfzzQBBudYYSLzKL1SRfUJGbGU7GRIUVzSjYrmvBWQviUTaPpmCbnYblqIijkct_cmZIyn3isk_RgRRMbQSJhypLeBIPsiEvxn25GWCb8ZksjtULWyXyL7alpLihsyn2NfnOHYO928t3Ls7yPxC9mov912nD7a_utxlrz6uJ9Z96G4xeloQ5yosy0pMbx6VEs01If4BYEJ5cH4w1ahjsHq-Q2hYRnL7mGSVE9agr8Q"
+              src="/images/heroes/hero-home-equipment.jpg"
             />
 
             {/* Glass overlay card */}
@@ -75,15 +121,15 @@ export function HeroHome({ industries }: HeroHomeProps) {
                     className="material-symbols-outlined"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
-                    verified
+                    build_circle
                   </span>
                 </div>
                 <div>
                   <div className="font-heading text-sm font-bold text-primary">
-                    Soporte Multimarca
+                    Mantenimiento Multimarca
                   </div>
                   <div className="text-xs uppercase tracking-widest text-on-surface-variant">
-                    Precisión Garantizada
+                    <span className="invisible whitespace-nowrap">Agilent, Waters, Shimadzu, Thermo y más</span>
                   </div>
                 </div>
               </div>

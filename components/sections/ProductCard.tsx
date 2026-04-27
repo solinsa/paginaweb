@@ -66,7 +66,7 @@ export function ProductCard({
       <div className="flex-1 flex flex-col justify-between py-2">
         <div>
           <div className="flex justify-between items-start">
-            <h2 className="text-2xl font-bold font-heading text-primary tracking-tight mb-2">
+            <h2 className="text-2xl font-bold font-heading text-on-surface tracking-tight mb-2">
               {title}
             </h2>
             <span className="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">
@@ -97,7 +97,7 @@ export function ProductCard({
           >
             {primaryAction}
           </a>
-          <button className="bg-surface-container-highest text-primary px-8 py-3 rounded-lg font-heading font-bold text-sm hover:bg-surface-container-high transition-colors">
+          <button className="bg-surface-container-highest text-on-surface px-8 py-3 rounded-lg font-heading font-bold text-sm hover:bg-surface-container-high transition-colors">
             {secondaryAction}
           </button>
         </div>

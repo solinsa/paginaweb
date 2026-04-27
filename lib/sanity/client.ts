@@ -1,31 +1,60 @@
-import { createClient } from "next-sanity";
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityImageSource } from "@sanity/image-url";
-
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+const apiVersion = "2024-01-01";
 
-// Graceful degradation: if no projectId configured, return a no-op client
-const isConfigured = !!projectId && projectId !== "1";
-
-export const client = isConfigured
-  ? createClient({
-      projectId: projectId!,
-      dataset,
-      apiVersion: "2024-01-01",
-      useCdn: process.env.NODE_ENV === "production",
-    })
-  : createClient({
-      projectId: "placeholder",
-      dataset: "production",
-      apiVersion: "2024-01-01",
-      useCdn: false,
-    });
+// Treat missing/placeholder IDs as unconfigured so production builds stay clean
+const isConfigured = !!projectId && projectId !== "1" && projectId !== "placeholder";
 
 export const sanityConfigured = isConfigured;
 
-const builder = imageUrlBuilder(client);
+function createNoopClient() {
+  return {
+    fetch: async () => null,
+  };
+}
 
-export function urlFor(source: SanityImageSource) {
-  return builder.image(source);
+function createSanityClient() {
+  if (!isConfigured) {
+    return createNoopClient();
+  }
+
+  const baseUrl = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}`;
+
+  return {
+    async fetch(query: string) {
+      const url = `${baseUrl}?query=${encodeURIComponent(query)}`;
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!res.ok) {
+        const text = await res.text().catch(() => "");
+        throw new Error(`Sanity fetch failed (${res.status}): ${text}`);
+      }
+
+      const json = await res.json();
+      return json.result;
+    },
+  };
+}
+
+export const client: any = createSanityClient();
+
+function createEmptyImageBuilder() {
+  const chain: any = {
+    width: () => chain,
+    height: () => chain,
+    blur: () => chain,
+    auto: () => chain,
+    fit: () => chain,
+    url: () => "",
+  };
+  return chain;
+}
+
+export function urlFor(_source: any) {
+  return createEmptyImageBuilder();
 }

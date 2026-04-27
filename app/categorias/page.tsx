@@ -124,7 +124,7 @@ export default function CategoriasPage() {
           <img
             alt="Laboratorio Moderno"
             className="rounded-3xl object-cover aspect-square grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKHAdL43U9l_zE4VSt58-2UQJ7fmn8txwU46Sp1BSlfkQXPmwXWOe3-6kzktHnvcnSNP3QgO5WdLFXPESkEvKDIByp0EjE-ndA-EIsN0X07jS3hF-Et8SbLf-aVRQ0GLU1PFiqjWQiSgU5qof7DOxwG_SaBsadiovpIQfrDJN9rwL54eJRFNFkfNwKSXmyPW_M-R7nSRCyoGfvKQxb8-N8DpykstULAoN0sK9vIxdva7UaunvkCOmWVHg0aLsFrzZLeYol_sw8zw"
+            src="/images/heroes/categorias-hero.jpg"
           />
         </div>
 

@@ -21,7 +21,7 @@ export function BlogPreview({ posts }: BlogPreviewProps) {
       <div className="container mx-auto px-8">
         {/* Heading */}
         <div className="mb-16 text-center">
-          <h2 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-primary">
+          <h2 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-on-surface">
             Perspectivas Técnicas
           </h2>
           <p className="mx-auto max-w-2xl text-on-surface-variant">

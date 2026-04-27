@@ -9,12 +9,12 @@ export function ServicesBento({ services }: ServicesBentoProps) {
   const items = services ?? [];
 
   return (
-    <section className="bg-surface-container-low py-24">
+    <section id="servicios" className="bg-surface-container-low py-24">
       <div className="container mx-auto px-8">
         {/* Header row */}
         <div className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
           <div className="max-w-xl">
-            <h2 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-primary">
+            <h2 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-on-surface">
               Servicios de Especialidad
             </h2>
             <p className="text-on-surface-variant">
@@ -47,7 +47,7 @@ export function ServicesBento({ services }: ServicesBentoProps) {
                       <span className="material-symbols-outlined mb-6 text-4xl text-secondary">
                         {svc.icon}
                       </span>
-                      <h3 className="mb-4 font-heading text-3xl font-bold text-primary">
+                      <h3 className="mb-4 font-heading text-3xl font-bold text-on-surface">
                         {svc.title}
                       </h3>
                       <p className="max-w-md text-on-surface-variant">
@@ -57,12 +57,13 @@ export function ServicesBento({ services }: ServicesBentoProps) {
                     {svc.badges && (
                       <div className="flex items-center gap-4">
                         {svc.badges.map((b) => (
-                          <span
+                          <Link
                             key={b}
-                            className="rounded-md bg-surface-container py-1 px-3 text-xs font-bold uppercase tracking-widest"
+                            href={`/soluciones?marca=${encodeURIComponent(b)}`}
+                            className="rounded-md bg-surface-container py-1 px-3 text-xs font-bold uppercase tracking-widest transition-colors hover:bg-surface-container-high hover:text-secondary"
                           >
                             {b}
-                          </span>
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -105,15 +106,22 @@ export function ServicesBento({ services }: ServicesBentoProps) {
                     key={i}
                     className="rounded-3xl bg-surface-container-highest p-10 md:col-span-4"
                   >
-                    <span className="material-symbols-outlined mb-6 text-4xl text-primary">
+                    <span className="material-symbols-outlined mb-6 text-4xl text-on-surface">
                       {svc.icon}
                     </span>
-                    <h3 className="mb-3 font-heading text-xl font-bold text-primary">
+                    <h3 className="mb-3 font-heading text-xl font-bold text-on-surface">
                       {svc.title}
                     </h3>
-                    <p className="text-sm text-on-surface-variant">
+                    <p className="mb-6 text-sm text-on-surface-variant">
                       {svc.description}
                     </p>
+                    <Link
+                      href="/servicios"
+                      className="inline-flex items-center gap-1 text-sm font-bold text-secondary transition-all hover:gap-2"
+                    >
+                      Conocer más
+                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    </Link>
                   </div>
                 );
 
@@ -125,18 +133,19 @@ export function ServicesBento({ services }: ServicesBentoProps) {
                     className="relative flex items-center overflow-hidden rounded-3xl bg-white p-10 md:col-span-8"
                   >
                     <div className="relative z-10 max-w-xs">
-                      <h3 className="mb-3 font-heading text-xl font-bold text-primary">
+                      <h3 className="mb-3 font-heading text-xl font-bold text-on-surface">
                         {svc.title}
                       </h3>
                       <p className="text-sm text-on-surface-variant">
                         {svc.description}
                       </p>
                     </div>
-                    <div className="absolute inset-y-0 right-0 w-1/2">
+                    <div className="absolute inset-y-0 right-0 w-1/2" aria-hidden="true">
                       <img
                         alt=""
+                        aria-hidden="true"
                         className="h-full w-full object-cover grayscale opacity-20"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSB5SV_GGW-ZhY-atKJnFCYNxh0RQIM3ONtVFpVAGkL_bFuluRC3FCpH5Kzoawm9H463w5mfeNN0I9Y1ofwCUP0BRO97VWMq9ct7iBMRHto8ZYLjhzap3Aiaq6oRY9_EgJLjFIj_W8udolL_FySUX9Vbq0ondgpwB7bQoMAfkV78MKU1Ye-mWH1JYct7hZNhUdHh5uTxUe0xdxU95CpNOV46pgfmEjoP3H3-Wze3veH9gbiDWaN9H6EIhhVlAR9KaSO_JgF8Lrww"
+                        src="/images/heroes/cta-banner-bg.jpg"
                       />
                     </div>
                   </div>

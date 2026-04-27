@@ -29,7 +29,7 @@ export default function CategoriaPage({
       {/* Side Navigation */}
       <aside className="hidden lg:flex flex-col h-screen w-72 sticky top-20 overflow-y-auto bg-surface-container-low py-8 px-6 space-y-2 text-sm font-medium">
         <div className="mb-6 px-2">
-          <h3 className="font-heading font-extrabold text-lg tracking-tight text-primary">
+          <h3 className="font-heading font-extrabold text-lg tracking-tight text-on-surface">
             Filtrado Técnico
           </h3>
           <p className="text-secondary text-xs font-bold uppercase tracking-widest mt-1">
@@ -90,7 +90,7 @@ export default function CategoriaPage({
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-5xl font-extrabold font-heading tracking-tight text-primary leading-tight">
+              <h1 className="text-4xl md:text-5xl font-extrabold font-heading tracking-tight text-on-surface leading-tight">
                 {category.title}
               </h1>
               <p className="mt-4 text-on-surface-variant text-lg leading-relaxed">
@@ -126,10 +126,10 @@ export default function CategoriaPage({
             <span className="text-secondary-fixed text-xs font-bold uppercase tracking-[0.2em]">
               Configuraciones Personalizadas
             </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-extrabold mt-4 mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-heading font-extrabold mt-4 mb-6 leading-tight text-[#f59e0b]">
               {category.ctaTitle}
             </h2>
-            <p className="text-blue-100 text-lg mb-8 opacity-80 font-light">
+            <p className="text-on-primary-container text-lg mb-8 opacity-80 font-light">
               {category.ctaDescription}
             </p>
             <button className="bg-white text-primary px-10 py-4 rounded-xl font-heading font-extrabold text-sm hover:bg-blue-50 transition-colors shadow-2xl">

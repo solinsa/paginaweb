@@ -59,7 +59,7 @@ export function ResourceCard({ post }: ResourceCardProps) {
         <div className="text-[10px] text-secondary font-bold uppercase tracking-widest mb-2">
           {post.category === 'Webinar' ? 'Educación • On Demand' : `${post.category} • ${readTime}`}
         </div>
-        <h3 className="font-heading text-xl font-bold text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+        <h3 className="font-heading text-xl font-bold text-on-surface mb-3 leading-snug group-hover:text-secondary transition-colors">
           {post.title}
         </h3>
         <p className="text-on-surface-variant text-sm line-clamp-3 mb-6">

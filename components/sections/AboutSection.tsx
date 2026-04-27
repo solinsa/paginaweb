@@ -11,7 +11,7 @@ interface AboutSectionProps {
 }
 
 export function AboutSection({
-  image = 'https://lh3.googleusercontent.com/aida-public/AB6AXuD--xGLosXStQcArZPfktSmWW_Wy1yZR2HuoImXPTHkG4EjjMgkfJrHuhQls4MbcOLFQRyY3zhs7zNLsTvQvLG9fP1RcCmtVgh_JWnMJbeQO7FlAoLNGfdjFrszEWXxbSThEjg2IoUSrIcouGJD9vAzzM3iiKb7kopudmMmXWEGGlmM4PVBVdp5Nd6Oy-oIN7UZwE047cB1DreDR-C_iZGJ1v8w4EZwYD1WFpq6JIZ1Qf2p7arycCZckx64lw3bIyuMxQwufxtIYA',
+  image = '/images/heroes/about-solinsa.jpg',
   overline = 'Nuestra Historia',
   title = 'Liderazgo desde el corazón industrial de México.',
   description = 'Fundada en 2010 en Monterrey, Nuevo León, Solinsa nació con el objetivo de elevar el estándar del soporte técnico analítico en el país. Entendemos que en la ciencia no hay margen de error.',
@@ -24,7 +24,7 @@ export function AboutSection({
   yearsBadge = { value: '14+', label: 'Años de Expertise' },
 }: AboutSectionProps) {
   return (
-    <section className="bg-surface py-24">
+    <section id="nosotros" className="bg-surface py-24">
       <div className="container mx-auto px-8">
         <div className="grid items-center gap-20 md:grid-cols-2">
           {/* Image column */}
@@ -43,6 +43,16 @@ export function AboutSection({
                 {yearsBadge.label}
               </div>
             </div>
+            {/* Floating multimarca badge */}
+            <div className="absolute -bottom-6 left-6 hidden items-center gap-2 rounded-2xl bg-surface-container-lowest px-6 py-4 shadow-lg lg:flex">
+              <span
+                className="material-symbols-outlined text-lg text-secondary"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                verified
+              </span>
+              <span className="text-sm font-bold text-on-surface">Multimarca</span>
+            </div>
           </div>
 
           {/* Text column */}
@@ -50,7 +60,7 @@ export function AboutSection({
             <span className="mb-4 block font-heading text-xs font-bold uppercase tracking-[0.2em] text-secondary">
               {overline}
             </span>
-            <h2 className="mb-8 font-heading text-4xl font-extrabold tracking-tight text-primary">
+            <h2 className="mb-8 font-heading text-4xl font-extrabold tracking-tight text-on-surface">
               {title}
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-on-surface-variant">
@@ -60,7 +70,7 @@ export function AboutSection({
             {/* Check list */}
             <ul className="mb-10 space-y-4">
               {checkItems.map((item, i) => (
-                <li key={i} className="flex items-center gap-4 font-medium text-primary">
+                <li key={i} className="flex items-center gap-4 font-medium text-on-surface">
                   <span
                     className="material-symbols-outlined text-secondary"
                     style={{ fontVariationSettings: "'FILL' 1" }}
@@ -72,13 +82,21 @@ export function AboutSection({
               ))}
             </ul>
 
-            {/* CTA button */}
-            <Link
-              href={cta.href}
-              className="rounded-xl border-2 border-primary px-8 py-4 font-heading font-bold text-primary transition-colors duration-300 hover:bg-primary hover:text-white"
-            >
-              {cta.label}
-            </Link>
+            {/* CTA buttons */}
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href={cta.href}
+                className="rounded-xl border-2 border-on-surface px-8 py-4 font-heading font-bold text-on-surface transition-colors duration-300 hover:bg-primary hover:text-white"
+              >
+                {cta.label}
+              </Link>
+              <Link
+                href="/contacto"
+                className="rounded-xl border-2 border-on-surface-variant/30 px-8 py-4 font-heading font-bold text-on-surface-variant transition-colors duration-300 hover:border-secondary hover:text-secondary"
+              >
+                Agendar Diagnóstico
+              </Link>
+            </div>
           </div>
         </div>
       </div>

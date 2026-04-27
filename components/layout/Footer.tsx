@@ -1,22 +1,22 @@
 import Link from "next/link";
 
 const SOLUTIONS_LINKS = [
-  { label: "HPLC", href: "/soluciones/hplc" },
-  { label: "GC", href: "/soluciones/gc" },
-  { label: "Preparacion de Muestra", href: "/soluciones/preparacion-de-muestra" },
-  { label: "Consumibles", href: "/soluciones/consumibles" },
+  { label: "HPLC", href: "#metodos" },
+  { label: "GC", href: "#metodos" },
+  { label: "Preparación de Muestra", href: "#metodos" },
+  { label: "Consumibles", href: "#metodos" },
 ];
 
 const RESOURCES_LINKS = [
   { label: "Blog", href: "/blog" },
-  { label: "Notas de Aplicacion", href: "/recursos/notas-de-aplicacion" },
-  { label: "Webinars", href: "/recursos/webinars" },
-  { label: "Soporte Tecnico", href: "/recursos/soporte-tecnico" },
+  { label: "Notas de Aplicacion", href: "/blog?tab=notas" },
+  { label: "Webinars", href: "/blog?tab=webinars" },
+  { label: "Soporte Tecnico", href: "/contacto" },
 ];
 
 const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "linked_in" },
-  { label: "Twitter", href: "https://twitter.com", icon: "social_leaderboard" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/solinsa", icon: "linked_in" },
+  { label: "Facebook", href: "https://www.facebook.com/solinsamexico", icon: "thumb_up" },
   { label: "YouTube", href: "https://youtube.com", icon: "play_circle" },
 ];
 
@@ -32,14 +32,21 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="font-heading text-2xl font-bold uppercase tracking-tighter text-white"
+              className="mb-4 inline-block"
+              aria-label="Solinsa - Inicio"
             >
-              SOLINSA
+              <img
+                src="/logo-solinsa.png"
+                alt="Solinsa Logo"
+                width={140}
+                height={40}
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-slate-300">
-              Ingenieria y soluciones tecnologicas para analisis quimico,
-              cromatografia y espectrometria. Mas de 25 anos de experiencia en
-              el mercado mexicano.
+              Tu aliado en cromatografía y espectroscopía. Mantenimiento
+              multimarca, calibración, repuestos y consultoría para que tu
+              laboratorio opere al 100%.
             </p>
             {/* Social icons */}
             <div className="mt-6 flex gap-3">
@@ -67,7 +74,7 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 flex flex-col gap-3">
               {SOLUTIONS_LINKS.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm text-slate-300 transition-colors hover:text-secondary-container"
@@ -98,32 +105,34 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Sedes */}
+          {/* Column 4: Contacto */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-              Sedes
+              Contacto
             </h4>
             <div className="mt-4 flex flex-col gap-4">
               <div className="flex items-start gap-3">
                 <span className="material-symbols-outlined mt-0.5 text-lg text-slate-400">
-                  location_on
-                </span>
-                <div>
-                  <p className="text-sm text-slate-300">Monterrey, NL</p>
-                  <p className="text-sm text-slate-400">Mexico</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined mt-0.5 text-lg text-slate-400">
                   call
                 </span>
-                <p className="text-sm text-slate-300">+52 (81) 1234-5678</p>
+                <p className="text-sm text-slate-300">+52 81 8100 0234</p>
               </div>
               <div className="flex items-start gap-3">
                 <span className="material-symbols-outlined mt-0.5 text-lg text-slate-400">
                   mail
                 </span>
-                <p className="text-sm text-slate-300">info@solinsa.com</p>
+                <a
+                  href="mailto:info@solinsa.com"
+                  className="text-sm text-slate-300 transition-colors hover:text-secondary-container"
+                >
+                  info@solinsa.com
+                </a>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined mt-0.5 text-lg text-slate-400">
+                  location_on
+                </span>
+                <p className="text-sm text-slate-300">Monterrey, NL, México</p>
               </div>
             </div>
           </div>

@@ -119,7 +119,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 /** Safely fetch from Sanity, returning null on error */
 async function safeFetch<T>(query: string): Promise<T | null> {
   try {
-    return await client.fetch<T>(query);
+    return (await client.fetch(query)) as T;
   } catch {
     return null;
   }

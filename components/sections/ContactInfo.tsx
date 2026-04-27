@@ -18,7 +18,7 @@ const defaultData: ContactInfoProps = {
   phone: '+52 (81) 8000 0000',
   email: 'contacto@solinsa.com.mx',
   mapImage:
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBzxyJ1m0_d7LHLSDT-SXhjWyNN2-bbs5FrM67KtqlTcBWzPWrfQNZHS7xkyoSC74pHIGqlkoMw-CB6vBAkgUmUhj6sU5bhD_jwrlkNlZwNd6dg0WCtrC_QWhlq-umFrKH14TV8LpUy9UX-QZOET9ZvSuhBg8MH2ygtiZIf1ed3pNmI-HuV_X9vA8OZlnBlermH-H749ZG-SHX3qWfwo7K4YRWu_kn294MwgGm_ZARPDe0bipD7A4ohreVn19gHplZlTiNWMnNK8g',
+    '/images/heroes/contacto-mapa.jpg',
 };
 
 export function ContactInfo(props?: ContactInfoProps) {
@@ -33,7 +33,7 @@ export function ContactInfo(props?: ContactInfoProps) {
       {/* Contact Card */}
       <div className="bg-surface-container-low p-8 rounded-xl space-y-6">
         <div className="space-y-1">
-          <h2 className="text-primary font-heading font-bold text-xl uppercase tracking-tighter">
+          <h2 className="text-on-surface font-heading font-bold text-xl uppercase tracking-tighter">
             Sede Monterrey
           </h2>
           <p className="text-secondary font-body text-sm font-semibold">
@@ -72,16 +72,16 @@ export function ContactInfo(props?: ContactInfoProps) {
             Soporte Multimarca
           </h3>
           <div className="grid grid-cols-2 gap-3">
-            <div className="bg-surface-container-lowest px-3 py-2 rounded-lg text-xs font-bold text-primary text-center">
+            <div className="bg-surface-container-lowest px-3 py-2 rounded-lg text-xs font-bold text-on-surface text-center">
               HPLC
             </div>
-            <div className="bg-surface-container-lowest px-3 py-2 rounded-lg text-xs font-bold text-primary text-center">
+            <div className="bg-surface-container-lowest px-3 py-2 rounded-lg text-xs font-bold text-on-surface text-center">
               GC
             </div>
-            <div className="bg-surface-container-lowest px-3 py-2 rounded-lg text-xs font-bold text-primary text-center">
+            <div className="bg-surface-container-lowest px-3 py-2 rounded-lg text-xs font-bold text-on-surface text-center">
               MS
             </div>
-            <div className="bg-surface-container-lowest px-3 py-2 rounded-lg text-xs font-bold text-primary text-center">
+            <div className="bg-surface-container-lowest px-3 py-2 rounded-lg text-xs font-bold text-on-surface text-center">
               UV-VIS
             </div>
           </div>
@@ -97,13 +97,13 @@ export function ContactInfo(props?: ContactInfoProps) {
         />
         <div className="absolute inset-0 bg-primary/20 flex items-center justify-center pointer-events-none">
           <div className="bg-white p-3 rounded-full shadow-xl">
-            <span className="material-symbols-outlined text-primary text-3xl">
+            <span className="material-symbols-outlined text-on-surface text-3xl">
               location_away
             </span>
           </div>
         </div>
         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg shadow-sm">
-          <span className="text-[10px] font-bold text-primary uppercase tracking-tighter">
+          <span className="text-[10px] font-bold text-on-surface uppercase tracking-tighter">
             Abrir en Maps
           </span>
         </div>

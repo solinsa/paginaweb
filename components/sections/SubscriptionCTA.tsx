@@ -31,10 +31,10 @@ export function SubscriptionCTA({
     <div className="mt-20 bg-primary-container rounded-2xl p-12 relative overflow-hidden">
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 className="font-heading text-3xl font-extrabold text-white mb-4">
+          <h2 className="font-heading text-3xl font-extrabold text-[#f59e0b] mb-4">
             {title}
           </h2>
-          <p className="text-blue-100 text-lg opacity-80">
+          <p className="text-on-primary-container text-lg opacity-80">
             {description}
           </p>
         </div>

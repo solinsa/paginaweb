@@ -1,28 +1,39 @@
 import {
   HeroHome,
   ServicesBento,
+  MethodsSection,
   AboutSection,
   BlogPreview,
   CTABanner,
+  StatsBar,
+  FAQSection,
 } from '@/components/sections';
 import {
-  demoIndustries,
   demoServices,
   demoPosts,
   demoAbout,
   demoCTA,
+  demoStats,
 } from '@/lib/demo-data';
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero — two-column with industry quick-access */}
-      <HeroHome industries={demoIndustries} />
+      {/* 1. Hero — Tu aliado en cromatografía */}
+      <HeroHome />
 
-      {/* 2. Services — bento grid */}
+      {/* 2. Trust indicators — Stats bar */}
+      <div id="confianza">
+        <StatsBar stats={demoStats} />
+      </div>
+
+      {/* 3. Services — bento grid */}
       <ServicesBento services={demoServices} />
 
-      {/* 3. About Solinsa — image + text with floating badge */}
+      {/* 4. Methods — Métodos Analíticos y Tipos de Productos */}
+      <MethodsSection />
+
+      {/* 5. About Solinsa — Tu aliado estratégico */}
       <AboutSection
         image={demoAbout.image}
         overline={demoAbout.overline}
@@ -33,10 +44,13 @@ export default function HomePage() {
         yearsBadge={demoAbout.yearsBadge}
       />
 
-      {/* 4. Blog preview — 3-column card grid */}
+      {/* 6. Blog preview — Perspectivas Técnicas */}
       <BlogPreview posts={demoPosts} />
 
-      {/* 5. CTA banner — full-width rounded card */}
+      {/* 7. FAQ — Preguntas frecuentes (SEO + AI agents) */}
+      <FAQSection />
+
+      {/* 8. CTA banner — Agenda tu diagnóstico */}
       <CTABanner
         title={demoCTA.title}
         description={demoCTA.description}

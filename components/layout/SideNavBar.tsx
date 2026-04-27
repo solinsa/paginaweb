@@ -16,6 +16,8 @@ interface SideNavBarProps {
   title?: string;
   subtitle?: string;
   width?: "w-64" | "w-72";
+  applyLabel?: string;
+  onApply?: () => void;
 }
 
 export default function SideNavBar({
@@ -25,6 +27,8 @@ export default function SideNavBar({
   title = "Filtros Tecnicos",
   subtitle = "Precision Clinica",
   width = "w-64",
+  applyLabel = "Aplicar Filtros",
+  onApply,
 }: SideNavBarProps) {
   return (
     <aside
@@ -81,11 +85,6 @@ export default function SideNavBar({
           );
         })}
       </div>
-
-      {/* Apply button */}
-      <button className="mt-6 w-full rounded-lg bg-secondary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-secondary/90">
-        Aplicar Filtros
-      </button>
     </aside>
   );
 }

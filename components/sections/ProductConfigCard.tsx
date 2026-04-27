@@ -34,7 +34,7 @@ export function ProductConfigCard({
           {configRef}
         </span>
       </div>
-      <h3 className="text-xl font-bold text-primary mb-2">{title}</h3>
+      <h3 className="text-xl font-bold text-on-surface mb-2">{title}</h3>
       <p className="text-sm text-on-surface-variant mb-4">{description}</p>
       <ul className="space-y-2">
         {features.map((feature, idx) => (

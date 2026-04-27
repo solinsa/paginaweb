@@ -61,9 +61,16 @@ export default function TopNavBar({ activeRoute = "" }: TopNavBarProps) {
             {/* Logo */}
             <Link
               href="/"
-              className="font-heading text-2xl font-bold uppercase tracking-tighter text-on-surface"
+              className="flex items-center gap-2"
+              aria-label="Solinsa - Inicio"
             >
-              SOLINSA
+              <img
+                src="/logo-solinsa.png"
+                alt="Solinsa Logo"
+                width={140}
+                height={40}
+                className="h-10 w-auto object-contain"
+              />
             </Link>
 
             {/* Center: Desktop nav links */}

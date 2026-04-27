@@ -29,7 +29,7 @@ export function StatsBar({ stats, className }: StatsBarProps) {
     >
       {stats.map((stat) => (
         <div key={stat.label} className="text-center">
-          <div className="text-5xl font-extrabold text-primary tracking-tighter mb-2">
+          <div className="text-5xl font-extrabold text-on-surface tracking-tighter mb-2">
             {stat.value}
           </div>
           <div className="text-xs font-bold text-on-surface-variant uppercase tracking-widest font-body">

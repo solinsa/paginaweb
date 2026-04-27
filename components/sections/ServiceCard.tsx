@@ -60,7 +60,7 @@ export function ServiceCard({
             </span>
           </div>
 
-          <h3 className="text-4xl font-extrabold text-primary mb-6 tracking-tight font-heading">
+          <h3 className="text-4xl font-extrabold text-on-surface mb-6 tracking-tight font-heading">
             {title}
           </h3>
           <p className="text-on-surface-variant font-body text-lg leading-relaxed mb-8">
@@ -147,7 +147,7 @@ export function ServiceCard({
         <h3
           className={cn(
             'text-3xl font-extrabold leading-tight mb-4 font-heading',
-            isDark ? 'text-white' : 'text-primary',
+            isDark ? 'text-white' : 'text-on-surface',
           )}
         >
           {title}

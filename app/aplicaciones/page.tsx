@@ -1,50 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { SideNavBar, type FilterItem } from "@/components/layout";
 import { HeroPage } from "@/components/sections";
 import { industriasList } from "@/lib/industrias-data";
-
-// ---------------------------------------------------------------------------
-// Demo filter items for sidebar
-// ---------------------------------------------------------------------------
-const filters: FilterItem[] = [
-  { id: "industria", label: "Industria", icon: "factory" },
-  { id: "metodo", label: "Método Analítico", icon: "science" },
-  { id: "hplc-gc", label: "HPLC/GC", icon: "biotech" },
-  { id: "espectrometria", label: "Espectrometría", icon: "query_stats" },
-  { id: "multimarca", label: "Multimarca", icon: "verified" },
-];
 
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
 export default function AplicacionesPage() {
-  const [activeFilters, setActiveFilters] = useState<string[]>(["industria"]);
-
-  const handleFilterChange = (filterId: string) => {
-    setActiveFilters((prev) =>
-      prev.includes(filterId)
-        ? prev.filter((id) => id !== filterId)
-        : [...prev, filterId]
-    );
-  };
-
   return (
     <div className="mx-auto flex max-w-[1440px] min-h-screen">
-      {/* SideNavBar */}
-      <div className="hidden lg:flex h-screen w-64 sticky top-20 shrink-0">
-        <SideNavBar
-          filters={filters}
-          activeFilters={activeFilters}
-          onFilterChange={handleFilterChange}
-          title="Filtros Técnicos"
-          subtitle="Precisión Clínica"
-        />
-      </div>
-
-      {/* Main Content */}
       <main className="flex-1 px-8 py-12">
         {/* Hero */}
         <HeroPage
@@ -56,7 +21,7 @@ export default function AplicacionesPage() {
             </>
           }
           description="Explora nuestra biblioteca de notas de aplicación desarrolladas para optimizar la productividad y exactitud en el laboratorio moderno."
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuDWaMe--4jMqjNiCyrs9-BgFCZdvRhBJtyuOa-AFH7wCpg4aFwZj-AlsQ0TvESOfpBlaypjFBti1AEEH7DUFgCcvzdwDj4-3Rh1xPpVtj2oU9QGpiz66nX05GoRIcidSzVdUvsKRRRyS2Y-XQLKkxG1RpruEQUsZb7-30IxYHw_zHfcHiitdutAnLzRnbtXavbBbLys-uGy5koTpCi4dk0Nm7fyt-lg5yRxpZ2CUkA61GD8TuQH4Zi1aSO2LEKYjIlFanIfLTLziQ"
+          image="/images/heroes/aplicaciones-hero.jpg"
           stats={[
             { icon: "description", label: "30+ Aplicaciones" },
             { icon: "verified_user", label: "ISO Certificado" },
@@ -242,10 +207,10 @@ export default function AplicacionesPage() {
         <div className="bg-gradient-to-br from-primary to-primary-container rounded-[3rem] p-16 text-center text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="font-heading text-4xl font-bold mb-6">
+            <h2 className="font-heading text-4xl font-bold mb-6 text-[#f59e0b]">
               ¿No encuentra la aplicación que busca?
             </h2>
-            <p className="text-blue-100/70 mb-10 text-lg">
+            <p className="text-on-primary-container mb-10 text-lg">
               Nuestros especialistas pueden desarrollar métodos personalizados
               para sus necesidades analíticas específicas.
             </p>

@@ -49,13 +49,85 @@ export interface ProductDetail {
 
 // ---- Soluciones Overview - Filter Items ----
 
-export const solucionesFilters = [
+export interface FilterGroup {
+  id: string;
+  label: string;
+  icon: string;
+}
+
+export interface SolutionItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  href: string;
+  tags: string[];
+  category: string;
+  highlight: boolean;
+}
+
+export const solucionesFilters: FilterGroup[] = [
   { id: 'industria', label: 'Industria', icon: 'factory' },
   { id: 'metodo', label: 'Método Analítico', icon: 'science' },
   { id: 'hplc-gc', label: 'HPLC/GC', icon: 'biotech' },
   { id: 'espectrometria', label: 'Espectrometría', icon: 'query_stats' },
   { id: 'multimarca', label: 'Multimarca', icon: 'verified' },
 ];
+
+export const solutionItems: SolutionItem[] = [
+  {
+    id: 'hplc-precision',
+    title: 'Sistemas HPLC/UHPLC',
+    description:
+      'Plataformas analíticas para control de calidad, investigación y desarrollo de métodos.',
+    icon: 'science',
+    href: '/soluciones/hplc',
+    tags: ['hplc-gc', 'metodo', 'multimarca'],
+    category: 'hplc',
+    highlight: true,
+  },
+  {
+    id: 'gc-analysis',
+    title: 'Cromatografía de Gases',
+    description:
+      'Soluciones para volátiles, semivolátiles y aplicaciones reguladas.',
+    icon: 'gas_meter',
+    href: '/soluciones/gc',
+    tags: ['hplc-gc', 'metodo', 'multimarca'],
+    category: 'gc',
+    highlight: true,
+  },
+  {
+    id: 'sample-prep',
+    title: 'Preparación de Muestra',
+    description:
+      'Automatización y consumibles para reducir variabilidad y mejorar reproducibilidad.',
+    icon: 'biotech',
+    href: '/contacto',
+    tags: ['metodo', 'multimarca'],
+    category: 'sample-prep',
+    highlight: false,
+  },
+  {
+    id: 'service-support',
+    title: 'Mantenimiento y Calibración',
+    description:
+      'Cobertura técnica, calibración certificada y capacitación especializada.',
+    icon: 'engineering',
+    href: '/servicios',
+    tags: ['industria', 'multimarca'],
+    category: 'service',
+    highlight: false,
+  },
+];
+
+export const filterConfig = {
+  industria: 'Applicaciones por industria',
+  metodo: 'Soluciones por método',
+  'hplc-gc': 'Portafolio principal',
+  espectrometria: 'Opciones especializadas',
+  multimarca: 'Servicio multimarca',
+} as const;
 
 // ---- Specs Table (Overview) ----
 
@@ -88,7 +160,7 @@ export const hplcProducts: Product[] = [
     description:
       'Configuración modular optimizada para flujos de trabajo rutinarios con una estabilidad de línea base excepcional.',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCQuzOuKmeoe9F1tWdJZl4dTpAOXd7iM8kNtlp2SYi1M94EPQ46x3yaznhYY-ntjcjkHoqEZmvNwu5B2rmNbES4E-HiOOwWQS4mXeZreqDjKSrBJ493gA-y2sO4rw_MVLCmw2JQhu3HVXT6MwX_oRXFB5RIyQNJnLfapKmCL0Uesnd234nwZ8iVgW-23Ht1TFWTYPVWrqq3Np-mk30gPUJbf2bnCWTLR21HURGmY_GVZHRcbiHNj6cjvMBxIB0qWPCwVEzUnSrWMw',
+      '/images/productos/hplc-isocratico.jpg',
     badge: 'Premium Performance',
     badgeVariant: 'secondary',
     icon: 'science',
@@ -108,7 +180,7 @@ export const hplcProducts: Product[] = [
     description:
       'Diseñado para la recuperación de compuestos con alta pureza a gran escala, integrando colectores de fracciones automáticos.',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBH1L_OJ6nz2TJelahcUzYm1QlinCAfNUkLyBQXBnyRr3jXWinc1w-VsVqEbuJs-4gExcDbuoONODDrkTmaOihfwMed-501VYgbUgy7FSD2QN3XCfTtlFoomNN4OXRpIsLdbIXDR2uW1p1UqE4KHCi6XrXio4V8KLHklO_HqPDfQyyoTzClWFdS68f8fj-swHdi8I-yxGSz_vtSvySRBGXlKHRwd3RBLbS2VMPpqm4p6iZsLZPMZV9S6bT3YXlorxgRg2qsJlbbYA',
+      '/images/productos/purificacion-preparativa.jpg',
     badge: 'High Flow',
     badgeVariant: 'secondary-container',
     icon: 'biotech',
@@ -128,7 +200,7 @@ export const hplcProducts: Product[] = [
     description:
       'Automatización de alto rendimiento con carry-over ultrabajo y control térmico de muestras integrado.',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDjLW5Uvwg3xr9TnfLtEvPOGseaZS8-CBCp2b_G4paVe9NdZGm7VkwtWMwsuUH2k9FxX72y2wasZ8yZ7qBsANDZfbxEznoODuIbL2Djd7uWwAjst0AepMJ7GJ71PhfXxo68ekc_YCGd0rawQoAUaAZZCjkkd1d381AOcxXkVYeW7CB5aYWKiSvpUR0vMc3plAO60aIEb_W8JpMrhEOG56xUsm0Sylqlkb4C8FyJtxB4MN_JjRidtWy8TbV8OubJ3TxgB5Wb9kkcQA',
+      '/images/productos/autosampler.jpg',
     badge: 'Automation',
     badgeVariant: 'on-surface-variant',
     icon: 'settings_input_component',
@@ -185,19 +257,19 @@ export const eliteSeriesDetail: ProductDetail = {
     'Diseñado para la máxima precisión analítica en entornos farmacéuticos y de investigación avanzada. Rendimiento superior con una arquitectura de hardware modular optimizada para flujos de trabajo críticos.',
   images: [
     {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDawveJI9yFjB2dpsQklip8lMj2zHagzmY7eXVGRDDL0lGcruXgSn74DWtpctlleonNcq96lDmxf78WByww3WOmNOejUsKXtBHLFGdwV8BcMddUcYoNV1SaXqo3XKk8UfbynBIaynrbxf3dX4HSu955sZnzXqgDoGnhyMTN5nSTXOlw7xahsAIAmCAP835poolr9MGlfG1acW3-TUmSn70BN_TUMQrB9ObYos7OwMC4EPPnOyp8Dt0ansQeNQhrhuK7m6ji6ycERA',
+      src: '/images/productos/elite-series-1.jpg',
       alt: 'Solinsa Elite Series HPLC',
     },
     {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBE-728jSi_mtJaROHF68fOFbcLJo6sepRKO5KnJ7aJ7tsWdxyXwTlTUq738V0d9i7fv2xqEUbo0jPow0s-LVEA792zW1R7UlcIiZV6Nea6jdNrbIvzpxBuhyGYOA4nL85gje-aercbx9h8MAqFMVTc5uyfXgQJrrcQZ8G726THQpKWkJhpl7i77Did0jPnT2xmK4ovNkEZ8_OUoH2xVpap9oshsiIzufcS98yApzm1RJ9dqvlNxYIxxv0lMTx2hyBfXjwYcita-g',
+      src: '/images/productos/elite-series-2.jpg',
       alt: 'Close up chromatography equipment',
     },
     {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7qGjOzmA_Op1wwsp3nD47RHpVVBqwTyLVHij-A-aJ2Ao94gbD1zBU_PDfXBYYzr0sB2oVmMaXEm2okiCj90m05_sqwQjvSN6hU6EWqqVD4wota3y5v1z6p2Mk0vSHbtq67pw8LsaRoP7WxzKU0uVX3pppxBO0NvIPVctCAeRHksDM4R8IPWwmv6KZbQnEgr5Pnz_4M25_0IVVUhV42RyAX0e4L1H_T7mhkRMV31UXBAKUrpqyME4IMHr5QHp3Z9JDwk6f-v14lA',
+      src: '/images/productos/elite-series-3.jpg',
       alt: 'Liquid samples in HPLC tray',
     },
     {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBsDAl3JOMo-atFS_VhF7nEH-UhRmXGeHtBqJzYidqIWHEmL2IsISJOnHJEpInXx6Rv5gIjYcZLyg4nECNLGiX6XPkfZttFdQKtX2Vjsi0hbEbmPKpZwNGX8PMK0NcggTzyoSz8TSREJYp6sBCyRiQuj-RB8pLWnRP3Qqo3ZLtUl21O_AaaWKiNwXs8js2uGRmFS-n6qMZogCU7fmqwRLq3v-HThtFvJv7ZvJUwfAAhXyt829_Pmj20t8NxWjzchvz6n2QS6kC1HA',
+      src: '/images/productos/elite-series-4.jpg',
       alt: 'Internal pump components',
     },
   ],

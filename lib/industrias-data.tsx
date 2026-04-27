@@ -623,6 +623,53 @@ export const industriasMap: Record<string, IndustriaData> = {
     },
   },
 
+  alcoholes: {
+    slug: "alcoholes",
+    title: "Soluciones de Cromatografía para Análisis de Alcoholes y Bebidas Fermentadas",
+    shortTitle: "Alcoholes y Fermentados",
+    description:
+      "Control de calidad de alcoholes, bebidas fermentadas y subproductos de fermentación con técnicas GC y HPLC.",
+    detailedDescription:
+      "La industria de bebidas y alcoholes requiere control analítico para graduación alcohólica, congéneres, metanol, compuestos volátiles, azúcares residuales y contaminantes del proceso. Nuestros sistemas permiten asegurar consistencia de producto, cumplimiento regulatorio y optimización de formulaciones.",
+    icon: "local_bar",
+    badge: "Beverage QC",
+    badgeVariant: "primary",
+    layout: "dark",
+    applications: [
+      { icon: "wine_bar", title: "Graduación alcohólica", description: "Determinación de etanol y alcoholes superiores en bebidas destiladas y fermentadas.", noteId: "901", slug: "graduacion-alcoholica" },
+      { icon: "science", title: "Metanol y congéneres", description: "Cuantificación de metanol, acetaldehído, acetato de etilo y fusel alcohols por GC-FID/GC-MS.", noteId: "902", slug: "metanol-congeneres" },
+      { icon: "bakery_dining", title: "Azúcares y fermentación", description: "Monitoreo de glucosa, fructosa y etanol residual en fermentación y acabado.", noteId: "903", slug: "azucares-fermentacion" },
+      { icon: "verified", title: "Cerveza y vino", description: "Perfil de aromas, amargor, SO2 y contaminantes para cerveza artesanal y vino.", noteId: "904", slug: "cerveza-vino" },
+    ],
+    equipos: [
+      { nombre: "GC-FID para alcoholes", tipo: "Cromatografía de Gases", aplicaciones: ["Etanol", "Metanol", "Alcoholes superiores"], especificaciones: [
+        { label: "LOD", value: "0.001 % v/v" },
+        { label: "Rango lineal", value: "0.01 - 100 % v/v" },
+        { label: "Tiempo por corrida", value: "< 10 min" },
+      ]},
+      { nombre: "HPLC-RI / HPLC-DAD", tipo: "Cromatografía Líquida", aplicaciones: ["Azúcares residuales", "Ácidos orgánicos", "Perfil de fermentación"], especificaciones: [
+        { label: "Columna", value: "Amino / Organic Acid" },
+        { label: "Detección", value: "RI y UV/DAD" },
+        { label: "Automatización", value: "Opcional" },
+      ]},
+    ],
+    normativas: [
+      { codigo: "NOM-142-SSA1/SCFI-2014", descripcion: "Bebidas alcohólicas: especificaciones sanitarias y etiquetado", organismo: "México" },
+      { codigo: "OIV", descripcion: "Métodos recomendados para vino y derivados", organismo: "OIV" },
+      { codigo: "AOAC / ISO", descripcion: "Métodos de referencia para alcohol y fermentación", organismo: "AOAC/ISO" },
+    ],
+    stats: [
+      { icon: "science", label: "Analitos", value: "Etanol, metanol, congéneres" },
+      { icon: "speed", label: "Tiempo", value: "<10 min/corrida" },
+      { icon: "verified", label: "Uso", value: "Bebidas y destilerías" },
+    ],
+    metadata: {
+      title: "Análisis de Alcoholes y Bebidas Fermentadas | Solinsa",
+      description: "Sistemas GC y HPLC para graduación alcohólica, metanol, congéneres, azúcares y control de fermentación.",
+      keywords: ["alcoholes", "bebidas fermentadas", "etanol", "metanol", "GC-FID", "vino", "cerveza"],
+    },
+  },
+
   farma: {
     slug: "farma",
     title: "Soluciones de Cromatografía para la Industria Farmacéutica",
@@ -678,7 +725,7 @@ export const industriasMap: Record<string, IndustriaData> = {
     stats: [
       { icon: "precision_manufacturing", label: "Resolución", value: "Alta Precisión" },
       { icon: "local_fire_department", label: "Temperatura", value: "Hasta 450°C" },
-      { icon: "engineering", label: "Robustez", value: "24/7 Operación" },
+      { icon: "engineering", label: "Robustez", value: "Operación Continua" },
     ],
     metadata: {
       title: "Cromatografía para Petroquímica | Solinsa",

@@ -24,7 +24,7 @@ export interface MethodBentoProps {
   visualImage: string;
   visualTitle: string;
   visualDescription: string;
-  multimarcaText?: string;
+  multimarcaText?: string | React.ReactNode;
   className?: string;
 }
 
@@ -36,14 +36,14 @@ export function MethodBento({
   visualImage,
   visualTitle,
   visualDescription,
-  multimarcaText = "Compatible con Agilent, Shimadzu y Thermo Scientific.",
+  multimarcaText = <span key="compatibility" className="invisible whitespace-nowrap">Compatible con Agilent, Shimadzu y Thermo Scientific.</span>,
   className,
 }: MethodBentoProps) {
   return (
     <div className={cn("grid grid-cols-1 gap-8 md:grid-cols-3", className)}>
       {/* Method Overview — 2 cols */}
       <div className="rounded-2xl bg-surface-container-low p-10 md:col-span-2">
-        <h3 className="mb-8 flex items-center gap-3 font-heading text-2xl font-bold text-primary">
+        <h3 className="mb-8 flex items-center gap-3 font-heading text-2xl font-bold text-on-surface">
           <span className="material-symbols-outlined text-secondary">
             biotech
           </span>
@@ -98,7 +98,7 @@ export function MethodBento({
 
       {/* Consumables */}
       <div className="rounded-2xl bg-surface-container-high p-8">
-        <h3 className="mb-6 font-heading text-xl font-bold text-primary">
+        <h3 className="mb-6 font-heading text-xl font-bold text-on-surface">
           Consumibles Críticos
         </h3>
         <div className="space-y-4">
@@ -117,15 +117,16 @@ export function MethodBento({
       </div>
 
       {/* Visual Data — 2 cols */}
-      <div className="relative aspect-video h-[400px] overflow-hidden rounded-2xl bg-slate-900 md:col-span-2 md:aspect-auto">
+      <div className="relative aspect-video h-[400px] overflow-hidden rounded-2xl bg-slate-900 md:col-span-2 md:aspect-auto" aria-hidden="true">
         <img
           alt=""
+          aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-luminosity"
           src={visualImage}
         />
         <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary/90 to-transparent p-10">
           <div className="glass inline-block max-w-sm rounded-xl p-6">
-            <h4 className="mb-2 font-bold text-primary">{visualTitle}</h4>
+            <h4 className="mb-2 font-bold text-white">{visualTitle}</h4>
             <p className="text-sm text-on-surface-variant">
               {visualDescription}
             </p>
