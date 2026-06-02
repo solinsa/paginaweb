@@ -1,62 +1,42 @@
-import {
-  HeroHome,
-  ServicesBento,
-  MethodsSection,
-  AboutSection,
-  BlogPreview,
-  CTABanner,
-  StatsBar,
-  FAQSection,
-} from '@/components/sections';
-import {
-  demoServices,
-  demoPosts,
-  demoAbout,
-  demoCTA,
-  demoStats,
-} from '@/lib/demo-data';
+import HeroSection from "@/components/sections/HeroSection";
+import TrustBar from "@/components/sections/TrustBar";
+import ProblemsWeSolve from "@/components/sections/ProblemsWeSolve";
+import IndustrySolutions from "@/components/sections/IndustrySolutions";
+import IntegratedSolutions from "@/components/sections/IntegratedSolutions";
+import WhySolinsa from "@/components/sections/WhySolinsa";
+import Brands from "@/components/sections/Brands";
+import ConversionForm from "@/components/sections/ConversionForm";
+import FinalCTA from "@/components/sections/FinalCTA";
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero — Tu aliado en cromatografía */}
-      <HeroHome />
+      {/* Hero */}
+      <HeroSection />
 
-      {/* 2. Trust indicators — Stats bar */}
-      <div id="confianza">
-        <StatsBar stats={demoStats} />
-      </div>
+      {/* Trust Bar — Servicios clave */}
+      <TrustBar />
 
-      {/* 3. Services — bento grid */}
-      <ServicesBento services={demoServices} />
+      {/* Problems We Solve — Tarjetas de servicios */}
+      <ProblemsWeSolve />
 
-      {/* 4. Methods — Métodos Analíticos y Tipos de Productos */}
-      <MethodsSection />
+      {/* Industry Solutions — 4 industrias */}
+      <IndustrySolutions />
 
-      {/* 5. About Solinsa — Tu aliado estratégico */}
-      <AboutSection
-        image={demoAbout.image}
-        overline={demoAbout.overline}
-        title={demoAbout.title}
-        description={demoAbout.description}
-        checkItems={demoAbout.checkItems}
-        cta={demoAbout.cta}
-        yearsBadge={demoAbout.yearsBadge}
-      />
+      {/* Integrated Solutions — 3 paquetes integrados */}
+      <IntegratedSolutions />
 
-      {/* 6. Blog preview — Perspectivas Técnicas */}
-      <BlogPreview posts={demoPosts} />
+      {/* Why SOLINSA — Stats y diferenciadores */}
+      <WhySolinsa />
 
-      {/* 7. FAQ — Preguntas frecuentes (SEO + AI agents) */}
-      <FAQSection />
+      {/* Brands — Tecnologías líderes */}
+      <Brands />
 
-      {/* 8. CTA banner — Agenda tu diagnóstico */}
-      <CTABanner
-        title={demoCTA.title}
-        description={demoCTA.description}
-        primaryButton={demoCTA.primaryButton}
-        secondaryButton={demoCTA.secondaryButton}
-      />
+      {/* Conversion Form — Cotización */}
+      <ConversionForm />
+
+      {/* Final CTA */}
+      <FinalCTA />
     </>
   );
 }

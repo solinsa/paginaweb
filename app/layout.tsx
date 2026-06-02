@@ -1,53 +1,38 @@
 import type { Metadata } from "next";
-import { fontVariables } from "@/lib/fonts";
-import { TopNavBar } from "@/components/layout";
-import Footer from "@/components/layout/Footer";
-import JsonLd from "@/components/seo/JsonLd";
-import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/seo/json-ld";
 import "./globals.css";
+import TopNavBar from "@/components/sections/TopNavBar";
+import FooterSection from "@/components/sections/FooterSection";
+import WhatsAppButton from "@/components/sections/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Solinsa",
-    default:
-      "Solinsa — Mantenimiento y Venta de Equipos de Cromatografía y Espectroscopía",
-  },
+  title: "SOLINSA | Soluciones en Instrumentación S.A. de C.V.",
   description:
-    "Solinsa: tu aliado en cromatografía y espectroscopía. Mantenimiento preventivo y correctivo multimarca (Agilent, Waters, Shimadzu, Thermo), calibración, repuestos, consultoría analítica. Más de 14 años de experiencia en México.",
+    "Solinsa: Equipos de cromatografía, servicio técnico y soporte de métodos para laboratorios en México. GC, GCMS, HPLC/UHPLC, cromatografía iónica, detectores especiales y preparación de muestras.",
   keywords: [
-    "mantenimiento HPLC",
-    "mantenimiento GC",
     "cromatografía",
-    "espectrometría de masas",
-    "espectroscopía",
-    "calibración equipos laboratorio",
-    "repuestos cromatografía",
-    "Agilent",
-    "Waters",
-    "Shimadzu",
-    "Thermo Fisher",
-    "PerkinElmer",
-    "laboratorio Monterrey",
-    "México",
-    "mantenimiento preventivo",
-    "mantenimiento correctivo",
     "HPLC",
     "GC",
-    "GC-MS",
-    "LC-MS",
+    "GCMS",
+    "UHPLC",
+    "cromatografía iónica",
+    "equipo de laboratorio",
+    "servicio técnico",
+    "IQ/OQ/PQ",
+    "mantenimiento preventivo",
+    "México",
+    "laboratorio",
+    "Solinsa",
+    "Young In Chromass",
+    "VUV Analytics",
   ],
   openGraph: {
-    title: "Solinsa — Tu Aliado en Cromatografía y Espectroscopía",
+    title: "SOLINSA | Soluciones en Instrumentación",
     description:
-      "Mantenimiento multimarca, calibración, repuestos y consultoría para equipos de cromatografía y espectroscopía. Más de 14 años de experiencia.",
+      "Integramos GC, GCMS, HPLC/UHPLC, cromatografía iónica, detectores especiales y preparación de muestras con instalación, capacitación, IQ/OQ/PQ, consumibles y soporte local.",
     url: "https://www.solinsa.com.mx",
     siteName: "Solinsa",
     locale: "es_MX",
     type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
@@ -57,20 +42,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${fontVariables} h-full antialiased`}>
+    <html lang="es" className="antialiased">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
-        <JsonLd data={organizationSchema()} />
-        <JsonLd data={websiteSchema()} />
-        <JsonLd data={localBusinessSchema()} />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="bg-surface text-primary-blue selection:bg-energetic-yellow selection:text-primary-blue">
         <TopNavBar />
-        <main className="flex-1 pt-20">{children}</main>
-        <Footer />
+        <main>{children}</main>
+        <FooterSection />
+        <WhatsAppButton />
       </body>
     </html>
   );

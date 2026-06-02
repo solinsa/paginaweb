@@ -1,130 +1,53 @@
 @import "tailwindcss";
 
 /* ============================================================
-   SOLINSA DESIGN SYSTEM — Stitch Design Tokens
-   Material Design 3 inspired, Tailwind CSS v4 @theme
+   SOLINSA STITCH2 DESIGN SYSTEM
+   Tailwind CSS v4 @theme tokens
    ============================================================ */
 
 @theme inline {
   /* ---- FONTS ---- */
-  --font-heading: var(--font-manrope);
-  --font-body: var(--font-inter);
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
 
   /* ---- COLOR PALETTE ---- */
+  --color-primary-blue: #2F4772;
+  --color-technical-blue: #0871A9;
+  --color-energetic-yellow: #FCC014;
+  --color-muted-blue-grey: #72819A;
+  --color-light-blue: #5395CF;
+  --color-light-grey: #E5E8EA;
+  --color-surface: #FFFFFF;
+  --color-on-surface: #2F4772;
+  --color-outline: #72819A;
+  --color-outline-variant: #E5E8EA;
 
-  /* Primary (Deep Navy) */
-  --color-primary: #001e40;
-  --color-primary-container: #003366;
-  --color-primary-fixed: #c6e7ff;
-
-  /* Secondary (Teal / Cyan) */
-  --color-secondary: #00658d;
-  --color-secondary-container: #2dbcfe;
-  --color-secondary-fixed: #c6e7ff;
-
-  /* Accent (Solinsa Gold) */
-  --color-accent: #f59e0b;
-  --color-on-accent: #1a1c1c;
-
-  /* Surfaces (Tonal layering — MD3) */
-  --color-background: #f9f9f9;
-  --color-surface: #f9f9f9;
-  --color-surface-dim: #f3f3f3;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f3f3f3;
-  --color-surface-container: #eeeeee;
-  --color-surface-container-high: #e8e8e8;
-  --color-surface-container-highest: #e2e2e2;
-  --color-surface-bright: #f9f9f9;
-
-  /* On-surface (Text) */
-  --color-on-surface: #1a1c1c;
-  --color-on-surface-variant: #43474f;
-  --color-on-primary: #ffffff;
-  --color-on-primary-container: #ffffff;
-  --color-on-secondary: #ffffff;
-  --color-on-secondary-container: #001e40;
-  --color-on-secondary-fixed: #001e40;
-
-  /* Outlines */
-  --color-outline: #737780;
-  --color-outline-variant: #c3c6d1;
-
-  /* Error */
-  --color-error: #ba1a1a;
-  --color-error-container: #ffdad6;
-  --color-on-error: #ffffff;
-  --color-on-error-container: #410002;
-
-  /* Success / Info (derived from palette) */
-  --color-success: #1a6d3c;
-  --color-success-container: #a4f5b8;
-  --color-info: #00658d;
-
-  /* ---- TYPOGRAPHY SCALES ---- */
-  --font-size-display-lg: 3.5rem;
-  --font-size-display-md: 3rem;
-  --font-size-display-sm: 2.5rem;
-  --font-size-headline-lg: 2rem;
-  --font-size-headline-md: 1.75rem;
-  --font-size-headline-sm: 1.5rem;
-  --font-size-title-lg: 1.375rem;
-  --font-size-title-md: 1.125rem;
-  --font-size-title-sm: 1rem;
-  --font-size-body-lg: 1.125rem;
-  --font-size-body-md: 1rem;
-  --font-size-body-sm: 0.875rem;
-  --font-size-label-lg: 0.9375rem;
-  --font-size-label-md: 0.8125rem;
-  --font-size-label-sm: 0.6875rem;
-
-  /* Line heights */
-  --line-height-display-lg: 1.1;
-  --line-height-display-md: 1.1;
-  --line-height-display-sm: 1.15;
-  --line-height-headline-lg: 1.2;
-  --line-height-headline-md: 1.25;
-  --line-height-headline-sm: 1.3;
-  --line-height-title-lg: 1.35;
-  --line-height-title-md: 1.4;
-  --line-height-title-sm: 1.45;
-  --line-height-body-lg: 1.6;
-  --line-height-body-md: 1.65;
-  --line-height-body-sm: 1.6;
-  --line-height-label-lg: 1.4;
-  --line-height-label-md: 1.45;
-  --line-height-label-sm: 1.5;
-
-  /* Letter spacing */
-  --letter-spacing-display-lg: -0.03em;
-  --letter-spacing-display-md: -0.025em;
-  --letter-spacing-display-sm: -0.02em;
-  --letter-spacing-headline-lg: -0.02em;
-  --letter-spacing-headline-md: -0.015em;
-  --letter-spacing-headline-sm: -0.01em;
-  --letter-spacing-label: 0.2em;
-
-  /* ---- SHADOWS ---- */
-  --shadow-scientific-glow: 0px 12px 32px rgba(0, 30, 64, 0.06);
-  --shadow-scientific-glow-md: 0px 16px 48px rgba(0, 30, 64, 0.08);
-  --shadow-scientific-glow-lg: 0px 24px 64px rgba(0, 30, 64, 0.1);
-
-  /* ---- SPACING (design system extras) ---- */
-  --spacing-section: 8rem;
-  --spacing-section-sm: 5rem;
+  /* ---- SPACING ---- */
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+  --spacing-margin-mobile: 16px;
+  --spacing-section-padding: 6rem;
+  --spacing-base: 8px;
+  --spacing-margin-desktop: 48px;
 
   /* ---- BORDER RADIUS ---- */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+  --radius-default: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 8px;
   --radius-full: 9999px;
 
+  /* ---- TYPOGRAPHY SCALES ---- */
+  --font-size-body-lg: 1.125rem;
+  --font-size-label-md: 0.875rem;
+  --font-size-headline-md: 1.875rem;
+  --font-size-display-lg: 3rem;
+  --font-size-headline-sm: 1.5rem;
+  --font-size-label-sm: 0.75rem;
+  --font-size-body-md: 1rem;
+
   /* ---- ANIMATION ---- */
-  --animate-duration-fast: 150ms;
+  --animate-duration-fast: 200ms;
   --animate-duration-normal: 300ms;
-  --animate-duration-slow: 500ms;
 }
 
 /* ============================================================
@@ -138,180 +61,110 @@ html {
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-on-surface);
-  font-family: var(--font-body), system-ui, sans-serif;
-  line-height: 1.65;
+  background-color: var(--color-surface);
+  color: var(--color-primary-blue);
+  font-family: var(--font-body);
 }
-
-/* Headlines use Manrope */
-h1, h2, h3, h4, h5, h6,
-.headline {
-  font-family: var(--font-heading), system-ui, sans-serif;
-  color: var(--color-on-surface);
-  line-height: 1.2;
-}
-
-/* ============================================================
-   UTILITY CLASSES — Stitch Design System
-   ============================================================ */
-
-/* Glassmorphism card */
-.glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-/* Ghost border (outline-variant at 20% opacity) */
-.ghost-border {
-  border: 1px solid rgba(195, 198, 209, 0.2);
-}
-
-/* Section spacing */
-.section-spacing {
-  padding-top: var(--spacing-section);
-  padding-bottom: var(--spacing-section);
-}
-
-.section-spacing-sm {
-  padding-top: var(--spacing-section-sm);
-  padding-bottom: var(--spacing-section-sm);
-}
-
-/* Label style (uppercase, tracked) */
-.label {
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-size: var(--font-size-label-md);
-  font-weight: 600;
-  letter-spacing: var(--letter-spacing-label);
-  text-transform: uppercase;
-  line-height: var(--line-height-label-md);
-}
-
-/* Scientific glow elevation */
-.elevated {
-  box-shadow: var(--shadow-scientific-glow);
-}
-
-.elevated-md {
-  box-shadow: var(--shadow-scientific-glow-md);
-}
-
-.elevated-lg {
-  box-shadow: var(--shadow-scientific-glow-lg);
-}
-
-/* Tonal surface helpers */
-.surface-low {
-  background-color: var(--color-surface-container-low);
-}
-
-.surface-base {
-  background-color: var(--color-surface-container);
-}
-
-.surface-high {
-  background-color: var(--color-surface-container-high);
-}
-
-.surface-highest {
-  background-color: var(--color-surface-container-highest);
-}
-
-/* ============================================================
-   SELECTION STYLING
-   ============================================================ */
 
 ::selection {
-  background-color: rgba(0, 101, 141, 0.15);
-  color: var(--color-on-surface);
+  background-color: var(--color-energetic-yellow);
+  color: var(--color-primary-blue);
 }
 
 /* ============================================================
-   MATERIAL DESIGN 3 UTILITY CLASSES — TEXT COLORS
-   (Generated for Tailwind v4 compatibility)
+   BUTTONS
    ============================================================ */
 
-/* On-primary variants */
-.text-on-primary {
-  color: var(--color-on-primary);
+.btn-primary {
+  background: var(--color-energetic-yellow);
+  color: var(--color-primary-blue);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
-.text-on-primary-container {
-  color: var(--color-on-primary-container);
+.btn-primary:hover {
+  background: #F5B000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* On-secondary variants */
-.text-on-secondary {
-  color: var(--color-on-secondary);
+.btn-secondary {
+  background: var(--color-technical-blue);
+  color: #FFFFFF;
+  transition: all 0.2s ease;
 }
 
-.text-on-secondary-container {
-  color: var(--color-on-secondary-container);
+.btn-secondary:hover {
+  background: var(--color-light-blue);
 }
 
-.text-on-secondary-fixed {
-  color: var(--color-on-secondary-fixed);
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+.text-body-lg {
+  font-size: var(--font-size-body-lg);
+  line-height: 28px;
+  font-weight: 400;
 }
 
-/* On-surface variants */
-.text-on-surface {
-  color: var(--color-on-surface);
+.text-label-md {
+  font-size: var(--font-size-label-md);
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  font-weight: 600;
 }
 
-.text-on-surface-variant {
-  color: var(--color-on-surface-variant);
+.text-headline-md {
+  font-size: var(--font-size-headline-md);
+  line-height: 38px;
+  font-weight: 700;
 }
 
-/* On-error variants */
-.text-on-error {
-  color: var(--color-on-error);
+.text-display-lg {
+  font-size: var(--font-size-display-lg);
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  font-weight: 800;
 }
 
-.text-on-error-container {
-  color: var(--color-on-error-container);
+.text-headline-sm {
+  font-size: var(--font-size-headline-sm);
+  line-height: 32px;
+  font-weight: 600;
 }
 
-/* Success */
-.text-success {
-  color: var(--color-success);
+.text-label-sm {
+  font-size: var(--font-size-label-sm);
+  line-height: 16px;
+  font-weight: 600;
 }
 
-/* Info */
-.text-info {
-  color: var(--color-info);
+.text-body-md {
+  font-size: var(--font-size-body-md);
+  line-height: 24px;
+  font-weight: 400;
 }
 
-/* Secondary-fixed */
-.text-secondary-fixed {
-  color: var(--color-secondary-fixed);
+.corporate-gradient {
+  background: linear-gradient(135deg, #2F4772 0%, #0871A9 55%, #FCC014 100%);
 }
 
-/* Primary-fixed (for text on dark backgrounds) */
-.text-primary-fixed {
-  color: #c6e7ff;
+.yellow-gradient {
+  background: linear-gradient(180deg, #FCC014 0%, #F5B000 100%);
 }
 
-/* On-primary-fixed */
-.text-on-primary-fixed {
-  color: #001e40;
-}
+/* ============================================================
+   FORM STYLES
+   ============================================================ */
 
-/* Surface bright (lightest surface) */
-.bg-surface-bright {
-  background-color: var(--color-background);
-}
-
-/* Accent (Solinsa Gold) */
-.text-accent {
-  color: var(--color-accent);
-}
-
-.bg-accent {
-  background-color: var(--color-accent);
-}
-
-.text-on-accent {
-  color: var(--color-on-accent);
+input:focus + label,
+select:focus + label,
+textarea:focus + label,
+input:focus ~ label,
+select:focus ~ label,
+textarea:focus ~ label {
+  color: var(--color-technical-blue);
 }
