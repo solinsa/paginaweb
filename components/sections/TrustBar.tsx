@@ -8,7 +8,7 @@ export default function TrustBar() {
     {
       icon: 'engineering',
       title: 'Servicio técnico',
-      description: 'Soporte multimarca: Agilent, Shimadzu, Waters, Young In Chromass.',
+      description: 'Soporte multimarca: Young In Chromass, Waters y todas las marcas reconocidas de cromatografía de gases y líquidas',
     },
     {
       icon: 'science',
