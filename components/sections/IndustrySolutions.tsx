@@ -1,67 +1,125 @@
-const WA_LINK = "https://wa.me/5218123554766";
+import Link from 'next/link';
 
-const cards = [
+const industryCards = [
   {
-    title: 'Tequila y Bebidas',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8pWRa0dK1oYCv7JjWoQie9bwbc7LNS4OchwGTZJY8TKZthFbAhLfhn9YQMG-06dvZBXMmzO9h0eOQeX_SuwJB4c7uACXsq084n6F9ZYruKwZE9MTohfeKzln_G1v1XRu98WM5f4gOzikujPeBl5iAaQ7qoLbxNXYEaW7kr9y_NEj3bQ6GEfmB_2UPntrxvv4fepxmkrvEgMjn5eLdCzUfl0SqkfmcnMphywZdhVx7wZ1FQRnFvwtuAN9V7RTrgdhrNic3VHheejQ',
-    alt: 'Tequila y Bebidas',
+    image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&q=80',
+    alt: 'Laboratorio de alimentos y bebidas',
+    label: 'Alimentos y Bebidas',
+    title: 'Calidad, contaminantes y perfiles',
+    items: [
+      'Tequila y bebidas por HPLC/UHPLC',
+      'Detector DAD/VUV',
+      'Confitería, sabores y fragancias',
+    ],
   },
   {
-    title: 'Alimentos y Confitería',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAJ4upI4m3WrfrqzHCdKVfd7AyVJ4qbAFBDJ858WJtgqJKL-xtAAJZXOKKv3WoGtNyLZ4ys444vgmoxyZsZ8u8SCxW2v0zs7w81UD78_Jf_8GjsiFHX0qcjItchDm1wVYutP8Ex7mbR2P6X-3YLcatN9l7fFYel8tK2fH0iSY_KI8MXIW7M-pfrdYIOIaNSZVLrNCFHwG-muEVEXOqfapxF3JrYw7OBmmHgE698EK5RauLScKN3cf8qnmLmFjJ3CRpeTt1BmBaG4tE',
-    alt: 'Alimentos y Confitería',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
+    alt: 'Laboratorio ambiental',
+    label: 'Ambiental',
+    title: 'Análisis VOC / SVOC y métodos EPA',
+    items: [
+      'GC-MS triple cuadrupolo',
+      'Purge & Trap EST Analytical',
+      'Métodos EPA certificados',
+    ],
   },
   {
-    title: 'Ambiental Privado',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrUSw4ZwCimx4mZGuV2mzmUgNq-YCGVVX3VKK8fOJSm6B2fxyVny1F6KrKS0BXh8RMptKijPTARrYtgXKYodClMM9aO-eaFLjbWd3ILXyHK_edgd70p45zTPslFvUGoI2B6brwlVug8m9AteS-npx7O_eq2Cb02w7AsrNGnGw7b882oxMHOPSsQJx7-_1D1vpqnWjEUUu9qFxU6yd3Zft3GGL5dOnN7t8iq3LYhe89CyYSod8h-NlKpDeIQOOUUq0piJjDlYsO7oE',
-    alt: 'Ambiental Privado',
+    image: 'https://images.unsplash.com/photo-1582719508461-905c67377157?w=600&q=80',
+    alt: 'Laboratorio farmacéutico',
+    label: 'Farmacéutica / QA-QC',
+    title: 'Validación y cumplimiento regulatorio',
+    items: [
+      'UHPLC con gradiente avanzado',
+      'Protocolos IQ/OQ/PQ',
+      'Trazabilidad total para auditorías',
+    ],
   },
-  {
-    title: 'Farma I+D',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCE50Bp-f363O_KRYiMA9Bvp7AcE4MBBbSLWBR_U1VDBFcJSp7KjuKt8VEk09ha_CsRnOIBAlAsfgeV147jUG3v7z0LUyWoSfQww2XWthQDRGO7ruIhsWSqGBNHj7gezBQGnoskGu0hXnokovmZTs7u7fhPNo7Ou0qkzC5cTqmQ8MCekVJzdDFmtb2uSSuH8lwyT6CLmnOkm_aWL6_f-O1bDsrlCuheYmaQWMYYoMxLPbUzXx7QWMOUdBK_nbEqRPDXga7NbS3qD0I',
-    alt: 'Farma I+D',
-  },
-]
+];
+
+function CheckIcon() {
+  return (
+    <svg
+      className="h-5 w-5 shrink-0 mt-0.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#059669"
+      strokeWidth="2.4"
+    >
+      <path d="M5 12l4 4L19 6" />
+    </svg>
+  );
+}
 
 export default function IndustrySolutions() {
   return (
-    <section className="bg-light-grey py-24 px-margin-desktop">
-      <div className="max-w-container-max mx-auto">
-        <h2 className="font-headline text-headline-md text-primary-blue mb-12 text-center">
-          Soluciones para laboratorios privados e industriales
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter">
-          {cards.map((card) => (
-            <div
-              key={card.title}
-              className="group bg-white rounded-lg overflow-hidden border border-white hover:border-light-blue hover:shadow-xl transition-all duration-300"
+    <section className="sec">
+      <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="sec-head center">
+          <h2 className="eyebrow">Soluciones por industria</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-primary-dark">
+            Equipo especializado para cada sector
+          </h3>
+          <p className="text-muted-blue-grey max-w-2xl mx-auto">
+            Ofrecemos instrumentación analítica y soporte técnico adaptado a los
+            requerimientos específicos de cada industria.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+          {industryCards.map((card) => (
+            <article
+              key={card.label}
+              className="bg-surface border border-outline rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition"
             >
-              <div className="h-48 overflow-hidden relative">
+              {/* Image */}
+              <div className="h-56 bg-paper overflow-hidden">
                 <img
-                  src={card.src}
+                  src={card.image}
                   alt={card.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-primary-blue/20 group-hover:bg-primary-blue/0 transition-colors" />
               </div>
-              <div className="p-6">
-                <h4 className="font-label-md text-label-md text-primary-blue uppercase mb-4">
+
+              {/* Body */}
+              <div className="p-6 flex flex-col gap-4">
+                <span className="text-xs font-mono uppercase text-technical-blue">
+                  {card.label}
+                </span>
+
+                <h3 className="text-xl font-bold text-primary-dark">
                   {card.title}
-                </h4>
-                <a
-                  href={WA_LINK}
+                </h3>
+
+                <ul className="space-y-2">
+                  {card.items.map((item) => (
+                    <li key={item} className="flex gap-2 text-sm text-primary-dark">
+                      <CheckIcon />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="https://wa.me/5218123554766?text=Quiero%20saber%20m%C3%A1s%20sobre%20soluciones%20para%20"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-technical-blue font-label-sm text-label-sm uppercase flex items-center justify-between group-hover:text-light-blue transition-colors"
+                  className="btn btn-yellow mt-auto self-start"
                 >
-                  Saber más
-                  <span className="material-symbols-outlined">chevron_right</span>
-                </a>
+                  Ver soluciones
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.4}
+                    className="w-[17px] h-[17px]"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </Link>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

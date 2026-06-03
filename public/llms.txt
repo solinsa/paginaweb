@@ -8,13 +8,13 @@ Solinsa es una empresa mexicana con más de 25 años de experiencia en ingenier�
 
 ## Main Sections
 
-- **Inicio**: https://www.solinsa.com.mx — Página principal
-- **Soluciones**: https://www.solinsa.com.mx/soluciones — Catálogo de equipos y productos
-- **Aplicaciones**: https://www.solinsa.com.mx/aplicaciones — Aplicaciones analíticas por industria
-- **Servicios**: https://www.solinsa.com.mx/servicios — Servicios técnicos y soporte
-- **Blog**: https://www.solinsa.com.mx/blog — Artículos técnicos y novedades
-- **Contacto**: https://www.solinsa.com.mx/contacto — Formulario de contacto
-- **Categorías**: https://www.solinsa.com.mx/categorias — Categorías de productos
+- **Inicio**: https://www.solinsa.mx — Página principal
+- **Soluciones**: https://www.solinsa.mx/soluciones — Catálogo de equipos y productos
+- **Aplicaciones**: https://www.solinsa.mx/aplicaciones — Aplicaciones analíticas por industria
+- **Servicios**: https://www.solinsa.mx/servicios — Servicios técnicos y soporte
+- **Blog**: https://www.solinsa.mx/blog — Artículos técnicos y novedades
+- **Contacto**: https://www.solinsa.mx/contacto — Formulario de contacto
+- **Categorías**: https://www.solinsa.mx/categorias — Categorías de productos
 
 ## Key Products & Services
 
@@ -51,7 +51,7 @@ Solinsa es una empresa mexicana con más de 25 años de experiencia en ingenier�
 
 - **Ubicación**: Monterrey, Nuevo León, México
 - **Teléfono**: +52 (81) 8000-1234
-- **Email**: info@solinsa.com.mx
+- **Email**: info@solinsa.mx
 - **LinkedIn**: https://www.linkedin.com/company/solinsa
 - **Facebook**: https://www.facebook.com/solinsamexico
 

@@ -1,136 +1,199 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function FooterSection() {
   return (
-    <footer className="bg-primary-blue text-white pt-20 pb-10 px-margin-desktop">
-      <div className="max-w-container-max mx-auto">
-        {/* 4-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          {/* Col 1 — Logo + Description + Social (spans 2 cols on md+) */}
-          <div className="md:col-span-2">
+    <footer className="bg-primary-dark text-blue-200/80 pt-16 pb-8">
+      <div className="max-w-container-max mx-auto px-margin-desktop">
+        {/* 4-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* COL 1 - Brand */}
+          <div className="md:col-span-2 lg:col-span-1">
             <img
               src="/logo-solinsa.png"
-              alt="SOLINSA Logo"
-              className="h-14 w-auto object-contain mb-8 brightness-0 invert"
+              alt="Solinsa"
+              className="invert brightness-0 h-10 w-auto mb-4"
             />
-            <p className="text-body-md text-white/80 mb-8 max-w-md leading-relaxed">
-              En SOLINSA innovamos el mantenimiento industrial en México.
-              Ofrecemos soluciones integrales en limpieza criogénica,
-              restauración de activos, formación técnica y productos
-              especializados que transforman la confiabilidad de tus equipos.
+            <h3 className="text-white font-bold text-xl">SOLINSA</h3>
+            <p className="font-mono text-xs text-blue-300/60 uppercase tracking-widest mb-4">
+              Soluciones en Instrumentación
             </p>
-            <div className="flex items-center gap-4">
-              {/* Social icon circle — Share */}
-              <a
-                href="#"
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/70 hover:bg-white/10 hover:text-white transition-colors"
-                aria-label="Compartir"
-              >
-                <span className="material-symbols-outlined text-[20px]">share</span>
-              </a>
-              {/* Social icon circle — LinkedIn */}
-              <a
-                href="#"
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/70 hover:bg-white/10 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <svg
-                  className="w-[18px] h-[18px]"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
-            </div>
+            <p className="text-sm text-blue-200/70 leading-relaxed">
+              En SOLINSA ofrecemos soluciones integrales en instrumentación
+              analítica para laboratorios y la industria. Contamos con equipos de
+              cromatografía, servicio técnico especializado y equipo
+              reacondicionado con la más alta calidad y respaldo.
+            </p>
           </div>
 
-          {/* Col 2 — Compañía */}
+          {/* COL 2 - Compañía */}
           <div>
-            <h5 className="text-label-md font-bold uppercase tracking-[0.2em] mb-8 text-energetic-yellow">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-blue-300/60 mb-6">
               Compañía
-            </h5>
-            <ul className="space-y-4">
+            </h4>
+            <ul>
               <li>
                 <Link
-                  href="/nosotros"
-                  className="text-white/70 hover:text-white transition-colors text-body-md"
+                  href="/sobre-nosotros"
+                  className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
                 >
-                  Sobre Nosotros
+                  Sobre nosotros
                 </Link>
               </li>
               <li>
                 <Link
                   href="/aviso-de-privacidad"
-                  className="text-white/70 hover:text-white transition-colors text-body-md"
+                  className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
                 >
-                  Aviso de Privacidad
+                  Aviso de privacidad
                 </Link>
               </li>
               <li>
                 <Link
                   href="/terminos-y-condiciones"
-                  className="text-white/70 hover:text-white transition-colors text-body-md"
+                  className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
                 >
-                  Términos y Condiciones
+                  Términos y condiciones
                 </Link>
               </li>
               <li>
                 <Link
                   href="/cumplimiento-normativo"
-                  className="text-white/70 hover:text-white transition-colors text-body-md"
+                  className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
                 >
-                  Cumplimiento Normativo
+                  Cumplimiento normativo
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3 — Contacto */}
+          {/* COL 3 - Soluciones */}
           <div>
-            <h5 className="text-label-md font-bold uppercase tracking-[0.2em] mb-8 text-energetic-yellow">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-blue-300/60 mb-6">
+              Soluciones
+            </h4>
+            <ul>
+              <li>
+                <Link
+                  href="/hplc-uhplc"
+                  className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
+                >
+                  HPLC / UHPLC
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/gc-gcms"
+                  className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
+                >
+                  GC / GCMS
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/servicio-tecnico"
+                  className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
+                >
+                  Servicio técnico
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/equipo-reacondicionado"
+                  className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
+                >
+                  Equipo reacondicionado
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* COL 4 - Contacto */}
+          <div>
+            <h4 className="text-xs font-mono uppercase tracking-widest text-blue-300/60 mb-6">
               Contacto
-            </h5>
-            <ul className="space-y-4">
+            </h4>
+            <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:ventas@solinsa.com"
-                  className="text-white/70 hover:text-white transition-colors text-body-md inline-flex items-center gap-2"
+                  href="mailto:ventas@solinsa.mx"
+                  className="inline-flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition py-1"
                 >
-                  <span className="material-symbols-outlined text-[18px]">mail</span>
-                  Ventas
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="w-4 h-4 shrink-0"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m2 7 10 6 10-6" />
+                  </svg>
+                  ventas@solinsa.mx
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:soporte@solinsa.com"
-                  className="text-white/70 hover:text-white transition-colors text-body-md inline-flex items-center gap-2"
+                  href="mailto:soporte@solinsa.mx"
+                  className="inline-flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition py-1"
                 >
-                  <span className="material-symbols-outlined text-[18px]">engineering</span>
-                  Soporte Técnico
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="w-4 h-4 shrink-0"
+                  >
+                    <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 3 3 6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z" />
+                  </svg>
+                  soporte@solinsa.mx
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-white/70 hover:text-white transition-colors text-body-md inline-flex items-center gap-2"
+                  href="https://wa.me/528123554766"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-blue-200/70 hover:text-white transition py-1"
                 >
-                  <span className="material-symbols-outlined text-[18px]">location_on</span>
-                  México
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="w-4 h-4 shrink-0"
+                  >
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+                  +52 81 2355 4766
                 </a>
+              </li>
+              <li>
+                <span className="inline-flex items-center gap-2 text-sm text-blue-200/70 py-1">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="w-4 h-4 shrink-0"
+                  >
+                    <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  Monterrey, N.L., México
+                </span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-10 text-center">
-          <p className="text-label-sm text-white/40 uppercase tracking-widest">
-            &copy; 2024 SOLINSA S.A. DE C.V. Todos los derechos reservados.
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300/50">
+          <p>
+            &copy; 2025 SOLINSA S.A. de C.V. Todos los derechos reservados.
           </p>
+          <p>Distribuidor oficial · Servicio multimarca · Hecho en México</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

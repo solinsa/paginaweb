@@ -1,109 +1,102 @@
-const WA_LINK = "https://wa.me/5218123554766";
+import Link from 'next/link'
+
+const cards = [
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-[13px] h-[13px]">
+        <path d="M3 22h18M5 22V8l7-5 7 5v14" />
+      </svg>
+    ),
+    label: 'Ambiental',
+    title: 'Análisis VOC / SVOC',
+    items: ['GC-MS triple cuadrupolo', 'Purge & Trap EST Analytical', 'Métodos EPA certificados'],
+    href: 'https://wa.me/5218123554766?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20Ambiental%20VOC%20/%20SVOC',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-[13px] h-[13px]">
+        <path d="M8 2h8M9 2v5l-4 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-4-9V2" />
+      </svg>
+    ),
+    label: 'Bebidas',
+    title: 'Tequila HPLC Prep',
+    items: ['UHPLC con gradiente avanzado', 'Detector DAD/VUV', 'Optimización de tiempos'],
+    href: 'https://wa.me/5218123554766?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20Tequila%20HPLC%20Prep',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-[13px] h-[13px]">
+        <path d="M3 12h4l3 8 4-16 3 8h4" />
+      </svg>
+    ),
+    label: 'Energía',
+    title: 'NOM-016 Compliance',
+    items: ['Analizador Wasson-ECE', 'DHA/RGA/PIONA', 'Reportes automatizados'],
+    href: 'https://wa.me/5218123554766?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20NOM-016%20Compliance',
+  },
+]
 
 export default function IntegratedSolutions() {
   return (
-    <section className="py-24 px-margin-desktop max-w-container-max mx-auto">
-      <h2 className="font-headline text-headline-md text-primary-blue mb-12">
-        Soluciones integradas listas para tu aplicación
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Card 1 — Ambiental */}
-        <div className="border border-light-grey rounded-lg overflow-hidden hover:border-light-blue transition-all">
-          <div className="bg-primary-blue text-white p-4 flex justify-between items-center">
-            <span className="font-label-sm text-label-sm uppercase tracking-widest">Ambiental</span>
-            <span className="material-symbols-outlined text-sm">package_2</span>
-          </div>
-          <div className="p-8 bg-white">
-            <h5 className="font-headline-sm text-headline-sm text-primary-blue mb-4">Análisis VOC / SVOC</h5>
-            <ul className="space-y-3 mb-10">
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                GC-MS Triple Cuadrupolo
-              </li>
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                Purge &amp; Trap EST Analytical
-              </li>
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                Métodos EPA certificados
-              </li>
-            </ul>
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full py-3 border-2 border-technical-blue text-technical-blue font-bold rounded hover:bg-technical-blue hover:text-white transition-all text-center"
-            >
-              VER ESPECIFICACIONES
-            </a>
-          </div>
+    <section className="sec">
+      <div className="max-w-container-max mx-auto px-margin-desktop">
+        <div className="sec-head center">
+          <span className="eyebrow">Soluciones integradas</span>
+          <h2>Listas para tu aplicación — no solo una caja.</h2>
         </div>
 
-        {/* Card 2 — Bebidas (featured) */}
-        <div className="border border-technical-blue/30 rounded-lg overflow-hidden shadow-lg transform scale-105 z-10">
-          <div className="bg-technical-blue text-white p-4 flex justify-between items-center">
-            <span className="font-label-sm text-label-sm uppercase tracking-widest">Bebidas</span>
-            <span className="material-symbols-outlined text-sm">liquor</span>
-          </div>
-          <div className="p-8 bg-white">
-            <h5 className="font-headline-sm text-headline-sm text-primary-blue mb-4">Tequila HPLC Prep</h5>
-            <ul className="space-y-3 mb-10">
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                UHPLC Gradiente Avanzado
-              </li>
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                Detector DAD / VUV
-              </li>
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                Optimización de tiempos
-              </li>
-            </ul>
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-full py-3 font-bold rounded shadow-lg block text-center"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+          {cards.map((card) => (
+            <article
+              key={card.label}
+              className="bg-surface border border-outline rounded-2xl p-6 flex flex-col gap-4 hover:border-technical-blue hover:shadow-lg transition"
             >
-              VER ESPECIFICACIONES
-            </a>
-          </div>
-        </div>
+              {/* Pill badge */}
+              <span className="pill self-start">
+                {card.icon}
+                {card.label}
+              </span>
 
-        {/* Card 3 — Energía */}
-        <div className="border border-light-grey rounded-lg overflow-hidden hover:border-light-blue transition-all">
-          <div className="bg-primary-blue text-white p-4 flex justify-between items-center">
-            <span className="font-label-sm text-label-sm uppercase tracking-widest">Energía</span>
-            <span className="material-symbols-outlined text-sm">local_gas_station</span>
-          </div>
-          <div className="p-8 bg-white">
-            <h5 className="font-headline-sm text-headline-sm text-primary-blue mb-4">NOM-016 Compliance</h5>
-            <ul className="space-y-3 mb-10">
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                Analizador Wasson-ECE
-              </li>
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                DHA / RGA / PIONA
-              </li>
-              <li className="flex items-center gap-3 text-muted-blue-grey text-body-md">
-                <span className="material-symbols-outlined text-technical-blue text-lg">check_circle</span>
-                Reportes automatizados
-              </li>
-            </ul>
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full py-3 border-2 border-technical-blue text-technical-blue font-bold rounded hover:bg-technical-blue hover:text-white transition-all text-center"
-            >
-              VER ESPECIFICACIONES
-            </a>
-          </div>
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-primary-dark">{card.title}</h3>
+
+              {/* Check list */}
+              <ul className="flex flex-col gap-2">
+                {card.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#059669"
+                      strokeWidth={2.4}
+                      className="w-5 h-5 shrink-0 mt-0.5"
+                    >
+                      <path d="M5 12l4 4L19 6" />
+                    </svg>
+                    <span className="text-muted-blue-grey">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Yellow CTA button */}
+              <Link
+                href={card.href}
+                target="_blank"
+                className="btn btn-yellow mt-auto self-start"
+              >
+                Cotizar
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.4}
+                  className="w-[17px] h-[17px]"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </Link>
+            </article>
+          ))}
         </div>
       </div>
     </section>
