@@ -74,7 +74,7 @@ export default function FooterSection() {
             <ul>
               <li>
                 <Link
-                  href="/hplc-uhplc"
+                  href="/soluciones/hplc-uhplc"
                   className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
                 >
                   HPLC / UHPLC
@@ -82,7 +82,7 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  href="/gc-gcms"
+                  href="/soluciones/gc-gcms"
                   className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
                 >
                   GC / GCMS
@@ -90,7 +90,7 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  href="/servicio-tecnico"
+                  href="/servicio"
                   className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
                 >
                   Servicio técnico
@@ -98,7 +98,7 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  href="/equipo-reacondicionado"
+                  href="/soluciones/reacondicionado"
                   className="text-sm text-blue-200/70 hover:text-white transition py-1.5 block"
                 >
                   Equipo reacondicionado
