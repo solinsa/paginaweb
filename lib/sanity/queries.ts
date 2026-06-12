@@ -8,10 +8,18 @@ export interface Post {
   mainImage: any;
   excerpt: string | null;
   body: any;
-  category: { title: string; slug: string } | null;
+  category: Category | null;
   publishedAt: string;
   seoTitle: string | null;
   seoDescription: string | null;
+}
+
+export interface Category {
+  title: string;
+  slug: string;
+  description?: string | null;
+  icon?: string | null;
+  image?: any;
 }
 
 const POST_FIELDS = groq`
@@ -21,11 +29,21 @@ const POST_FIELDS = groq`
   "mainImage": mainImage,
   excerpt,
   body,
-  "category": category->{title, "slug": slug.current},
+  "category": category->{title, "slug": slug.current, description, icon},
   publishedAt,
   seoTitle,
   seoDescription
 `;
+
+const CATEGORY_FIELDS = groq`
+  title,
+  "slug": slug.current,
+  description,
+  icon,
+  image
+`;
+
+// ─── Posts ────────────────────────────────────────────────────
 
 export async function getPosts(): Promise<Post[]> {
   return client.fetch(
@@ -46,6 +64,52 @@ export async function getPost(slug: string): Promise<Post | null> {
 export async function getPostSlugs(): Promise<string[]> {
   return client.fetch(
     groq`*[_type == "post" && defined(slug.current)].slug.current`,
+    {},
+    { next: { revalidate: 60 } }
+  );
+}
+
+export async function getPostsByCategory(categorySlug: string): Promise<Post[]> {
+  return client.fetch(
+    groq`*[_type == "post" && category->slug.current == $categorySlug] | order(publishedAt desc) { ${POST_FIELDS} }`,
+    { categorySlug },
+    { next: { revalidate: 60 } }
+  );
+}
+
+// ─── Categories ───────────────────────────────────────────────
+
+export async function getCategories(): Promise<Category[]> {
+  return client.fetch(
+    groq`*[_type == "category"] | order(order asc) { ${CATEGORY_FIELDS} }`,
+    {},
+    { next: { revalidate: 60 } }
+  );
+}
+
+export async function getCategory(slug: string): Promise<Category | null> {
+  return client.fetch(
+    groq`*[_type == "category" && slug.current == $slug][0] { ${CATEGORY_FIELDS} }`,
+    { slug },
+    { next: { revalidate: 60 } }
+  );
+}
+
+// ─── Composite queries ─────────────────────────────────────────
+
+/** Latest posts, capped at `limit`. After the featured one (offset 1), for the grid. */
+export async function getLatestPosts(limit: number = 7): Promise<Post[]> {
+  return client.fetch(
+    groq`*[_type == "post"] | order(publishedAt desc) [0...$limit] { ${POST_FIELDS} }`,
+    { limit },
+    { next: { revalidate: 60 } }
+  );
+}
+
+/** Get the single most recent post — used as the featured/hero article. */
+export async function getFeaturedPost(): Promise<Post | null> {
+  return client.fetch(
+    groq`*[_type == "post"] | order(publishedAt desc) [0] { ${POST_FIELDS} }`,
     {},
     { next: { revalidate: 60 } }
   );
