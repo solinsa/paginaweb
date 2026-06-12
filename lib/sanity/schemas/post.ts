@@ -33,6 +33,15 @@ export const post = defineType({
       group: "content",
     }),
     defineField({
+      name: "author",
+      title: "Autor/a",
+      type: "string",
+      group: "content",
+      description: "Nombre de la persona que escribió el artículo.",
+      validation: (rule) => rule.required().min(3).max(80),
+      initialValue: "SOLINSA",
+    }),
+    defineField({
       name: "publishedAt",
       title: "Fecha de publicación",
       type: "datetime",

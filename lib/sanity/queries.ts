@@ -9,6 +9,7 @@ export interface Post {
   excerpt: string | null;
   body: any;
   category: Category | null;
+  author: string | null;
   publishedAt: string;
   seoTitle: string | null;
   seoDescription: string | null;
@@ -30,6 +31,7 @@ const POST_FIELDS = groq`
   excerpt,
   body,
   "category": category->{title, "slug": slug.current, description, icon},
+  "author": coalesce(author->name, author, "SOLINSA"),
   publishedAt,
   seoTitle,
   seoDescription
@@ -106,11 +108,32 @@ export async function getLatestPosts(limit: number = 7): Promise<Post[]> {
   );
 }
 
-/** Get the single most recent post — used as the featured/hero article. */
+/** Get a single featured post (most recent). */
 export async function getFeaturedPost(): Promise<Post | null> {
   return client.fetch(
     groq`*[_type == "post"] | order(publishedAt desc) [0] { ${POST_FIELDS} }`,
     {},
+    { next: { revalidate: 60 } }
+  );
+}
+
+/** Related posts: same category, exclude current post, limit results. */
+export async function getRelatedPosts(
+  slug: string,
+  categorySlug?: string | null,
+  limit: number = 3
+): Promise<Post[]> {
+  if (!categorySlug) {
+    // fallback: latest posts excluding current
+    return client.fetch(
+      groq`*[_type == "post" && slug.current != $slug] | order(publishedAt desc) [0...$limit] { ${POST_FIELDS} }`,
+      { slug, limit },
+      { next: { revalidate: 60 } }
+    );
+  }
+  return client.fetch(
+    groq`*[_type == "post" && slug.current != $slug && category->slug.current == $categorySlug] | order(publishedAt desc) [0...$limit] { ${POST_FIELDS} }`,
+    { slug, categorySlug, limit },
     { next: { revalidate: 60 } }
   );
 }
