@@ -141,6 +141,46 @@ const ptComponents = {
         </figure>
       );
     },
+    table: ({ value }: any) => {
+      const rows: { cells: string[] }[] = value?.rows || [];
+      if (rows.length === 0) return null;
+      const [headerRow, ...dataRows] = rows;
+      return (
+        <div className="my-8 overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-b-2 border-[#1B2A4A]/20">
+                {headerRow.cells.map((cell: string, i: number) => (
+                  <th
+                    key={i}
+                    className="px-4 py-3 text-sm font-semibold uppercase tracking-wider text-primary-dark bg-[#1B2A4A]/5 first:rounded-tl-lg last:rounded-tr-lg"
+                  >
+                    {cell}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {dataRows.map((row: { cells: string[] }, ri: number) => (
+                <tr
+                  key={ri}
+                  className="border-b border-[#1B2A4A]/8 hover:bg-[#1B2A4A]/3 transition-colors"
+                >
+                  {row.cells.map((cell: string, ci: number) => (
+                    <td
+                      key={ci}
+                      className="px-4 py-3 text-[15px] md:text-[16px] leading-relaxed text-[#1B2A4A]/85"
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
   },
   list: {
     bullet: ({ children }: any) => (

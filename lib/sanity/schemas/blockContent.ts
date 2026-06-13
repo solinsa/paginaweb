@@ -44,5 +44,9 @@ export const blockContent = defineType({
         },
       ],
     }),
+    defineArrayMember({
+      type: "table",
+      title: "Tabla",
+    }),
   ],
 });
