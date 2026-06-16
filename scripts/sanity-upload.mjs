@@ -143,7 +143,7 @@ async function createPost(title, options = {}) {
     author,
     imagePath,
     imageAssetId,
-    categories,
+    category,
     excerpt,
     body,
     publishedAt,
@@ -163,19 +163,14 @@ async function createPost(title, options = {}) {
       _type: 'slug',
       current: slugify(title),
     },
-    ...(author && { author: { _type: 'reference', _ref: author } }),
+    ...(author && { author }),
     ...(mainImage && {
       mainImage: {
         _type: 'image',
         asset: { _type: 'reference', _ref: mainImage },
       },
     }),
-    ...(categories && {
-      categories: categories.split(',').map(c => ({
-        _type: 'reference',
-        _ref: c.trim(),
-      })),
-    }),
+    ...(category && { category: { _type: 'reference', _ref: category } }),
     ...(excerpt && { excerpt }),
     ...(body && { body }),
     ...(publishedAt && { publishedAt }),
@@ -377,18 +372,37 @@ async function main() {
         console.error('❌ Uso: node sanity-upload.mjs create-post "Título" [opciones]');
         console.error('   --image       Ruta al archivo de imagen');
         console.error('   --asset       Asset ID de imagen ya subida (alternativa a --image)');
-        console.error('   --author      ID del autor');
-        console.error('   --categories  IDs de categorías separados por coma');
+        console.error('   --author      Nombre del autor (string)');
+        console.error('   --category    ID de la categoría (single reference)');
         console.error('   --excerpt     Resumen corto');
+        console.error('   --body-file   Ruta a archivo JSON con el body Portable Text');
         console.error('   --publishedAt Fecha ISO (opcional, por defecto ahora)');
         process.exit(1);
       }
+
+      // Leer body desde archivo si se proporcionó
+      let bodyParsed = undefined;
+      if (opts['body-file']) {
+        const bodyPath = resolve(opts['body-file']);
+        if (!existsSync(bodyPath)) {
+          console.error(`❌ Archivo body no encontrado: ${bodyPath}`);
+          process.exit(1);
+        }
+        try {
+          bodyParsed = JSON.parse(readFileSync(bodyPath, 'utf-8'));
+        } catch (e) {
+          console.error(`❌ Error parseando body JSON: ${e.message}`);
+          process.exit(1);
+        }
+      }
+
       await createPost(title, {
         imagePath: opts.image,
         imageAssetId: opts.asset,
         author: opts.author,
-        categories: opts.categories,
+        category: opts.category,
         excerpt: opts.excerpt,
+        body: bodyParsed,
         publishedAt: opts.publishedAt,
       });
       break;
