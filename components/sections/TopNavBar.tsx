@@ -162,15 +162,12 @@ export default function TopNavBar() {
             <NavDropdown label="Industrias" items={industrias} />
             <NavDropdown label="Servicio" items={servicio} />
 
-            {/* Recursos — oculto temporalmente */}
-            {/*
             <Link
-              href="/recursos"
+              href="/blog"
               className="px-3 py-2 text-sm font-medium text-primary-dark hover:text-technical-blue transition-colors"
             >
-              Recursos
+              Blog
             </Link>
-            */}
           </div>
 
           {/* Desktop Right Actions */}
