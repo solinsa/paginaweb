@@ -1,64 +1,52 @@
 # Solinsa — llms.txt
 
-> One-stop shop for chromatography and analytical chemistry solutions in Mexico.
+> Equipos de cromatografía, servicio técnico y consumibles para laboratorios analíticos en México. Monterrey, Nuevo León.
 
 ## About
 
-Solinsa es una empresa mexicana con más de 25 años de experiencia en ingeniería y soluciones tecnológicas para análisis químico. Somos distribuidores autorizados de las principales marcas de instrumentación analítica: cromatografía líquida (HPLC/UHPLC), cromatografía de gases (GC), espectrometría de masas (MS), espectrofotometría y equipos de preparación de muestras.
+Solinsa (Soluciones en Instrumentación, S.A. de C.V.) es una empresa mexicana con más de 25 años de experiencia en ingeniería y soluciones para análisis químico. Integramos y damos servicio a sistemas de cromatografía de gases (GC), cromatografía de gases acoplada a espectrometría de masas (GC-MS), cromatografía líquida (HPLC/UHPLC), cromatografía iónica (IC), detectores especiales y preparación de muestras. Marcas representadas: Young In Chromass, QTEK, VUV Analytics, Ellutia, EST Analytical, CDS Analytical, Sedere, Shine, Trajan, Wiley y Persee.
 
 ## Main Sections
 
 - **Inicio**: https://www.solinsa.mx — Página principal
-- **Soluciones**: https://www.solinsa.mx/soluciones — Catálogo de equipos y productos
-- **Aplicaciones**: https://www.solinsa.mx/aplicaciones — Aplicaciones analíticas por industria
-- **Servicios**: https://www.solinsa.mx/servicios — Servicios técnicos y soporte
-- **Blog**: https://www.solinsa.mx/blog — Artículos técnicos y novedades
-- **Contacto**: https://www.solinsa.mx/contacto — Formulario de contacto
-- **Categorías**: https://www.solinsa.mx/categorias — Categorías de productos
+- **Catálogo de productos**: https://www.solinsa.mx/soluciones — Todos los equipos, detectores, consumibles y refacciones
+- **HPLC / UHPLC**: https://www.solinsa.mx/soluciones/hplc-uhplc — Sistemas ChroZen HPLC y UHPLC (Young In Chromass)
+- **GC / GC-MS**: https://www.solinsa.mx/soluciones/gc-gcms — Cromatografía de gases y espectrometría de masas
+- **Cromatografía iónica**: https://www.solinsa.mx/soluciones/ic — Aniones y cationes (Shine)
+- **Consumibles y refacciones**: https://www.solinsa.mx/soluciones/consumibles — Columnas Trajan, viales, bibliotecas Wiley
+- **Equipo reacondicionado**: https://www.solinsa.mx/soluciones/reacondicionado — Equipos verificados con garantía
+- **Aplicaciones**: https://www.solinsa.mx/aplicaciones — Aplicaciones analíticas documentadas
+- **Servicios**: https://www.solinsa.mx/servicio — Servicio técnico multimarca
+- **Blog**: https://www.solinsa.mx/blog — Artículos técnicos
+- **Recursos**: https://www.solinsa.mx/recursos — Checklists, guías y formatos gratuitos
+- **Industrias**: https://www.solinsa.mx/industrias — Soluciones por sector
 
 ## Key Products & Services
 
 ### Equipos
-- Sistemas HPLC / UHPLC
-- Cromatógrafos de gases (GC)
-- Espectrómetros de masas (LC-MS, GC-MS)
-- Espectrofotómetros UV-Vis, IR, AAS
-- Equipos de preparación de muestras
+- Sistemas HPLC / UHPLC ChroZen con detectores UV, DAD, RID, FL y ELSD
+- Cromatógrafos de gases (GC) con FID, TCD, ECD, FPD/PFPD, TEA y VUV
+- Sistemas GC-MS con bibliotecas espectrales
+- Cromatografía iónica con supresión de conductividad
+- Espectrofotometría UV-Vis y absorción atómica (Persee)
+- Preparación de muestras: purga y trampa (EST Analytical), pirólisis (CDS Analytical)
 
 ### Consumibles y Refacciones
-- Columnas cromatográficas (HPLC, GC)
-- Fases móviles y reactivos
-- Viales, filtros y accesorios
-- Refacciones y partes originales
+- Columnas capilares GC y guardas (Trajan)
+- Columnas analíticas HPLC: fase reversa, intercambio iónico, HILIC
+- Viales, septas, liners y accesorios de inyección
+- Bibliotecas espectrales MS (Wiley)
 
 ### Servicios
 - Instalación y puesta en marcha
-- Capacitación y entrenamiento
-- Mantenimiento preventivo y correctivo
-- Validación de métodos analíticos
-- Soporte técnico remoto y en sitio
-
-## Industries Served
-
-- Farmacéutica y Biotecnología
-- Alimentos y Bebidas
-- Petroquímica
-- Ambiental
-- Química Industrial
-- Academia e Investigación
+- Mantenimiento preventivo y correctivo multimarca
+- Calificaciones IQ, OQ y PQ
+- Capacitación y transferencia de métodos
+- Contratos anuales de servicio
+- Atención de emergencias
 
 ## Contact
 
-- **Ubicación**: Monterrey, Nuevo León, México
-- **Teléfono**: +52 (81) 8000-1234
-- **Email**: info@solinsa.mx
-- **LinkedIn**: https://www.linkedin.com/company/solinsa
-- **Facebook**: https://www.facebook.com/solinsamexico
-
-## Technical Details
-
-- Built with Next.js
-- CMS: Sanity.io
-- Search: Algolia
-- Image storage: Vercel Blob
-- Hosting: Vercel
+- WhatsApp: +52 81 2355 4766 (https://wa.me/528123554766)
+- Correo: ventas@solinsa.mx
+- Ubicación: Monterrey, Nuevo León, México
