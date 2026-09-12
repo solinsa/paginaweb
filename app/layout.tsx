@@ -5,6 +5,7 @@ import FooterSection from "@/components/sections/FooterSection";
 import WhatsAppButton from "@/components/sections/WhatsAppButton";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.solinsa.mx"),
   title: "SOLINSA | Soluciones en Instrumentación S.A. de C.V.",
   description:
     "Solinsa: Equipos de cromatografía, servicio técnico y soporte de métodos para laboratorios en México. GC, GCMS, HPLC/UHPLC, cromatografía iónica, detectores especiales y preparación de muestras.",
@@ -42,16 +43,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="antialiased">
+    <html lang="es-MX">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+          '@context':'https://schema.org','@type':'Organization',name:'SOLINSA',
+          legalName:'Soluciones en Instrumentación, S.A. de C.V.',url:'https://www.solinsa.mx',
+          telephone:'+52 81 2355 4766',email:'ventas@solinsa.mx',address:{'@type':'PostalAddress',addressLocality:'Monterrey',addressRegion:'Nuevo León',addressCountry:'MX'}
+        })}} />
       </head>
-      <body className="bg-surface text-primary-blue selection:bg-energetic-yellow selection:text-primary-blue">
+      <body>
         <TopNavBar />
         <main>{children}</main>
         <FooterSection />

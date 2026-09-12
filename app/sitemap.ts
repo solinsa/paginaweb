@@ -1,44 +1,4 @@
 import type {MetadataRoute} from 'next'
-import {getAllPostSlugs, getAllCategories} from '@/lib/sanity/queries'
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.solinsa.com.mx'
-
-export const revalidate = 3600 // revalidate hourly
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [postSlugs, categories] = await Promise.all([
-    getAllPostSlugs(),
-    getAllCategories(),
-  ])
-
-  const blogPosts: MetadataRoute.Sitemap = postSlugs.map((slug) => ({
-    url: `${SITE_URL}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.7,
-  }))
-
-  const blogCategories: MetadataRoute.Sitemap = categories.map((cat) => ({
-    url: `${SITE_URL}/blog?categoria=${cat.slug.current}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.6,
-  }))
-
-  return [
-    {
-      url: SITE_URL,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${SITE_URL}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    ...blogPosts,
-    ...blogCategories,
-  ]
-}
+const SITE_URL=process.env.NEXT_PUBLIC_SITE_URL||'https://www.solinsa.mx'
+const routes=['','/aplicaciones/furfural-azucares-tequila','/soluciones','/soluciones/hplc-uhplc','/soluciones/gc-gcms','/soluciones/ic','/soluciones/consumibles','/soluciones/reacondicionado','/servicio','/servicio/preventivo','/servicio/correctivo','/servicio/iq-oq-pq','/servicio/emergencia','/industrias','/industrias/alimentos','/industrias/ambiental','/industrias/farmaceutica','/industrias/academia','/blog','/blog/siete-senales-hplc-servicio','/recursos','/sobre-nosotros','/cumplimiento-normativo','/aviso-de-privacidad','/terminos-y-condiciones']
+export default function sitemap():MetadataRoute.Sitemap{return routes.map((route,i)=>({url:`${SITE_URL}${route}`,lastModified:new Date(),changeFrequency:i===0?'weekly':'monthly',priority:i===0?1:route==='/blog'?0.8:0.7}))}

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog | SOLINSA — Soluciones en Instrumentación',
     description: 'Artículos técnicos sobre cromatografía, espectrometría y productividad en laboratorio.',
-    url: 'https://www.solinsa.com.mx/blog',
+    url: 'https://www.solinsa.mx/blog',
     siteName: 'Solinsa',
     locale: 'es_MX',
     type: 'website',
