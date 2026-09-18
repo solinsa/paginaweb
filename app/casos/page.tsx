@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type {Metadata} from 'next'
 
 export const metadata: Metadata = {
@@ -40,10 +41,21 @@ export default function CasosPage() {
           <div className="grid-2">
             {cases.map((c) => (
               <article className="card" key={c.slug}>
-                <div className="placeholder" style={{minHeight: 190}}>
-                  <strong>Fotografía pendiente</strong>
-                  <span>Fotografía real del sistema y la actividad realizada.</span>
-                </div>
+                {c.slug === 'hplc-furfural-azucares-bebidas' ? (
+                  <div className="case-image">
+                    <Image
+                      src="/images/caso-hplc-bebidas.png"
+                      alt="Sistema HPLC ChroZen instalado en un laboratorio de bebidas alcohólicas"
+                      fill
+                      sizes="(max-width: 900px) 100vw, 50vw"
+                    />
+                  </div>
+                ) : (
+                  <div className="placeholder" style={{minHeight: 190}}>
+                    <strong>Fotografía pendiente</strong>
+                    <span>Fotografía real del sistema y la actividad realizada.</span>
+                  </div>
+                )}
                 <span className="badge blue">{c.tag}</span>
                 <h4>{c.title}</h4>
                 <p>{c.text}</p>
