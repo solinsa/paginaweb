@@ -182,7 +182,7 @@ export default function TerminosYCondicionesPage() {
                 <a href="mailto:ventas@solinsa.mx" className="text-technical-blue hover:underline">
                   ventas@solinsa.mx
                 </a>{' '}
-                o al teléfono +52 81 2355 4766.
+                o al teléfono +52 220 143 2743.
               </p>
             </div>
           </div>

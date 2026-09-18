@@ -10,7 +10,7 @@ const cards = [
     label: 'Ambiental',
     title: 'Análisis VOC / SVOC',
     items: ['GC-MS triple cuadrupolo', 'Purge & Trap EST Analytical', 'Métodos EPA certificados'],
-    href: 'https://wa.me/5218123554766?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20Ambiental%20VOC%20/%20SVOC',
+    href: 'https://wa.me/522201432743?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20Ambiental%20VOC%20/%20SVOC',
   },
   {
     icon: (
@@ -21,7 +21,7 @@ const cards = [
     label: 'Bebidas',
     title: 'Tequila HPLC Prep',
     items: ['UHPLC con gradiente avanzado', 'Detector DAD/VUV', 'Optimización de tiempos'],
-    href: 'https://wa.me/5218123554766?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20Tequila%20HPLC%20Prep',
+    href: 'https://wa.me/522201432743?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20Tequila%20HPLC%20Prep',
   },
   {
     icon: (
@@ -32,7 +32,7 @@ const cards = [
     label: 'Energía',
     title: 'NOM-016 Compliance',
     items: ['Analizador Wasson-ECE', 'DHA/RGA/PIONA', 'Reportes automatizados'],
-    href: 'https://wa.me/5218123554766?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20NOM-016%20Compliance',
+    href: 'https://wa.me/522201432743?text=Quiero%20cotizar%20la%20soluci%C3%B3n%20NOM-016%20Compliance',
   },
 ]
 

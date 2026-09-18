@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import {FormEvent,useMemo,useState} from 'react'
 
-const WA = 'https://wa.me/528123554766'
+const WA = 'https://wa.me/522201432743'
 
 type FilterKey = 'families' | 'techniques' | 'types'
 type Product = {

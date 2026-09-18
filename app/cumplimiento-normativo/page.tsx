@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Certificaciones, normativas y estándares que SOLINSA cumple para garantizar la calidad y trazabilidad en instrumentación analítica.',
 }
 
-const WA = 'https://wa.me/5218123554766'
+const WA = 'https://wa.me/522201432743'
 
 const standards = [
   {

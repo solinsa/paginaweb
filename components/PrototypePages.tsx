@@ -1,6 +1,6 @@
 import Link from 'next/link'
 export {ProductCatalog} from './ProductCatalog'
-const WA='https://wa.me/528123554766'
+const WA='https://wa.me/522201432743'
 export function PageHero({crumb='Inicio',eyebrow,title,lead,cta}:{crumb?:string,eyebrow?:string,title:string,lead:string,cta?:string}){return <header className="page-hero"><div className="container"><span className="breadcrumbs"><Link href="/">Inicio</Link> · {crumb}</span>{eyebrow&&<span className="eyebrow">{eyebrow}</span>}<h1>{title}</h1><p className="lead">{lead}</p>{cta&&<a className="btn btn-wa" style={{width:'max-content'}} href={WA}>{cta}</a>}</div></header>}
 const Empty=({text='Fotografía del equipo pendiente'}:{text?:string})=><div className="placeholder"><strong>Fotografía pendiente</strong><span>{text}</span></div>
 const Card=({title,text,meta,href='#'}:{title:string,text:string,meta?:string,href?:string})=><Link href={href} className="card">{meta&&<span className="badge blue">{meta}</span>}<h4>{title}</h4><p>{text}</p><span className="text-link">Ver detalle →</span></Link>

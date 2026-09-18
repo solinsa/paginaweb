@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Más de 15 años como referente en cromatografía e instrumentación analítica en México. Conoce nuestra historia, misión y equipo.',
 }
 
-const WA = 'https://wa.me/5218123554766'
+const WA = 'https://wa.me/522201432743'
 
 const stats = [
   { value: '15+', label: 'Años de experiencia' },

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-const WA='https://wa.me/528123554766'
+const WA='https://wa.me/522201432743'
 const offers=[
   {n:'01',title:'Proyectos llave en mano',text:'Para el laboratorio que necesita una capacidad analítica nueva y no solo una cotización de equipo.',items:['Configuración propuesta','Requerimientos del sitio','Puesta en marcha y capacitación'],href:'/soluciones'},
   {n:'02',title:'Montaje de técnicas y métodos',text:'Del equipo instalado al método trabajando: columna, detector, preparación de muestra y condiciones.',items:['Selección de configuración','Ajuste de condiciones','Transferencia al personal'],href:'/industrias'},

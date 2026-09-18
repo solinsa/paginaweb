@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const WA = 'https://wa.me/5218123554766'
+const WA = 'https://wa.me/522201432743'
 
 interface ServicioHeroProps {
   eyebrow: string
@@ -75,7 +75,7 @@ export default function ServicioHero({
                 </div>
                 <div>
                   <p className="text-xs text-white/50">Teléfono</p>
-                  <p className="text-sm text-white font-semibold">+52 (81) 2355-4766</p>
+                  <p className="text-sm text-white font-semibold">+52 (220) 143-2743</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

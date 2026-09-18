@@ -100,7 +100,7 @@ export default function IndustrySolutions() {
                 </ul>
 
                 <Link
-                  href="https://wa.me/5218123554766?text=Quiero%20saber%20m%C3%A1s%20sobre%20soluciones%20para%20"
+                  href="https://wa.me/522201432743?text=Quiero%20saber%20m%C3%A1s%20sobre%20soluciones%20para%20"
                   target="_blank"
                   className="btn btn-yellow mt-auto self-start"
                 >

@@ -48,7 +48,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
           '@context':'https://schema.org','@type':'Organization',name:'SOLINSA',
           legalName:'Soluciones en Instrumentación, S.A. de C.V.',url:'https://www.solinsa.mx',
-          telephone:'+52 81 2355 4766',email:'ventas@solinsa.mx',address:{'@type':'PostalAddress',addressLocality:'Monterrey',addressRegion:'Nuevo León',addressCountry:'MX'}
+          telephone:'+52 220 143 2743',email:'ventas@solinsa.mx',address:{'@type':'PostalAddress',addressLocality:'Monterrey',addressRegion:'Nuevo León',addressCountry:'MX'}
         })}} />
       </head>
       <body>
