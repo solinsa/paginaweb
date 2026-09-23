@@ -7,6 +7,7 @@ export type ProductFamily = {
   lead: string
   whatsappCta: string
   photoAlt: string
+  photo?: string
   sectionTitle: string
   features: string[]
   footnote: string
@@ -88,6 +89,7 @@ export const productFamilies: Record<string, ProductFamily> = {
   },
   ic: {
     slug: 'ic',
+    photo: '/images/productos/cromatografo-ionico-lab.png',
     kind: 'cromatografía iónica',
     brand: 'Shine',
     title: 'Cromatografía iónica (IC)',
@@ -123,6 +125,7 @@ export const productFamilies: Record<string, ProductFamily> = {
   },
   consumibles: {
     slug: 'consumibles',
+    photo: '/images/productos/consumibles-lab.png',
     kind: 'consumibles y refacciones',
     brand: 'Trajan · Wiley · Young In Chromass',
     title: 'Consumibles y refacciones para cromatografía',
@@ -210,6 +213,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   'chrozen-hplc': {
     slug:'chrozen-hplc', kind:'HPLC', brand:'Young In Chromass', title:'ChroZen HPLC',
     eyebrow:'Young In Chromass · HPLC',
+    photo:'/images/productos/chrozen-hplc-lab.png',
     lead:'Sistema HPLC modular para análisis cuantitativo de rutina. Bombas isocráticas, binarias o cuaternarias, automuestreador y detectores UV, DAD, RID, FL y ELSD.',
     features:['Bombas isocráticas, binarias o cuaternarias','Automuestreador y horno de columnas','Detectores UV, DAD, RID, FL y ELSD','Transferencia de métodos asistida por Solinsa'],
     specs:[['Configuración','Modular'],['Bombas','Isocrática, binaria o cuaternaria'],['Detectores','UV, DAD, RID, FL, ELSD'],['Muestreo','Manual o automático'],['Software','Adquisición e integración']],
@@ -218,6 +222,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   'chrozen-uhplc': {
     slug:'chrozen-uhplc', kind:'UHPLC', brand:'Young In Chromass', title:'ChroZen UHPLC',
     eyebrow:'Young In Chromass · UHPLC',
+    photo:'/images/productos/chrozen-uhplc-lab.png',
     lead:'Sistema UHPLC de alta presión para separaciones rápidas y eficientes con partículas sub-2 µm, ideal para alto volumen de muestras y métodos de alta resolución.',
     features:['Operación a alta presión con partículas sub-2 µm','Menor consumo de solvente y tiempo por corrida','Compatible con métodos HPLC existentes','Detectores UV, DAD, RID, FL y ELSD'],
     specs:[['Presión','Operación UHPLC'],['Separaciones','Más rápidas y con mejor resolución'],['Compatibilidad','Migración desde métodos HPLC'],['Software','Adquisición e integración']],
@@ -226,6 +231,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   'chrozen-hplc-preparativo': {
     slug:'chrozen-hplc-preparativo', kind:'HPLC preparativo', brand:'Young In Chromass', title:'ChroZen HPLC preparativo',
     eyebrow:'Young In Chromass · HPLC preparativo',
+    photo:'/images/productos/chrozen-hplc-preparativo-lab.png',
     lead:'Purificación a escala preparativa con bombas de alto caudal y colector de fracciones, para aislar compuestos de interés en desarrollo y producción.',
     features:['Bombas de alto caudal para escala preparativa','Colector de fracciones automatizado','Celdas y columnas preparativas','Escalamiento desde métodos analíticos'],
     specs:[['Escala','Preparativa'],['Colector','Fracciones automatizado'],['Caudal','Alto caudal'],['Aplicaciones','Purificación y aislamiento de compuestos']],
@@ -243,6 +249,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   'detector-elsd': {
     slug:'detector-elsd', kind:'Detector ELSD', brand:'Sedere', title:'Detector ELSD para LC',
     eyebrow:'Sedere · Detector ELSD',
+    photo:'/images/productos/detector-elsd-lab.png',
     lead:'Detector evaporativo de dispersión de luz (ELSD) para compuestos no volátiles sin cromóforo, compatible con elución por gradiente.',
     features:['Detección universal para compuestos no volátiles','Compatible con elución por gradiente','Sin dependencia de cromóforos ni UV','Alto para lípidos, azúcares, surfactantes y polímeros'],
     specs:[['Técnica','Evaporación y dispersión de luz'],['Elución','Compatible con gradiente'],['Aplicaciones','Lípidos, azúcares, surfactantes, polímeros'],['Compatibilidad','HPLC/UHPLC']],
@@ -251,6 +258,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   'chrozen-gc': {
     slug:'chrozen-gc', kind:'GC', brand:'Young In Chromass', title:'ChroZen GC',
     eyebrow:'Young In Chromass · GC',
+    photo:'/images/productos/chrozen-gc-lab.png',
     lead:'Cromatógrafo de gases configurable por inyector, columna y detector para análisis de volátiles: congéneres, solventes, hidrocarburos y COV.',
     features:['Inyectores split/splitless, headspace y P&T','Detectores FID, TCD, ECD, FPD/PFPD','Horno con programación de temperatura','Configuración por aplicación'],
     specs:[['Inyectores','Split/splitless, headspace, P&T'],['Detectores','FID, TCD, ECD, FPD/PFPD'],['Horno','Programación de temperatura'],['Software','Adquisición e integración']],
@@ -258,6 +266,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'gc-ms': {
     slug:'gc-ms', kind:'GC-MS', brand:'QTEK', title:'Sistema GC-MS',
+    photo:'/images/productos/gc-ms-lab.png',
     eyebrow:'QTEK · GC-MS',
     lead:'Cromatografía de gases acoplada a espectrometría de masas para identificación y cuantificación de compuestos volátiles y semivolátiles, con bibliotecas espectrales Wiley.',
     features:['Ionización EI con rango de masas amplio','Identificación contra bibliotecas Wiley','Análisis de COV, semivolátiles y contaminantes','Modo scan y SIM'],
@@ -266,6 +275,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'detector-vuv': {
     slug:'detector-vuv', kind:'Detector VUV', brand:'VUV Analytics', title:'Detector VUV',
+    photo:'/images/productos/detector-vuv-lab.png',
     eyebrow:'VUV Analytics · Detector VUV',
     lead:'Detección espectral en ultravioleta de vacío para GC: espectros únicos por compuesto que permiten análisis cualitativo y cuantitativo simultáneo sin columnas especiales.',
     features:['Espectros únicos en rango VUV (125–240 nm)','Identificación y cuantificación en una sola corrida','Co-elución resoluble espectralmente','Sin derivatización ni columnas especiales'],
@@ -274,6 +284,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'detector-tea': {
     slug:'detector-tea', kind:'Detector TEA', brand:'Ellutia', title:'Detector TEA',
+    photo:'/images/productos/detector-tea-lab.png',
     eyebrow:'Ellutia · Detector TEA',
     lead:'Detección selectiva de compuestos nitrogenados para GC: nitrosaminas, nitrocompuestos y especies nitrogenadas con sensibilidad ultra-traza.',
     features:['Selectividad para compuestos de nitrógeno','Sensibilidad a nivel de traza','Aplicación en nitrosaminas y análisis ambiental','Compatible con GC estándar'],
@@ -282,6 +293,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'automuestreador-hta': {
     slug:'automuestreador-hta', kind:'Automuestreador', brand:'HTA', title:'Automuestreador para GC y LC',
+    photo:'/images/productos/automuestreador-hta-lab.png',
     eyebrow:'HTA · Automuestreador',
     lead:'Automatización de inyección para GC y HPLC: secuencias analíticas sin supervisión, mayor repetibilidad y opciones de derivatización.',
     features:['Compatible con GC y HPLC','Posiciones configurables por vial','Mayor repetibilidad en inyección','Operación por secuencias desatendidas'],
@@ -290,6 +302,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'purga-trampa': {
     slug:'purga-trampa', kind:'Purga y trampa', brand:'EST Analytical', title:'Sistema de purga y trampa',
+    photo:'/images/productos/purga-trampa-lab.png',
     eyebrow:'EST Analytical · Purga y trampa',
     lead:'Preparación automatizada de muestras para compuestos volátiles (COV) por purga y trampa, acoplable a GC o GC-MS existentes.',
     features:['Concentración de COV para GC-MS','Cumple métodos EPA para agua y suelos','Trampa de adsorción con desorción térmica','Acoplable a GC-MS existente'],
@@ -299,6 +312,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'pirolisis': {
     slug:'pirolisis', kind:'Pirólisis', brand:'CDS Analytical', title:'Sistema de pirólisis',
+    photo:'/images/productos/pirolisis-lab.png',
     eyebrow:'CDS Analytical · Pirólisis',
     lead:'Preparación térmica de muestras para análisis por GC y GC-MS: pirólisis y desorción térmica para polímeros, materiales y sólidos no volátiles.',
     features:['Pirólisis en modo flash y secuencial','Desorción térmica de muestras sólidas','Caracterización de polímeros y materiales','Acoplable a GC o GC-MS'],
@@ -307,6 +321,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'espectrofotometro-uv-vis': {
     slug:'espectrofotometro-uv-vis', kind:'UV-Vis', brand:'Persee', title:'Espectrofotómetro UV-Vis',
+    photo:'/images/productos/espectrofotometro-uv-vis-lab.png',
     eyebrow:'Persee · UV-Visible',
     lead:'Espectroscopía UV-Visible para análisis de rutina en control de calidad, agua, alimentos y farmacia, con software de cuantificación.',
     features:['Rango espectral UV y visible','Modos de lectura: absorbancia, transmitancia, concentración','Celdas de flujo y soportes configurables','Software de cuantificación y reportes'],
@@ -315,6 +330,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'espectrometro-aas': {
     slug:'espectrometro-aas', kind:'AAS', brand:'Persee', title:'Espectrómetro de absorción atómica',
+    photo:'/images/productos/espectrometro-aas-lab.png',
     eyebrow:'Persee · Absorción atómica',
     lead:'Análisis elemental por absorción atómica para determinación de metales en agua, alimentos, ambiental e industrial, con llama y horno de grafito.',
     features:['Atomización por llama y horno de grafito','Fondo de corrección configurado por elemento','Análisis de metales en matrices acuosas y digestos','Software de cuantificación'],
@@ -323,6 +339,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'agua-ultrapura': {
     slug:'agua-ultrapura', kind:'Agua tipo I', brand:'Young In Chromass', title:'Sistema de agua ultrapura',
+    photo:'/images/productos/agua-ultrapura-lab.png',
     eyebrow:'Young In Chromass · Agua ultrapura',
     lead:'Producción de agua ultrapura tipo I para aplicaciones analíticas de laboratorio: HPLC, GC-MS, IC y prearación de muestras, con dispensador y monitoreo integrado.',
     features:['Agua tipo I (18.2 MΩ·cm)','Etapas de ósmosis inversa y deionización','Dispensador con monitoreo de calidad','Alimentación directa a equipos analíticos'],
@@ -331,6 +348,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   },
   'columnas-hplc': {
     slug:'columnas-hplc', kind:'Consumibles HPLC', brand:'Trajan', title:'Columnas analíticas HPLC',
+    photo:'/images/productos/columnas-hplc-lab.png',
     eyebrow:'Trajan · Consumibles HPLC',
     lead:'Columnas y guardas para separaciones cromatográficas: fase reversa C18, intercambio iónico, HILIC y fases especializadas, con selección por método.',
     features:['Fases C18, C8, fenil, HILIC e intercambio iónico','Guardas y pre-columnas','Selección por referencia o equivalencia','Envíos desde Monterrey a todo México'],
@@ -350,4 +368,3 @@ const productDetails: Record<string, ProductFamilyInput> = {
 for (const [slug, detail] of Object.entries(productDetails)) {
   productFamilies[slug] = {...baseEntry, eyebrow: detail.brand, ...detail}
 }
-
