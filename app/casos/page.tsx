@@ -51,9 +51,13 @@ export default function CasosPage() {
                     />
                   </div>
                 ) : (
-                  <div className="placeholder" style={{minHeight: 190}}>
-                    <strong>Fotografía pendiente</strong>
-                    <span>Fotografía real del sistema y la actividad realizada.</span>
+                  <div className="case-image">
+                    <Image
+                      src="/images/caso-optimizacion-gc-hplc.png"
+                      alt="Sistemas ChroZen instalados en un laboratorio de análisis de alimentos"
+                      fill
+                      sizes="(max-width: 900px) 100vw, 50vw"
+                    />
                   </div>
                 )}
                 <span className="badge blue">{c.tag}</span>
