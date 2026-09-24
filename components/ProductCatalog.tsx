@@ -36,7 +36,7 @@ const products: Product[] = [
   {name:'Sistema de agua ultrapura',image:'/images/productos/agua-ultrapura.png',brand:'Young In Chromass',description:'Producción de agua para aplicaciones analíticas de laboratorio.',family:'Sistemas de agua',techniques:['Agua Tipo I'],type:'Equipo',href:'/soluciones/agua-ultrapura'},
   {name:'Columnas analíticas HPLC',image:'/images/productos/columnas-hplc.png',brand:'Trajan',description:'Columnas y guardas para separaciones cromatográficas.',family:'Consumibles',techniques:['HPLC','UHPLC'],type:'Consumible',href:'/soluciones/columnas-hplc'},
   {name:'Consumibles para GC',image:'/images/productos/consumibles-gc.png',brand:'Trajan',description:'Columnas, viales, septas, liners y consumibles de inyección.',family:'Consumibles',techniques:['GC','GC-MS'],type:'Consumible',href:'/soluciones/consumibles'},
-  {name:'Bibliotecas espectrales MS',brand:'Wiley',description:'Bibliotecas de referencia para identificación espectral.',family:'Software y bibliotecas',techniques:['GC-MS'],type:'Software',href:'/soluciones/bibliotecas-espectrales'},
+  {name:'Bibliotecas espectrales MS',image:'/images/productos/bibliotecas-espectrales-ms.png',brand:'Wiley',description:'Bibliotecas de referencia para identificación espectral.',family:'Software y bibliotecas',techniques:['GC-MS'],type:'Software',href:'/soluciones/bibliotecas-espectrales'},
 ]
 
 const filterGroups: {key: FilterKey; label: string; options: string[]}[] = [

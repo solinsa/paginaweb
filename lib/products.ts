@@ -359,6 +359,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   'bibliotecas-espectrales': {
     slug:'bibliotecas-espectrales', kind:'Software y bibliotecas', brand:'Wiley', title:'Bibliotecas espectrales MS',
     eyebrow:'Wiley · Bibliotecas espectrales',
+    photo:'/images/productos/bibliotecas-espectrales-ms.png',
     lead:'Bibliotecas de referencia Wiley para identificación espectral en GC-MS, con cientos de miles de espectros documentados y búsqueda integrada al software de adquisición.',
     features:['Identificación de compuestos contra referencia','Integración con software GC-MS','Actualizaciones disponibles','Amplia cobertura de compuestos orgánicos'],
     specs:[['Marca','Wiley'],['Aplicación','Identificación espectral GC-MS'],['Integración','Software de adquisición estándar'],['Licencia','Anual o perpetua, según edición']],
