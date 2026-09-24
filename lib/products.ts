@@ -240,6 +240,7 @@ const productDetails: Record<string, ProductFamilyInput> = {
   'detector-rid': {
     slug:'detector-rid', kind:'Detector RID', brand:'Young In Chromass', title:'Detector de índice de refracción RID',
     eyebrow:'Young In Chromass · Detector RID',
+    photo:'/images/productos/detector-rid.png',
     lead:'Detección por índice de refracción para azúcares, polioles y compuestos sin absorción UV ni cromóforo. Compatible con sistemas HPLC ChroZen y otras marcas.',
     features:['Detección universal para compuestos sin UV','Uso típico: azúcares, furfural, polioles y lípidos','Termostato interno para estabilidad de línea base','Compatible con elución isocrática'],
     applications:[{source:'Experiencia de Solinsa',title:'Furfural y azúcares en bebidas destiladas',text:'Detección UV + RID · Columna de intercambio iónico'}],
