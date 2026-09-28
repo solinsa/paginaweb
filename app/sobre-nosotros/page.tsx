@@ -243,7 +243,7 @@ export default function SobreNosotrosPage() {
               </svg>
               Contáctanos por WhatsApp
             </Link>
-            <Link href="/cotizar" className="btn btn-ghost on-dark">
+            <Link href="https://wa.me/522201432743?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" className="btn btn-ghost on-dark">
               Solicitar cotización
             </Link>
           </div>

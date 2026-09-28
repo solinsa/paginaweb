@@ -49,7 +49,7 @@ export default function RefurbishedSection() {
 
             {/* RIGHT side */}
             <div className="flex flex-col gap-3">
-              <Link href="/reacondicionado" className="btn btn-yellow">
+              <Link href="/soluciones/reacondicionado" className="btn btn-yellow">
                 Ver equipo disponible
                 <svg
                   viewBox="0 0 24 24"
@@ -62,7 +62,7 @@ export default function RefurbishedSection() {
                 </svg>
               </Link>
 
-              <Link href="/contacto" className="btn btn-ghost on-dark">
+              <Link href="https://wa.me/522201432743" className="btn btn-ghost on-dark">
                 Consultar disponibilidad
                 <svg
                   viewBox="0 0 24 24"

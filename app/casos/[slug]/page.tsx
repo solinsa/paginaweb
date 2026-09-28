@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type {Metadata} from 'next'
 import {PageHero} from '@/components/PrototypePages'
 
-type Params = {params: {slug: string}}
+type Params = {params: Promise<{slug: string}>}
 
 const cases: Record<
   string,
@@ -12,6 +12,8 @@ const cases: Record<
     lead: string
     body: string[]
     bullets: string[]
+    image?: string
+    imageAlt?: string
   }
 > = {
   'hplc-furfural-azucares-bebidas': {
@@ -27,6 +29,8 @@ const cases: Record<
       'Montaje de condiciones y verificación del método',
       'Calificación IQ/OQ y capacitación en sitio',
     ],
+    image: '/images/caso-hplc-furfural-detalle.png',
+    imageAlt: 'Sistema ChroZen HPLC instalado en un laboratorio de bebidas alcohólicas',
   },
   'optimizacion-gc-hplc-alimentos': {
     eyebrow: 'Alimentos y confitería · GC · HPLC',
@@ -41,6 +45,8 @@ const cases: Record<
       'Ajuste de condiciones de trabajo por método',
       'Reporte con pruebas de cierre',
     ],
+    image: '/images/caso-optimizacion-gc-hplc-detalle.png',
+    imageAlt: 'Sistema ChroZen HPLC instalado en un laboratorio de análisis de alimentos',
   },
 }
 
@@ -49,15 +55,17 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({params}: Params): Promise<Metadata> {
-  const c = cases[params.slug]
+  const {slug} = await params
+  const c = cases[slug]
   return {
     title: c ? `${c.title} | Casos SOLINSA` : 'Caso | SOLINSA',
     description: c?.lead,
   }
 }
 
-export default function CasoDetallePage({params}: Params) {
-  const c = cases[params.slug]
+export default async function CasoDetallePage({params}: Params) {
+  const {slug} = await params
+  const c = cases[slug]
   if (!c) {
     return (
       <>
@@ -101,10 +109,16 @@ export default function CasoDetallePage({params}: Params) {
                   <li key={b}>{b}</li>
                 ))}
               </ul>
-              <div className="placeholder" style={{minHeight: 160, marginTop: 16}}>
-                <strong>Fotografía pendiente</strong>
-                <span>Fotografía real del sistema instalado.</span>
-              </div>
+              {c.image ? (
+                <div className="placeholder" style={{minHeight: 160, marginTop: 16}}>
+                  <img src={c.image} alt={c.imageAlt ?? 'Fotografía real del sistema instalado'} />
+                </div>
+              ) : (
+                <div className="placeholder" style={{minHeight: 160, marginTop: 16}}>
+                  <strong>Fotografía pendiente</strong>
+                  <span>Fotografía real del sistema instalado.</span>
+                </div>
+              )}
             </article>
           </div>
         </div>

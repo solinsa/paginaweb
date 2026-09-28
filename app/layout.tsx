@@ -3,6 +3,7 @@ import "./globals.css";
 import TopNavBar from "@/components/sections/TopNavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import WhatsAppButton from "@/components/sections/WhatsAppButton";
+import ScrollToTop from "./ScrollToTop";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.solinsa.mx"),
@@ -52,6 +53,7 @@ export default function RootLayout({
         })}} />
       </head>
       <body>
+        <ScrollToTop />
         <TopNavBar />
         <main>{children}</main>
         <FooterSection />
