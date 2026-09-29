@@ -110,7 +110,7 @@ export default function AvisoDePrivacidadPage() {
                   </a>
                 </p>
                 <p>
-                  <strong>Teléfono:</strong> +52 81 2355 4766
+                  <strong>Teléfono:</strong> +52 220 143 2743
                 </p>
                 <p>
                   <strong>Plazo de respuesta:</strong> 20 días hábiles conforme a la LFPDPPP

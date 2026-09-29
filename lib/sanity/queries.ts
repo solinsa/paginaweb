@@ -5,8 +5,10 @@ export interface Post {
   _id: string;
   title: string;
   slug: string;
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   mainImage: any;
   excerpt: string | null;
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   body: any;
   category: Category | null;
   author: string | null;
@@ -20,6 +22,7 @@ export interface Category {
   slug: string;
   description?: string | null;
   icon?: string | null;
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   image?: any;
 }
 

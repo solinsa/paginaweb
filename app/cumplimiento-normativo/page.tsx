@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Certificaciones, normativas y estándares que SOLINSA cumple para garantizar la calidad y trazabilidad en instrumentación analítica.',
 }
 
-const WA = 'https://wa.me/5218123554766'
+const WA = 'https://wa.me/522201432743'
 
 const standards = [
   {
@@ -266,7 +266,7 @@ export default function CumplimientoNormativoPage() {
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>
-            <Link href="/cotizar" className="btn btn-ghost on-dark">
+            <Link href="https://wa.me/522201432743?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" className="btn btn-ghost on-dark">
               Solicitar cotización
             </Link>
           </div>

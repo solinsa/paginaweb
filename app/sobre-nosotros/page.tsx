@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Más de 15 años como referente en cromatografía e instrumentación analítica en México. Conoce nuestra historia, misión y equipo.',
 }
 
-const WA = 'https://wa.me/5218123554766'
+const WA = 'https://wa.me/522201432743'
 
 const stats = [
   { value: '15+', label: 'Años de experiencia' },
@@ -243,7 +243,7 @@ export default function SobreNosotrosPage() {
               </svg>
               Contáctanos por WhatsApp
             </Link>
-            <Link href="/cotizar" className="btn btn-ghost on-dark">
+            <Link href="https://wa.me/522201432743?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" className="btn btn-ghost on-dark">
               Solicitar cotización
             </Link>
           </div>

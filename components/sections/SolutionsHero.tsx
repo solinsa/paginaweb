@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const WA = 'https://wa.me/5218123554766'
+const WA = 'https://wa.me/522201432743'
 
 interface SolutionsHeroProps {
   eyebrow: string

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const WA_LINK = 'https://wa.me/5218123554766';
+const WA_LINK = 'https://wa.me/522201432743';
 
 const industries = [
   { value: '', label: 'Seleccione industria' },
