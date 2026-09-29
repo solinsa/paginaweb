@@ -1,0 +1,587 @@
+[
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Introducción" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "La elección del detector en cromatografía de líquidos de alta eficiencia (HPLC) es una de las decisiones más críticas en el desarrollo de un método analítico. Cada detector ofrece un principio de detección diferente, con ventajas y limitaciones específicas que determinan su idoneidad para distintos tipos de analitos y aplicaciones." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "En este artículo presentamos una guía comparativa de los detectores más utilizados en HPLC: UV-Vis, PDA (Diodos en Arreglo), FLD (Fluorescencia), RI (Índice de Refracción), ELSD (Dispersión de Luz Evaporativa) y MS (Espectrometría de Masas). Analizamos su principio de funcionamiento, sensibilidad, selectividad, aplicaciones típicas y los criterios para seleccionar el detector adecuado según el tipo de analito." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "1. Detector UV-Vis (Ultravioleta-Visible)" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Principio de Funcionamiento" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "El detector UV-Vis mide la absorbancia de la luz a una longitud de onda fija (generalmente entre 190 y 800 nm) a medida que el eluyente pasa a través de una celda de flujo. Se basa en la ley de Beer-Lambert, donde la absorbancia es proporcional a la concentración del analito y a la longitud del paso óptico." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Sensibilidad:" },
+      { "_type": "span", "marks": [], "text":  " Alta para compuestos con cromóforos (grupos que absorben UV/Vis). Límites de detección típicos de 0.1–1 µg/mL en condiciones óptimas." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Selectividad:" },
+      { "_type": "span", "marks": [], "text":  " Moderada. Depende de la longitud de onda seleccionada. Compuestos sin cromóforos no son detectables." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Aplicaciones típicas:" },
+      { "_type": "span", "marks": [], "text":  " Análisis de fármacos, compuestos orgánicos con grupos aromáticos, proteínas (280 nm), ácidos nucleicos (260 nm), aditivos alimentarios, pesticidas." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Ventajas y Limitaciones" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Ventajas:" },
+      { "_type": "span", "marks": [], "text":  " Costo moderado, robustez, fácil operación, compatible con gradientes de solventes, amplia disponibilidad de longitudes de onda." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Limitaciones:" },
+      { "_type": "span", "marks": [], "text":  " No detecta compuestos sin cromóforos, requiere selección manual de longitud de onda, posible interferencia de solventes con absorbancia en UV." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "2. Detector PDA (Photodiode Array / Diodos en Arreglo)" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Principio de Funcionamiento" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "El detector PDA es una evolución del UV-Vis. Utiliza un arreglo de fotodiodos para capturar simultáneamente el espectro completo de absorción (típicamente 190–800 nm) en cada punto de la separación cromatográfica. Esto permite obtener un mapa 3D (tiempo de retención × longitud de onda × absorbancia) del cromatograma completo." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Sensibilidad:" },
+      { "_type": "span", "marks": [], "text":  " Similar al UV-Vis (0.1–1 µg/mL), aunque ligeramente menor debido a la dispersión de la luz en el policromador." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Selectividad:" },
+      { "_type": "span", "marks": [], "text":  " Alta. La información espectral completa permite identificar picos co-eluyentes, verificar pureza de picos y seleccionar la longitud de onda óptima post-análisis." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Aplicaciones típicas:" },
+      { "_type": "span", "marks": [], "text":  " Desarrollo de métodos, control de calidad farmacéutico, identificación de impurezas, análisis de productos naturales, verificación de pureza de picos en métodos validados." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Ventajas y Limitaciones" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Ventajas:" },
+      { "_type": "span", "marks": [], "text":  " Información espectral completa en cada punto, detección de co-eluciones, selección de longitud de onda post-corrida, identificación por matching espectral." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Limitaciones:" },
+      { "_type": "span", "marks": [], "text":  " Mayor costo que UV-Vis, mayor volumen de datos, no detecta compuestos sin cromóforos, sensibilidad ligeramente inferior al UV-Vis de longitud de onda fija." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "3. Detector FLD (Fluorescencia)" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Principio de Funcionamiento" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "El detector de fluorescencia (FLD) excita la muestra con una longitud de onda específica y mide la emisión de luz a una longitud de onda mayor. Solo los compuestos que poseen fluoróforos (grupos fluorescentes) emiten señal, lo que le confiere una selectividad excepcional." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Sensibilidad:" },
+      { "_type": "span", "marks": [], "text":  " Muy alta. Límites de detección de 0.01–10 ng/mL, hasta 1000 veces más sensible que UV-Vis para compuestos fluorescentes." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Selectividad:" },
+      { "_type": "span", "marks": [], "text":  " Muy alta. Solo detecta compuestos que fluorescen, minimizando interferencias de la matriz." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Aplicaciones típicas:" },
+      { "_type": "span", "marks": [], "text":  " Análisis de aflatoxinas y micotoxinas, vitaminas, aminoácidos (derivatizados), fármacos fluorescentes, poliaromáticos (PAHs), catecolaminas." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Ventajas y Limitaciones" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Ventajas:" },
+      { "_type": "span", "marks": [], "text":  " Sensibilidad excepcional, alta selectividad, mínimo ruido de fondo, ideal para trazas." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Limitaciones:" },
+      { "_type": "span", "marks": [], "text":  " Solo para compuestos con fluorescencia natural o derivatizados, posible quenching (apagamiento) por solventes o matriz, requiere selección de λ de excitación/emisión." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "4. Detector RI (Índice de Refracción)" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Principio de Funcionamiento" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "El detector de índice de refracción (RI) mide el cambio en el índice de refracción del eluyente a medida que el analito pasa por la celda de flujo. Es un detector universal, ya que cualquier compuesto disuelto en la fase móvil altera el índice de refracción." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Sensibilidad:" },
+      { "_type": "span", "marks": [], "text":  " Baja a moderada. Límites de detección típicos de 1–100 µg/mL. Es el detector menos sensible de la mayoría." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Selectividad:" },
+      { "_type": "span", "marks": [], "text":  " Baja. Responde a cualquier soluto, lo que dificulta la identificación específica." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Aplicaciones típicas:" },
+      { "_type": "span", "marks": [], "text":  " Análisis de carbohidratos (azúcares), polímeros, ácidos grasos, alcoholes, glicoles, compuestos sin cromóforos ni fluorescencia." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Ventajas y Limitaciones" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Ventajas:" },
+      { "_type": "span", "marks": [], "text":  " Universal (detecta cualquier compuesto), operación simple, adecuado para compuestos no-cromóforos." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Limitaciones:" },
+      { "_type": "span", "marks": [], "text":  " Baja sensibilidad, incompatible con gradientes de solventes (solo isocrático), sensible a cambios de temperatura, no selectivo, línea base inestable." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "5. Detector ELSD (Dispersión de Luz Evaporativa)" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Principio de Funcionamiento" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "El ELSD nebuliza el eluyente, evapora el solvente en un tubo de evaporación caliente y mide la dispersión de luz producida por las partículas sólidas del analito. Es un detector universal, sensible y compatible con gradientes, lo que lo convierte en una alternativa superior al RI para muchas aplicaciones." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Sensibilidad:" },
+      { "_type": "span", "marks": [], "text":  " Moderada a alta. Límites de detección típicos de 0.1–10 µg/mL, significativamente mejor que RI." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Selectividad:" },
+      { "_type": "span", "marks": [], "text":  " Baja. Responde a cualquier compuesto no volátil o semivolátil, sin información espectral." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Aplicaciones típicas:" },
+      { "_type": "span", "marks": [], "text":  " Lípidos, carbohidratos, surfactantes, esteroides, saponinas, productos naturales, compuestos farmacéuticos sin cromóforo, análisis de polímeros no-UV." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Ventajas y Limitaciones" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Ventajas:" },
+      { "_type": "span", "marks": [], "text":  " Universal, compatible con gradientes, más sensible que RI, respuesta casi independiente de las propiedades químicas del analito." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Limitaciones:" },
+      { "_type": "span", "marks": [], "text":  " Analito debe ser menos volátil que la fase móvil, respuesta no-lineal (requiere transformación logarítmica), no destructivo parcial, parámetros de evaporación deben optimizarse." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "6. Detector MS (Espectrometría de Masas)" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Principio de Funcionamiento" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "El espectrómetro de masas acoplado a HPLC (LC-MS) ioniza los analitos a la salida de la columna, separa los iones según su relación masa/carga (m/z) y los detecta. Los tipos más comunes son cuadrupolo simple (MS), triple cuadrupolo (MS/MS) y tiempo de vuelo (TOF). Las fuentes de ionización más utilizadas son ESI (Electrospray) y APCI (Ionización Química a Presión Atmosférica)." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Sensibilidad:" },
+      { "_type": "span", "marks": [], "text":  " Muy alta. Límites de detección de pg/mL a ng/mL en modo MRM (MS/MS). Es el detector más sensible disponible para HPLC." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Selectividad:" },
+      { "_type": "span", "marks": [], "text":  " Excepcional. La información de masa molecular y fragmentación permite una identificación inequívoca de los analitos." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Aplicaciones típicas:" },
+      { "_type": "span", "marks": [], "text":  " Farmacocinética, metabolómica, proteómica, análisis de contaminantes y residuos, confirmación de identidad, análisis de biomarcadores, ciencias forenses." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h3",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Ventajas y Limitaciones" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Ventajas:" },
+      { "_type": "span", "marks": [], "text":  " Sensibilidad y selectividad extremas, confirmación de identidad por masa exacta, información estructural (fragmentación), compatible con gradientes, permite análisis cuantitativo y cualitativo." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Limitaciones:" },
+      { "_type": "span", "marks": [], "text":  " Alto costo de adquisición y mantenimiento, requiere personal especializado, fases móviles deben ser volátiles (acetato de amonio, ácido fórmico), posible supresión iónica por la matriz, mayor complejidad operativa." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Tabla Comparativa de Detectores HPLC" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "La siguiente tabla resume las características clave de cada detector para facilitar la comparación directa:" }
+    ]
+  },
+  {
+    "_type": "table",
+    "rows": [
+      { "_key": "row-0-0", "cells": ["Detector", "Principio", "Sensibilidad (LOD)", "Selectividad", "Gradiente", "Costo relativo"] },
+      { "_key": "row-1-1", "cells": ["UV-Vis", "Absorbancia a λ fija", "0.1–1 µg/mL", "Media", "Sí", "€"] },
+      { "_key": "row-2-2", "cells": ["PDA", "Absorbancia espectral completa", "0.1–1 µg/mL", "Alta", "Sí", "€€"] },
+      { "_key": "row-3-3", "cells": ["FLD", "Fluorescencia (Emisión)", "0.01–10 ng/mL", "Muy alta", "Sí", "€€"] },
+      { "_key": "row-4-4", "cells": ["RI", "Cambio de índice refracción", "1–100 µg/mL", "Baja", "No (isocrático)", "€"] },
+      { "_key": "row-5-5", "cells": ["ELSD", "Dispersión de luz evaporativa", "0.1–10 µg/mL", "Baja", "Sí", "€€"] },
+      { "_key": "row-6-6", "cells": ["MS (QqQ)", "Relación m/z y fragmentación", "pg–ng/mL", "Excepcional", "Sí", "€€€€"] }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Criterios de Selección por Tipo de Analito" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Para elegir el detector adecuado, considere los siguientes criterios según el tipo de analito que necesita analizar:" }
+    ]
+  },
+  {
+    "_type": "table",
+    "rows": [
+      { "_key": "row-0-0", "cells": ["Tipo de Analito", "Detector Recomendado", "Alternativa", "Justificación"] },
+      { "_key": "row-1-1", "cells": ["Fármacos con cromóforo", "UV-Vis / PDA", "MS", "Buen balance costo-beneficio; PDA permite verificar pureza"] },
+      { "_key": "row-2-2", "cells": ["Aminas biógenas, aflatoxinas", "FLD", "MS/MS", "Sensibilidad extrema para trazas en alimentos"] },
+      { "_key": "row-3-3", "cells": ["Carbohidratos, azúcares", "ELSD / RI", "MS", "ELSD compatible con gradientes; RI requiere isocrático"] },
+      { "_key": "row-4-4", "cells": ["Lípidos, ácidos grasos", "ELSD / CAD", "MS", "Detectores universales, buena respuesta sin cromóforo"] },
+      { "_key": "row-5-5", "cells": ["Polímeros, surfactantes", "ELSD", "RI", "ELSD tolera gradientes y ofrece mejor sensibilidad"] },
+      { "_key": "row-6-6", "cells": ["Residuos de pesticidas (trazas)", "MS/MS", "PDA", "Límites regulatorios requieren confirmación por masa"] },
+      { "_key": "row-7-7", "cells": ["Metabolitos, biomarcadores", "MS (HRMS)", "MS/MS", "Alta resolución para identificación de compuestos desconocidos"] },
+      { "_key": "row-8-8", "cells": ["Iones inorgánicos", "Conductividad", "—", "Detector específico para IC; no aplica HPLC convencional"] },
+      { "_key": "row-9-9", "cells": ["Compuestos sin cromóforo ni fluorescencia", "ELSD / CAD", "RI / MS", "ELSD es la opción más versátil y compatible con gradientes"] }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Consideraciones Adicionales" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Detectores en tándem:" },
+      { "_type": "span", "marks": [], "text": " Es posible conectar dos detectores en serie (ej. PDA + MS o PDA + FLD) para obtener información complementaria en una sola inyección. Esta configuración es especialmente útil en el desarrollo de métodos y en la identificación de impurezas." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Compatibilidad con la fase móvil:" },
+      { "_type": "span", "marks": [], "text": " Verifique que el detector seleccionado sea compatible con la composición de la fase móvil (pH, solventes orgánicos, sales no volátiles). Los detectores MS requieren fases móviles volátiles, mientras que los detectores UV pueden tolerar concentraciones moderadas de sales." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [ "strong" ], "text": "Volumen de la celda de flujo:" },
+      { "_type": "span", "marks": [], "text": " Para columnas de diámetro pequeño (UHPLC, 2.1 mm ID), se requieren celdas de flujo de bajo volumen (< 2 µL) para minimizar la dispersión extra-columna y mantener la eficiencia de la separación." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Conclusión" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "No existe un detector universal que sea óptimo para todas las aplicaciones de HPLC. La selección del detector debe basarse en las propiedades fisicoquímicas del analito, los requisitos de sensibilidad y selectividad, la compatibilidad con la fase móvil y el presupuesto disponible." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "Como regla general:" }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "➤ UV-Vis y PDA son la opción por defecto para compuestos con cromóforos, ofreciendo el mejor equilibrio entre costo, robustez y prestaciones." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "➤ FLD es la mejor opción cuando se requiere máxima sensibilidad para compuestos fluorescentes, especialmente en aplicaciones de trazas." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "➤ ELSD es la alternativa universal más versátil para compuestos sin cromóforo, combinando sensibilidad moderada con compatibilidad con gradientes." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "➤ RI queda relegado a aplicaciones isocráticas donde no se requiere alta sensibilidad y el presupuesto es limitado." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "➤ MS (LC-MS/MS) es la opción definitiva para análisis de trazas, identificación de compuestos desconocidos y aplicaciones regulatorias que exigen confirmación inequívoca." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "En Solinsa, contamos con más de 15 años de experiencia en la configuración de sistemas HPLC y la selección de detectores para laboratorios farmacéuticos, alimentarios, ambientales y de investigación. Nuestro equipo de ingenieros especializados puede asesorarte en la elección del detector óptimo para tus aplicaciones y en la puesta a punto de tu método analítico." }
+    ]
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "children": [
+      { "_type": "span", "marks": [], "text": "¿Necesitas asesoría para seleccionar el detector HPLC ideal para tu laboratorio? Contáctanos para una consultoría técnica sin compromiso." }
+    ]
+  }
+]
