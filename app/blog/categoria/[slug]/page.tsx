@@ -42,6 +42,7 @@ function formatDate(iso: string) {
 
 // ─── Post Card ─────────────────────────────────────────────────
 
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 function PostCard({ post }: { post: any }) {
   const imgUrl = post.mainImage
     ? urlFor(post.mainImage).width(600).height(340).url()
