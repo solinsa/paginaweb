@@ -1,4 +1,5 @@
 import {client, urlFor} from './sanity/client'
+import coresaPreview from '@/content/blog/solinsa-capacitacion-coresa-el-salvador.json'
 
 type Span = {text?: string; marks?: string[]}
 
@@ -20,6 +21,7 @@ export type BlogTable = {rows: string[][]}
 export type BlogSection = {
   heading: string
   text: string
+  boldText?: string[]
   image?: string
   imageAlt?: string
   table?: BlogTable
@@ -98,7 +100,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     "categories": categories[]->{title}
   }`)
 
-  return posts.map(post => {
+  const publishedPosts = posts.map(post => {
     const sections = toSections(post.body || [])
     return {
       slug: post.slug.current,
@@ -112,6 +114,17 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       sections,
     }
   })
+
+  // Keep the review article local until its content is published in Sanity.
+  if (process.env.NODE_ENV === 'development') {
+    const preview: BlogPost = {
+      ...coresaPreview,
+      readTime: estimateReadTime(coresaPreview.sections),
+    }
+    return [preview, ...publishedPosts.filter(post => post.slug !== preview.slug)]
+  }
+
+  return publishedPosts
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
