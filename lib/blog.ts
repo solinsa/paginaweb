@@ -1,4 +1,5 @@
 import {client, urlFor} from './sanity/client'
+import coresaArticle from '@/content/blog/solinsa-capacitacion-coresa-el-salvador.json'
 
 type Span = {text?: string; marks?: string[]}
 
@@ -20,6 +21,7 @@ export type BlogTable = {rows: string[][]}
 export type BlogSection = {
   heading: string
   text: string
+  boldText?: string[]
   image?: string
   imageAlt?: string
   table?: BlogTable
@@ -98,7 +100,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     "categories": categories[]->{title}
   }`)
 
-  return posts.map(post => {
+  const publishedPosts = posts.map(post => {
     const sections = toSections(post.body || [])
     return {
       slug: post.slug.current,
@@ -112,6 +114,12 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       sections,
     }
   })
+
+  const article: BlogPost = {
+    ...coresaArticle,
+    readTime: estimateReadTime(coresaArticle.sections),
+  }
+  return [article, ...publishedPosts.filter(post => post.slug !== article.slug)]
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
