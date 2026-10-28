@@ -1,5 +1,4 @@
 import {client, urlFor} from './sanity/client'
-import coresaArticle from '@/content/blog/solinsa-capacitacion-coresa-el-salvador.json'
 
 type Span = {text?: string; marks?: string[]}
 
@@ -62,13 +61,14 @@ export function toSections(body: any[] = []): BlogSection[] {
   const sections: BlogSection[] = []
   let current: BlogSection | null = null
 
-  const push = (text: string) => {
+  const push = (text: string, bold: string[] = []) => {
     if (!text.trim()) return
     if (!current) {
       current = {heading: 'Introducción', text: ''}
       sections.push(current)
     }
     current.text = current.text ? `${current.text}\n\n${text}` : text
+    if (bold.length) current.boldText = [...(current.boldText || []), ...bold]
   }
 
   for (const block of blocks) {
@@ -78,7 +78,8 @@ export function toSections(body: any[] = []): BlogSection[] {
         current = {heading: text, text: ''}
         sections.push(current)
       } else {
-        push(text)
+        const bold = (block.children || []).filter(span => span.marks?.includes('strong') && span.text?.trim()).map(span => span.text as string)
+        push(text, bold)
       }
     } else if (block._type === 'table') {
       if (!current) {
@@ -97,10 +98,10 @@ export function toSections(body: any[] = []): BlogSection[] {
 export async function getBlogPosts(): Promise<BlogPost[]> {
   const posts = await client.fetch<SanityPost[]>(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
     _id, title, slug, excerpt, mainImage, publishedAt, body,
-    "categories": categories[]->{title}
+    "categories": coalesce(categories[]->{title}, [category->{title}])
   }`)
 
-  const publishedPosts = posts.map(post => {
+  return posts.map(post => {
     const sections = toSections(post.body || [])
     return {
       slug: post.slug.current,
@@ -114,12 +115,6 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       sections,
     }
   })
-
-  const article: BlogPost = {
-    ...coresaArticle,
-    readTime: estimateReadTime(coresaArticle.sections),
-  }
-  return [article, ...publishedPosts.filter(post => post.slug !== article.slug)]
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
