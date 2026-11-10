@@ -30,3 +30,41 @@ header{display:flex;align-items:center;gap:28px;max-width:1600px;margin:auto;pad
 
 /* Framing for the supplied laboratory training photo. */
 .hero-photo>img{object-position:61% 63%}
+
+/* Square application carousel: supplied infographics stay fully visible. */
+.hero .hero-visual{display:block;align-self:center;height:auto;min-height:0;margin:10px 0 35px;min-width:0}
+.hero-carousel{width:100%;min-width:0}.carousel-stage{position:relative;aspect-ratio:1/1;background:#fff;border-radius:25px;overflow:hidden;border:1px solid var(--line);box-shadow:0 16px 40px #12384e0d;touch-action:pan-y}
+.carousel-slide{margin:0;width:100%;height:100%;position:absolute;inset:0}.carousel-slide[hidden]{display:none}.carousel-slide img{width:100%;height:100%;object-fit:contain;transform:none}.carousel-slide.photo img{object-fit:cover;object-position:60% center}
+.carousel-expand{position:absolute;right:12px;bottom:12px;border:1px solid var(--line);background:#fffffff2;color:var(--navy);border-radius:100px;padding:9px 13px;font-family:inherit;font-size:10px;font-weight:600;cursor:pointer;box-shadow:0 3px 12px #12384e16}.carousel-caption{padding:18px 2px 12px;min-height:85px}.carousel-caption .eyebrow{display:block;font-size:8px;margin-bottom:7px;letter-spacing:1px}.carousel-caption strong{display:block;font-size:19px;line-height:1.3;font-weight:600;letter-spacing:-.4px}
+.carousel-controls{display:flex;align-items:center;gap:12px}.carousel-arrow{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--navy);font-size:21px;cursor:pointer;flex-shrink:0}.carousel-arrow:hover{background:var(--navy);color:white}.carousel-dots{display:flex;align-items:center;justify-content:center;gap:0;flex:1;min-width:0}.carousel-dot{position:relative;width:22px;height:30px;background:transparent;border:0;padding:0;cursor:pointer;flex-shrink:1}.carousel-dot:after{content:'';position:absolute;width:5px;height:5px;background:#aebfc5;border-radius:50%;inset:0;margin:auto}.carousel-dot[aria-pressed=true]:after{background:var(--blue);width:9px;height:9px}.carousel-count{font:10px Consolas,monospace;white-space:nowrap;color:var(--muted)}button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.image-dialog{width:min(96vw,1100px);max-width:none;max-height:94vh;padding:18px;border:0;border-radius:18px;background:white;color:var(--navy);overscroll-behavior:contain}.image-dialog::backdrop{background:#082333d9}.image-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:-18px;background:white;padding:8px 0 14px;z-index:1}.image-dialog h2{font-size:18px;line-height:1.3;letter-spacing:-.4px;margin:0}.dialog-close{border:1px solid var(--line);border-radius:100px;background:var(--paper);padding:10px 15px;color:var(--navy);white-space:nowrap;cursor:pointer}.expanded-image{width:100%;height:auto;max-height:none;margin:auto}body:has(.image-dialog[open]){overflow:hidden}
+@media(max-width:800px) and (min-width:601px){.hero{grid-template-columns:1fr 1fr;column-gap:28px}.carousel-controls{gap:5px}.carousel-count{display:none}.carousel-dot{width:18px}.carousel-caption strong{font-size:17px}.carousel-arrow{width:32px;height:32px}}
+@media(max-width:600px){.hero .hero-visual{margin:28px 0 12px;width:100%;height:auto;align-self:auto}.carousel-stage{border-radius:22px}.carousel-caption{padding-top:16px;min-height:75px}.carousel-caption strong{font-size:19px}.carousel-controls{gap:8px}.carousel-dot{width:22px;height:34px}.carousel-arrow{width:36px;height:36px}.image-dialog{padding:12px;max-height:95vh;width:96vw}.image-dialog-header{top:-12px;gap:12px}.image-dialog h2{font-size:14px}.dialog-close{font-size:12px;padding:8px 12px}}
+
+/* Logo sits directly on the page background. */
+header>a:first-of-type{background:transparent;padding:0;border-radius:0}
+
+/* Equipment details are included only in this card's WhatsApp draft. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.equipment-checklist h3{font-size:27px;line-height:1.15;margin:15px 0 12px;letter-spacing:-.7px}.budget-action.equipment-checklist .checklist-help{font-size:12px!important;line-height:1.5;color:var(--muted);margin:0 0 16px}
+.equipment-options{margin:0;padding:0;border:0;min-width:0}.equipment-options label{display:flex;align-items:flex-start;gap:11px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.45;cursor:pointer}.equipment-options input{width:18px;height:18px;flex:0 0 18px;accent-color:var(--blue);margin:0}.equipment-options label:has(input:checked){color:var(--blue)}.equipment-status{font-size:10px;color:var(--muted);margin:15px 0}.equipment-checklist .button{width:100%;margin:0}.equipment-checklist .budget-caption{font-size:9px}
+@media(max-width:800px){.equipment-checklist h3{font-size:24px}.equipment-options label{font-size:11px;gap:9px}}
+@media(max-width:600px){.equipment-checklist h3{font-size:27px}.equipment-options label{font-size:13px;padding:14px 0}.equipment-checklist .button{font-size:12px}.equipment-status{font-size:11px}}
+.budget{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}.budget>div{min-width:0}.equipment-options label>span{min-width:0;overflow-wrap:anywhere}
+@media(max-width:650px){.budget{grid-template-columns:1fr}}
+.equipment-more{border-bottom:1px solid var(--line);margin-top:6px}.equipment-more summary{cursor:pointer;display:flex;justify-content:space-between;gap:15px;align-items:center;list-style:none;color:var(--blue);font-size:12px;font-weight:600;line-height:1.45;padding:15px 0}.equipment-more summary::-webkit-details-marker{display:none}.equipment-more summary:after{content:'+';font-size:20px;font-weight:400;flex-shrink:0}.equipment-more[open] summary:after{content:'−'}.equipment-more-options{padding-left:8px}.equipment-more-options label:last-child{border-bottom:0}.equipment-more summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+@media(max-width:600px){.equipment-more summary{font-size:13px}}
+
+/* WhatsApp calls to action: bright green with high-contrast dark text. */
+.button[data-wa],.floating[data-wa]{background:#25d366;color:#12384e}
+.button[data-wa]:hover,.floating[data-wa]:hover{background:#20bd5a;color:#12384e}
+.floating[data-wa]{border-color:#159b48}.floating[data-wa] svg{color:currentColor}
+.button[data-wa]:focus-visible,.floating[data-wa]:focus-visible{outline:3px solid #12384e;outline-offset:4px}
+
+.floating[data-wa]{gap:10px}.floating[data-wa] .whatsapp-icon{display:block;width:26px;height:26px;min-width:26px;flex:0 0 26px;aspect-ratio:1;overflow:visible}
+
+/* Contact arrows rotate clockwise to point right, matching solution cards. */
+.button[data-wa]>span{display:inline-block;flex-shrink:0;transform:rotate(0deg);transform-origin:center;transition:transform .2s ease}
+.button[data-wa]:hover{transform:none}
+.button[data-wa]:hover>span,.button[data-wa]:focus-visible>span{transform:rotate(45deg)}
+@media(prefers-reduced-motion:reduce){.button[data-wa]:hover>span,.button[data-wa]:focus-visible>span{transform:none}}

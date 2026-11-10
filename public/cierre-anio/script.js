@@ -44,6 +44,26 @@
     document.head.appendChild(tag);
   }
 
+  // Build only the checklist CTA from the currently selected equipment details.
+  const equipmentCard = document.querySelector('.equipment-checklist');
+  if (equipmentCard) {
+    const boxes = [...equipmentCard.querySelectorAll('input[type="checkbox"]')];
+    const link = equipmentCard.querySelector('[data-equipment-wa]');
+    const status = equipmentCard.querySelector('.equipment-status');
+    const introduction = link.dataset.wa.trim();
+    const updateEquipmentMessage = () => {
+      const selected = boxes.filter(box => box.checked).map(box => box.value);
+      const details = selected.length ? '\n\nDetalles de mi equipo:\n' + selected.map(value => '- ' + value).join('\n') : '';
+      const message = introduction + details;
+      link.dataset.wa = message;
+      link.href = 'https://wa.me/522201432743?text=' + encodeURIComponent(message);
+      status.textContent = selected.length === 0 ? 'Sin detalles seleccionados' : selected.length + (selected.length === 1 ? ' detalle seleccionado' : ' detalles seleccionados');
+    };
+    boxes.forEach(box => box.addEventListener('change', updateEquipmentMessage));
+    window.addEventListener('pageshow', updateEquipmentMessage);
+    updateEquipmentMessage();
+  }
+
   document.querySelectorAll('[data-wa]').forEach(link => {
     link.href = 'https://wa.me/522201432743?text=' + encodeURIComponent(link.dataset.wa);
     link.target = '_blank';
@@ -78,11 +98,59 @@
     link.href = destination.href;
   });
 
-  const boxes = [...document.querySelectorAll('.checklist input[type="checkbox"]')];
-  const progress = document.querySelector('.progress');
-  const updateProgress = () => {
-    if (progress) progress.textContent = `${boxes.filter(box => box.checked).length} de ${boxes.length} datos preparados`;
-  };
-  boxes.forEach(box => box.addEventListener('change', updateProgress));
-  updateProgress();
+})();
+
+(() => {
+  const carousel = document.querySelector('.hero-carousel');
+  if (!carousel) return;
+  const slides = [...carousel.querySelectorAll('.carousel-slide')];
+  const dots = [...carousel.querySelectorAll('[data-slide]')];
+  const title = carousel.querySelector('#carousel-title');
+  const count = carousel.querySelector('.carousel-count');
+  const stage = carousel.querySelector('.carousel-stage');
+  const dialog = document.querySelector('.image-dialog');
+  let index = 0;
+
+  function show(next) {
+    index = (next + slides.length) % slides.length;
+    slides.forEach((slide, i) => { slide.hidden = i !== index; });
+    dots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === index)));
+    title.textContent = slides[index].dataset.title;
+    count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+  }
+  carousel.querySelectorAll('[data-direction]').forEach(button => {
+    button.addEventListener('click', () => show(index + Number(button.dataset.direction)));
+  });
+  dots.forEach(dot => dot.addEventListener('click', () => show(Number(dot.dataset.slide))));
+  carousel.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    show(index + (event.key === 'ArrowRight' ? 1 : -1));
+  });
+  let pointerStart = null;
+  stage.addEventListener('pointerdown', event => {
+    if (event.target.closest('button') || !event.isPrimary) return;
+    pointerStart = { x: event.clientX, y: event.clientY };
+  });
+  stage.addEventListener('pointerup', event => {
+    if (!pointerStart) return;
+    const dx = event.clientX - pointerStart.x;
+    const dy = event.clientY - pointerStart.y;
+    pointerStart = null;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) show(index + (dx < 0 ? 1 : -1));
+  });
+  stage.addEventListener('pointercancel', () => { pointerStart = null; });
+  stage.addEventListener('pointerleave', () => { pointerStart = null; });
+  carousel.querySelector('.carousel-expand').addEventListener('click', () => {
+    const source = slides[index].querySelector('img');
+    const image = dialog.querySelector('.expanded-image');
+    image.src = source.src;
+    image.alt = source.alt;
+    dialog.querySelector('#expanded-title').textContent = slides[index].dataset.title;
+    dialog.showModal();
+  });
+  dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  // Manual navigation lets visitors read each application at their own pace.
+  show(0);
 })();
