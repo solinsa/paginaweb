@@ -114,8 +114,12 @@
   function show(next) {
     index = (next + slides.length) % slides.length;
     slides.forEach((slide, i) => { slide.hidden = i !== index; });
+    const equipment = slides[index].querySelector('.equipment-image image');
+    if (equipment && !equipment.hasAttribute('href')) equipment.setAttribute('href', equipment.dataset.src);
+    carousel.querySelector('.carousel-reading-hint').hidden = !slides[index].classList.contains('product-slide');
     dots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === index)));
     title.textContent = slides[index].dataset.title;
+    carousel.querySelector('.carousel-expand').textContent = slides[index].classList.contains('product-slide') ? 'Ver ficha completa ↗' : 'Ampliar imagen ↗';
     count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
   }
   carousel.querySelectorAll('[data-direction]').forEach(button => {
@@ -142,7 +146,7 @@
   stage.addEventListener('pointercancel', () => { pointerStart = null; });
   stage.addEventListener('pointerleave', () => { pointerStart = null; });
   carousel.querySelector('.carousel-expand').addEventListener('click', () => {
-    const source = slides[index].querySelector('img');
+    const source = slides[index].querySelector('.slide-source') || slides[index].querySelector('img');
     const image = dialog.querySelector('.expanded-image');
     image.src = source.src;
     image.alt = source.alt;
